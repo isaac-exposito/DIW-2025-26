@@ -1,0 +1,36 @@
+/* Estilos para el botón de copiar */
+pre:has(code) {
+  position: relative;
+}
+
+.hljs-copy {
+  position: absolute;
+  cursor: pointer;
+  right: 5px;
+  top: 5px;
+  background-color: #4d4d4d;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 5px;
+  font-size: 12px;
+  transition: background-color 0.3s ease;
+}
+
+.hljs-copy:hover {
+  background-color: #7c7c7c;
+}
+
+/* Estilos para evitar scroll horizontal en bloques de código */
+pre {
+  white-space: pre-wrap; /* CSS3 */
+  word-wrap: break-word; /* Internet Explorer 5.5+ */
+  overflow-x: auto;
+  max-width: 100%;
+  margin: 0 !important;
+}
+
+code {
+  white-space: pre-wrap;
+  word-break: break-word;
+}

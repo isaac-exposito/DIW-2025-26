@@ -1,0 +1,45 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+code {
+  text-wrap: wrap;
+  white-space: pre-wrap;
+}
+
+code:not(pre code) {
+  color: #d63384;
+  font-size: 0.9em;
+  font-weight: bold;
+  word-wrap: break-word;
+  background-color: transparent;
+  font-family: "Roboto Mono", monospace;
+}
+
+/* Panel de explicación */
+.explanation {
+  background-color: #fff59d;
+  /* border: 1px solid #fff59d; */
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  margin: 30px auto;
+  max-width: 900px;
+  border-radius: 3px;
+  font-family: system-ui, Roboto, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.explanation p {
+  margin: 0 0 12px 0;
+}
+
+.explanation p:last-child {
+  margin: 0;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
