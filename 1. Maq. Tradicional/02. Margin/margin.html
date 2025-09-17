@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Margin</title>
+  <link rel="stylesheet" href="../../Utils/css/general.css">
+    <style>
+      body {
+        background-color: #e0e0e0;
+        margin: 0;
+        padding: 20px;
+      }
+
+      .container {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 20px;
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+    div.uno,
+    div.dos,
+    div.tres,
+    div.cuatro {
+      border: 5px solid black;
+      padding: 10px;
+    }
+
+    div.uno {
+      margin-bottom: 50px;
+    }
+
+    div.dos {
+      margin-top: 0px;
+    }
+
+    div.tres {
+      display: inline-block;
+      width: 200px;
+      margin-right: 50px;
+    }
+
+    div.cuatro {
+      display: inline-block;
+      width: 200px;
+      margin-left: 0px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <h1>Colapso de la propiedad <code>margin</code></h1>
+
+    <div class="uno">div.uno</div>
+    <div class="dos">div.dos</div>
+
+    <div class="explanation">
+      <p><strong>Explicación:</strong></p>
+
+      <p>Observa que a <code>div.dos</code> podemos darle un <code>margin-top</code> de hasta 50px sin que eso suponga ninguna diferencia en el margen con <code>div.uno</code>. Esto ocurre porque el <code>margin-bottom</code> del primer div está establecido ya en 50px.</p>
+
+      <p>Sin embargo, esto no ocurre con los márgenes izquierdo y derecho. Prueba modificando el margen izquierdo del <code>div.cuatro</code>. En este caso, el margen izquierdo del segundo div es 0px, pero el margen derecho del primer div es 50px, por lo que el margen entre ambos divs será de 50px.</p>
+
+      <p>Esto se debe a que los márgenes izquierdo y derecho no colapsan de la misma manera que los márgenes superior e inferior.</p>
+    </div>
+
+    <div class="tres">div.tres</div>
+    <div class="cuatro">div.cuatro</div>
+
+  </div>
+</body>
+
+</html>

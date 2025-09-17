@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comportamiento de display y margin</title>
+  <link rel="stylesheet" href="../../Utils/css/general.css">
+  <style>
+    body {
+      background-color: #e0e0e0;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .inline-box {
+      display: inline;
+      border: 2px solid blue;
+      padding: 15px;
+      /* Observa cómo las propiedades height y width no tienen efecto */
+      height: 300px;
+      width: 300px;
+      /* Observa cómo los márgenes verticales tampoco tienen efecto */
+      margin-block: 200px;
+      margin-inline: 20px;
+    }
+
+    .inline-block-box {
+      display: inline-block;
+      border: 2px solid green;
+      padding: 15px;
+      /* Observa cómo las propiedades height y width sí tienen efecto */
+      width: 100px;
+      height: 100px;
+      /* Observa cómo los márgenes verticales también tienen efecto */
+      margin-block: 20px;
+      margin-inline: 10px;
+    }
+
+    .block-box {
+      display: block;
+      border: 2px solid red;
+      padding: 15px;
+      margin-block: 20px;
+      margin-inline: 10px;
+    }
+
+    .container-ejemplos {
+      border: 5px solid #ccc;
+      padding: 10px;
+      width: 600px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <h1>Comportamiento de <code>display</code> y <code>margin</code></h1>
+
+    <div class="container-ejemplos">
+      <span class="inline-box">inline</span>
+      <span class="inline-box">inline</span>
+      <span class="inline-box">inline</span>
+      <div class="inline-block-box">inline-block</div>
+      <div class="inline-block-box">inline-block</div>
+      <div class="inline-block-box">inline-block</div>
+      <div class="block-box">block</div>
+      <div class="block-box">block</div>
+      <div class="block-box">block</div>
+    </div>
+
+    <div class="explanation">
+      <p><strong>Explicación</strong> de los valores de la propiedad CSS <code>inline</code>:</p>
+      <ul>
+        <li><strong><code>inline</code>:</strong> Los elementos con <code>display: inline</code> se comportan como elementos en línea, formando parte del flujo de texto. Sólo ocupan el espacio necesario para su contenido, no puedes establecer ancho o alto ni le afectan los márgenes en vertical, pero sí en horizontal.</li>
+        <li><strong><code>inline-block</code>:</strong> Los elementos con <code>display: inline-block</code> se comportan como elementos en línea, formando parte del flujo de texto, pero permiten establecer un ancho y alto específicos. Ocupan espacio según su contenido y dimensiones definidas.</li>
+        <li><strong><code>block</code>:</strong> Los elementos con <code>display: block</code> son bloques independientes que ocupan todo el ancho disponible en su contenedor. Cada elemento block comienza en una nueva línea y puedes definir su ancho y alto.</li>
+      </ul>
+
+      <p>Otro aspecto <strong>importante</strong> de los elementos <code>inline</code> es que los posibles valores de <code>padding</code> o <code>border</code> <u>no afectan a las dimensiones de su padre</u>. Es decir, si aumentas el <code>padding</code> o el <code>border</code> de un elemento <code>inline</code>, su padre no se adaptará al cambio de dimensiones.</p>
+
+      <p>Ejemplos de elementos que son <code>inline</code> por defecto:
+        <code>&lt;span&gt;</code>, <code>&lt;a&gt;</code>, <code>&lt;strong&gt;</code>, <code>&lt;img&gt;</code>.
+      </p>
+
+      <p>Ejemplos de elementos que son <code>inline-block</code> por defecto:
+        <code>&lt;img&gt;</code>, <code>&lt;input&gt;</code>, <code>&lt;button&gt;</code>, <code>&lt;select&gt;</code>, <code>&lt;video&gt;</code>, <code>&lt;canvas&gt;</code>.
+      </p>
+
+      <p>Ejemplos de elementos que son <code>block</code> por defecto:
+        <code>&lt;div&gt;</code>, <code>&lt;h1&gt;</code> a <code>&lt;h6&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;ul&gt;</code> y <code>&lt;ol&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;header&gt;</code>, <code>&lt;footer&gt;</code>.
+      </p>
+    </div>
+
+  </div>
+</body>
+
+</html>
