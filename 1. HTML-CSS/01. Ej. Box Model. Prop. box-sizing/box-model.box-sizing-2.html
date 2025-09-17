@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Box Model. Prop. box-sizing</title>
+  <link rel="stylesheet" href="../../Utils/css/general.css">
+  <style>
+    body {
+      background-color: #e0e0e0;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .container-ejemplo {
+      overflow: hidden;
+      border: 2px solid #ccc;
+    }
+
+    div.div {
+      width: 50%;
+      padding: 20px;
+      border: 10px solid black;
+      background-color: lightblue;
+      float: left;
+    }
+
+    label {
+      display: inline-block;
+      margin-right: 10px;
+      font-size: 16px;
+    }
+
+    input[type="radio"] {
+      margin-right: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="container-ejemplo">
+      <div class="div">DIV1</div>
+      <div class="div">DIV2</div>
+    </div>
+
+    <div class="explanation" style="margin-top: 150px;">
+      <p><strong>Explicación:</strong></p>
+
+      <p>Si eliminamos <code>box-sizing: border-box</code>, los elementos <code>div</code> tendrán un comportamiento diferente en cuanto al tamaño.</p>
+      <p>El ancho especificado del 50% solo incluirá el contenido, y el padding y el borde se añadirán a este ancho, haciendo que los <code>div</code> sean más anchos de ese 50%, lo que implica que DIV2 baje desborde y baje a la línea siguiente.</p>
+
+      <div>
+        <label>
+          <input type="radio" name="box-sizing" value="content-box" id="content-box-radio"> Content-box
+        </label>
+        <label>
+          <input type="radio" name="box-sizing" value="border-box" id="border-box-radio" checked> Border-box
+        </label>
+      </div>
+    </div>
+
+
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var radioButtons = document.querySelectorAll('input[name="box-sizing"]');
+      radioButtons.forEach(function (radio) {
+        radio.addEventListener('change', function () {
+          var boxSizingValue = this.value;
+          var divs = document.querySelectorAll('div.div');
+          divs.forEach(function (div) {
+            div.style.boxSizing = boxSizingValue;
+          });
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>

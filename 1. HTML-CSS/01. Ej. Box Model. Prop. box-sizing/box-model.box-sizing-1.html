@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Box Model. Prop. box-sizing</title>
+  <link rel="stylesheet" href="../../Utils/css/general.css">
+
+  <style>
+    body {
+      background-color: #e0e0e0;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .content-box {
+      box-sizing: content-box;
+      border: 5px solid black;
+      padding: 10px;
+      margin: 10px;
+      width: 300px;
+    }
+
+    .border-box {
+      box-sizing: border-box;
+      border: 5px solid black;
+      padding: 10px;
+      margin: 10px;
+      width: 300px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="content-box">content-box</div>
+    <div class="border-box">border-box</div>
+
+    <div class="explanation">
+      <p><strong>Explicación:</strong></p>
+
+      <p>La propiedad CSS <code>box-sizing</code> determina cómo se calcula el tamaño total de un elemento HTML, incluyendo su contenido (<code>content</code>), relleno (<code>padding</code>) y borde (<code>border</code>).</p>
+
+      <p>Existen dos valores principales para <code>box-sizing</code>:</p>
+      <ul>
+        <li><strong><code>content-box</code>:</strong> El tamaño total se calcula considerando únicamente el contenido interior del elemento, excluyendo el <code>padding</code> y el <code>border</code>.</li>
+        <li><strong><code>border-box</code>:</strong> El tamaño total se calcula incluyendo el contenido, el <code>padding</code> y el <code>border</code>, lo que hace que el tamaño total sea más predecible.</li>
+      </ul>
+
+      <p>En el ejemplo, el div con <code>content-box</code> tiene un tamaño total de 330px, 300px por <code>width</code>, 10 px por cada uno de los <code>paddings</code> y 10px más por cada uno de los bordes.</p>
+
+      <p>Sin embargo, el div con <code>border-box</code> tiene un tamaño total de 300px, ya que el <code>padding</code> y el <code>border</code> se incluyen dentro de la medida especificada.</p>
+    </div>
+  </div>
+</body>
+
+</html>
