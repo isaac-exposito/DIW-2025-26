@@ -43,3 +43,7 @@ img {
   height: auto;
   object-fit: cover;
 }
+
+h1 {
+  text-align: center;
+}
