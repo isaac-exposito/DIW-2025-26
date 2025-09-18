@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Position</title>
+  <style>
+    p.def {
+      font-size: 16pt;
+    }
+
+    div {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 18pt;
+      font-weight: bold;
+    }
+
+    .absolute {
+      position: absolute;
+      padding: 20px;
+      right: 10px;
+      top: 10px;
+      background-color: lightyellow;
+    }
+
+    .fixed {
+      position: fixed;
+      padding: 20px;
+      right: 100px;
+      bottom: 50px;
+      border-radius: 50%;
+      z-index: 999;
+      background-color: lightskyblue;
+    }
+
+    .relative {
+      position: relative;
+      padding: 5px 10px;
+      background-color: lightcyan;
+      /* Prueba a modificar estos valores y observar el comportamiento */
+      top: 0px;
+      left: 0px;
+    }
+
+    .contenedor-relative {
+      position: relative;
+      top: 0px;
+      left: 0px;
+      padding: 10px;
+      background-color: lightpink;
+    }
+
+    .sticky {
+      position: sticky;
+      padding: 20px;
+      background-color: lightgreen;
+      text-align: center;
+      top: 0px;
+    }
+  </style>
+</head>
+
+<body>
+  <img src="https://picsum.photos/id/684/300/200" alt="Imagen de prueba">
+
+  <div class="sticky">position: sticky</div>
+
+  <div class="fixed">position: fixed</div>
+
+  <p class="def"><b>Lectura recomendada:</b> <a href="https://dev.to/lupitacode/guia-completa-y-practica-sobre-posicionamiento-css-fundamentos-17c" target="_blank">Guía completa y práctica sobre posicionamiento CSS</a></p>
+
+  <div class="relative">
+    <p class="def"><code>position: relative</code></p>
+    <p class="def">El valor <code>relative</code> posiciona un elemento respecto a su posición normal en el flujo del navegador.</p>
+    <p class="def">Se usan las propiedades <code>top, right, bottom, left</code> para especificar el desplazamiento del elemento respecto de su posición original. Estas propiedades aceptan valores negativos.</p>
+    <p class="def">El viewport es el área visible en la pantalla de un dispositivo.</p>
+  </div>
+  <p>Ad harum consectetur minus eius dolore iusto, fuga maxime exercitationem reprehenderit veritatis laborum quaerat doloremque tempora totam omnis error quo debitis consequatur itaque amet eum odio libero ullam repudiandae! Modi</p>
+  <div class="absolute">position: absolute (1)</div>
+
+  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam eos accusamus enim aut impedit veniam iusto quam eum labore ipsa ipsum obcaecati veritatis sequi vitae, corrupti nesciunt, saepe consectetur ab.</p>
+  <p>Quis maiores nisi, sunt pariatur distinctio amet voluptatem eos laborum, fugit quos dolorum dolores alias quam harum nulla assumenda adipisci esse id aspernatur. Dicta harum maiores, doloribus perspiciatis earum est!</p>
+  <p>Similique aliquam consectetur voluptatibus sint voluptas qui. Excepturi libero natus illo accusantium porro deleniti. Ipsa enim, sit, eligendi placeat aliquid architecto voluptate ex ipsam sapiente natus, aspernatur consequuntur sint inventore!</p>
+  <p>Iusto nemo adipisci quaerat libero autem iure eveniet veniam omnis, fugit architecto alias, deleniti, eius voluptatum corporis vel! Ipsam dolor harum perferendis quis, aliquam ullam reiciendis id. Tempore, nulla quaerat.</p>
+
+
+
+  <div class="contenedor-relative">
+    <div class="contenedor-relative">
+      <p class="def">Esto es un contenedor con <code>position: relative</code> solo para ver cómo se posiciona un elemento<br>con <code>position: absolute</code> en su interior.</p>
+      <p class="def">El valor <code>absolute</code> posiciona un elemento respecto a su ancestro posicionado <i>no static</i> más cercano. Si no encuentra ninguno, lo posiciona respecto al viewport*.</p>
+      <p class="def">Un elemento con <u><code>position: absolute</code> no ocupa espacio en el flujo normal del documento</u>.</p>
+      <p class="def">(*) El viewport es el área disponible en la pantalla del navegador (sin contar la interfaz del navegador, como botones, barra de menú, etc.) es decir, es el área donde se mostrará la página web o el espacio para renderizar el documento web.</p>
+      <div class="absolute">position: absolute (2)</div>
+    </div>
+  </div>
+
+
+
+
+
+  <p>Pariatur ut, ea vel molestiae laboriosam neque, illum dolorum vitae quam saepe dolores! Accusamus asperiores, facere, voluptatibus atque recusandae ut dolore deserunt ipsum impedit, quas officia cum totam doloremque illum!</p>
+  <p>Dolore repellat dolorum omnis cumque nulla impedit, suscipit perspiciatis consectetur minima quidem ratione ab perferendis maiores cum tempora dolorem error aut ipsa molestiae deleniti quae placeat! Praesentium sequi harum itaque?</p>
+  <p>Non vitae repellendus ipsum iure hic nisi velit alias ad eaque? Facere, quidem accusantium rerum temporibus nam officiis error incidunt dolor nulla quisquam fugit cupiditate reiciendis blanditiis neque. Soluta, nobis.</p>
+  <p>At soluta itaque adipisci fugiat est porro voluptates alias eaque facilis sit praesentium animi, veritatis qui et autem. Placeat, mollitia facilis sit odit praesentium fugiat optio illo tempora libero nam!</p>
+  <p>Repellendus corrupti modi quaerat inventore nihil quas eius quibusdam magni voluptas nemo. A sunt atque, totam architecto nisi repellat quidem rem at impedit praesentium? Nisi distinctio totam iure quod repellendus?</p>
+  <p>Consequatur, aspernatur! Maxime ipsum voluptatem qui sapiente quisquam deserunt perspiciatis modi unde, exercitationem quo, sed illo nam iure optio, fugit rem earum eos recusandae saepe? Quas ipsa unde odit quod.</p>
+  <p>Eaque tenetur molestiae debitis dicta doloremque hic sit voluptates alias laudantium. Facilis vitae id, libero quibusdam quae explicabo, odio a cum deserunt magnam vero ipsa architecto quos ad quasi distinctio.</p>
+  <p>Adipisci, quo. Laboriosam iusto nam at, mollitia suscipit impedit earum. Pariatur velit ullam ipsa quod officiis minus commodi voluptates consectetur asperiores delectus iure rem vel doloremque laboriosam maxime, praesentium temporibus.</p>
+  <p>Modi facere et dolorem laudantium, tempora vero maiores? Eum eveniet, atque odio, ipsam ab voluptas ullam velit dicta alias mollitia commodi libero. Quas culpa aperiam ut doloremque maxime, vitae facilis.</p>
+  <p>Cum sequi veritatis, nulla impedit ut sapiente soluta et autem voluptatibus deleniti architecto nobis pariatur suscipit facere vero voluptas reiciendis obcaecati corporis totam itaque dolor? Ipsum, commodi? Blanditiis, itaque nesciunt.</p>
+  <p>Ipsam eum ipsum, perspiciatis tempore magni aperiam enim dolore nam recusandae eos? Corrupti dolor illo repudiandae sed itaque, aspernatur maxime fugiat omnis minus perspiciatis quaerat pariatur molestias ad mollitia maiores.</p>
+  <p>Similique ad nisi asperiores quidem dolore, recusandae exercitationem veniam non praesentium obcaecati, reiciendis commodi a nam fugiat? Sit ab temporibus, quas consequuntur unde ipsam, dicta recusandae expedita obcaecati similique perspiciatis.</p>
+  <p>Molestias, quasi. Tempora, labore facere, voluptatem voluptate optio mollitia quasi cum iusto numquam adipisci itaque doloremque tempore rem iste sequi, eveniet vero atque eius perspiciatis ratione. Eligendi a doloribus id.</p>
+  <p>Tenetur nihil id consectetur temporibus totam, perspiciatis alias reiciendis, corrupti numquam adipisci voluptates omnis culpa earum maxime ratione dolorem ipsa odio ducimus! Facere, itaque? Porro hic excepturi corrupti ipsa optio.</p>
+  <p>Alias provident voluptate eligendi blanditiis quasi deleniti cum, minima voluptas officiis. Ea dolorum alias, odio officiis magnam tempore necessitatibus, ab et eum totam, cupiditate ducimus! Illo quaerat doloremque vel hic?</p>
+  <p>Consectetur sed ut voluptatem minus quo excepturi maxime, aliquam doloribus quos, deserunt eius dolor sequi ea recusandae molestias animi ex. Rerum nostrum quod in facilis quisquam nesciunt consequuntur unde soluta?</p>
+  <p>Veniam soluta aliquam maiores tenetur dolore, deserunt porro perspiciatis assumenda expedita tempore vero fuga quidem nostrum necessitatibus, aliquid, eveniet consequuntur reiciendis cupiditate aperiam minus accusamus iure autem magni? Asperiores, eius?</p>
+  <p>Nostrum, voluptate esse temporibus iste non dolores harum optio vel ipsa explicabo nulla recusandae dolorum fugiat ad itaque, a consequuntur sequi modi facere veniam! Officiis minus excepturi vero molestiae accusamus.</p>
+  <p>Architecto quis officiis laudantium, voluptatum, necessitatibus quo sint quia molestiae fugiat nulla quas in molestias! Iste, totam dolor hic reprehenderit animi voluptatem vitae iure dolorum provident exercitationem doloremque ducimus? Dolor.</p>
+  <p>Ea delectus ex libero perferendis at ratione harum unde ipsum consequuntur tempora, optio, nostrum voluptas alias dicta neque corporis repellendus aspernatur atque. Molestiae quam quibusdam temporibus fugiat veritatis ab alias.</p>
+  <p>Molestiae tempore nulla rerum et corporis. Cumque earum alias sed repudiandae vitae sapiente quam corrupti minima voluptatibus vel illo, nemo, explicabo accusamus velit veritatis ducimus laboriosam a suscipit, et beatae.</p>
+  <p>Dolorem assumenda dignissimos recusandae! Possimus molestiae provident nostrum suscipit aliquid dolores ullam iste fuga reiciendis deleniti esse rem ipsam qui assumenda vero quasi fugiat explicabo libero adipisci, commodi ab hic.</p>
+  <p>Sit illo eaque ad voluptas, quam ullam? Inventore, architecto modi incidunt sed voluptas provident iste! Consequuntur minima, fugit suscipit quaerat aut laudantium amet repellat assumenda harum error eveniet voluptatem voluptas?</p>
+  <p>Nihil impedit omnis quam voluptatibus corporis minima repellendus vel voluptatem, soluta, qui ducimus nobis consequatur. Officiis illo consequatur ullam dolores, soluta laboriosam? Obcaecati saepe vitae facilis? Animi nemo libero a?</p>
+  <p>Iure mollitia deleniti nemo ut ab unde quidem consequuntur explicabo magni quia, quas quis harum minus in laudantium praesentium! Deleniti id sapiente optio, laudantium ab magni accusantium odio temporibus aliquam.</p>
+  <p>Necessitatibus laudantium odit reiciendis quisquam dolorem! Reprehenderit ratione deleniti eveniet rem similique corrupti est earum atque, a ipsam in temporibus, commodi fugiat! Rem aliquam pariatur minus illum explicabo molestias modi?</p>
+</body>
+
+</html>

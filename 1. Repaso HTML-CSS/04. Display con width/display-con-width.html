@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Display con width</title>
+  <link rel="stylesheet" href="../../Utils/css/general.css">
+  <style>
+    body {
+      background-color: #e0e0e0;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .padre {
+      border: 5px solid green;
+      margin-bottom: 50px;
+    }
+
+    .padre>* {
+      border: 5px solid black;
+      padding: 10px;
+      /* Prueba a comentar y descomentar estas propiedades para ver el comportamiento */
+      /* width: 50%; */
+      /* min-width: 50%; */
+      /* max-width: 50%; */
+    }
+
+    .d-inline {
+      display: inline;
+    }
+
+    .d-inline-block {
+      display: inline-block;
+    }
+
+    .d-block {
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <h1>Comportamiento de <code>display</code> con <code>width</code></h1>
+
+    <div class="padre">
+      <span class="d-inline">inline</span>
+    </div>
+    <div class="padre">
+      <span class="d-inline-block">inline-block</span>
+    </div>
+    <div class="padre">
+      <span class="d-block">block</span>
+    </div>
+
+    <div class="explanation">
+      <p>Prueba a comentar y descomentar las propiedades de <code>.padre &gt; *</code> para comprobar el efecto de <code>width</code> para cada valor de la propiedad <code>display</code>.</p>
+    </div>
+
+  </div>
+
+</body>
+
+</html>
