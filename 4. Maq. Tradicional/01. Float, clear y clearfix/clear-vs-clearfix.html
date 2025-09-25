@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Clear vs Clearfix</title>
+  <link rel="stylesheet" href="../../Utils/css/general.css">
+  <style>
+    body {
+      background-color: #e0e0e0;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .box {
+      width: 100px;
+      height: 100px;
+      float: left;
+      background: lightblue;
+      margin: 5px;
+    }
+
+    /* Clearfix clásico */
+    .clearfix::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <h1><code>clear</code> vs <code>clearfix</code></h1>
+
+    <p>Contenedor sin clearfix (colapsa):</p>
+    <div class="container">
+      <div class="box"></div>
+      <div class="box"></div>
+    </div>
+
+    <p>Contenedor arreglado con &lt;div style="clear:both"&gt;:</p>
+    <div class="container">
+      <div class="box"></div>
+      <div class="box"></div>
+      <div style="clear:both"></div>
+    </div>
+
+    <p>Contenedor arreglado con clearfix:</p>
+    <div class="container clearfix">
+      <div class="box"></div>
+      <div class="box"></div>
+    </div>
+  </div>
+
+</body>
+
+</html>
