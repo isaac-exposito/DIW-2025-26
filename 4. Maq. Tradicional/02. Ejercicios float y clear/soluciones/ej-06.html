@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicios float y clear. Ej. 6</title>
+  <link rel="stylesheet" href="ejercicios-float-y-clear.css">
+  <link rel="stylesheet" href="../../../Utils/css/general.css">
+
+  <!-- Tema CSS para highlight.js -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/night-owl.min.css" integrity="sha512-i5X6Fdn/ZqvGSqPrdMa3FgcpXM/Nr6YccSKFYT93zljl/HZDEpvBbE5Pxp91eiWGccZLrL/LDQJd7fjTRYsVaA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+  <style>
+    img {
+      width: 20%;
+    }
+
+    .texto {
+      float: right;
+      background-color: aqua;
+      width: 80%;
+      padding: 0px 15px;
+    }
+
+    .clearfix::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="clearfix">
+    <img src="https://picsum.photos/id/237/200/100" alt="Perrito">
+    <div class="texto">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque cupiditate aperiam distinctio error exercitationem reiciendis tenetur, nostrum impedit ut necessitatibus, ipsa voluptates repudiandae perspiciatis amet adipisci nihil dignissimos tempore ab! Accusantium itaque culpa ratione maxime aliquam necessitatibus voluptatem atque, ea ab expedita voluptates voluptas magni vel rem accusamus explicabo tempora quisquam aperiam officia? Asperiores accusantium numquam adipisci suscipit facere consequatur.
+    </div>
+  </div>
+
+  <div class="explanation">
+
+    <p><strong>Explicación:</strong></p>
+    <p>Parece evidente que para que el texto esté a la derecha de la imagen alguien debe estar flotando: el texto, la imagen o ambos. Veamos las opciones:</p>
+
+    <ol>
+      <li>
+        <p><u>Sólo flota la imagen</u>: Si la imagen flota a la izquierda, cuando el texto supere la altura de la imagen se irá a la izquierda, no respetando la situación que nos piden (*).</p>
+      </li>
+      <li>
+        <p><u>Sólo flota el texto</u>: Dado que el texto es largo, aunque lo flotemos a la derecha no causará ningún efecto en el resultado. Definitivamente, no es la solución.</p>
+      </li>
+      <li>
+        <p><u>Flotan ambos</u>: Como en la situación anterior, aunque flotemos ambos elementos, como el texto es largo no cabrá en el hueco que deja la imagen a su derecha, por lo que se desplazará completamente hacia abajo. Tampoco es la solución.</p>
+      </li>
+    </ol>
+
+    <p>La <b>solución</b> está en usar <code>width</code> junto con <code>float</code>. La imagen ya está a la izquierda, por lo que no necesitamos que flote. Sólo necesitamos que el texto flote a la derecha y darles a ambos una anchura fija en porcentaje.</p>
+    <p>Por supuesto, habría que envolver a ambos en un contenedor con la clase <code>clearfix</code>.</p>
+
+    <p><b>Otra solución posible</b> para alcanzar la disposición que nos piden es hacer flotar la imagen a la izquierda si al texto le damos un valor a la propiedad <code>overflow</code> igual a <code>scroll</code>, <code>hidden</code> o <code>auto</code>:</p>
+
+    <pre><code>img {
+  width: 20%;
+  float: left;
+}
+
+.texto {
+  overflow: hidden;
+  background-color: aqua;
+  width: 80%;
+  padding: 0px 15px;
+}</code></pre>
+
+    <p>La explicación es un poco técnica y fuera de los objetivos del ejercicio. Se produce porque cuando le asignas <code>overflow: hidden</code> o cualquier otro valor que no sea <code>visible</code>, el navegador crea un nuevo <i>block formatting context</i> (BFC) para ese elemento. Este contexto de formato de bloque evita que los elementos flotantes, como la imagen (<code>float: left</code>), se solapen o desorganicen a otros elementos. En esencia, fuerza al texto a respetar la disposición que has definido (80% del ancho a la derecha).</p>
+
+    <p>Fuente: <a href="https://www.w3.org/TR/css-overflow-3/" target="_blank">https://www.w3.org/TR/css-overflow-3/</a></p>
+
+  </div>
+
+  <!-- highlight.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/highlight.min.js" integrity="sha512-6yoqbrcLAHDWAdQmiRlHG4+m0g/CT/V9AGyxabG8j7Jk8j3r3K6due7oqpiRMZqcYe9WM2gPcaNNxnl2ux+3tA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script>hljs.highlightAll();</script>
+
+  <!-- Función para copiar el contenido del pre tag -->
+  <script src="../../../Utils/js/copy-button-pre-tag.js"></script>
+</body>
+
+</html>

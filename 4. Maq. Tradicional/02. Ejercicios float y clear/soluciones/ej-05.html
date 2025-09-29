@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicios float y clear. Ej. 5</title>
+  <link rel="stylesheet" href="../../../Utils/css/general.css">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    .flotante {
+      float: left;
+      width: 25%;
+      padding: 20px;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .flotante.div1 {
+      background-color: aqua;
+    }
+
+    .flotante.div2 {
+      background-color: beige;
+    }
+
+    .flotante.div3 {
+      background-color: coral;
+    }
+
+    .flotante.div4 {
+      background-color: cornflowerblue;
+    }
+
+    .clearfix::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+  </style>
+
+
+</head>
+
+<body>
+  <div class="clearfix">
+    <div class="flotante div1">Div1</div>
+    <div class="flotante div2">Div2</div>
+    <div class="flotante div3">Div3</div>
+    <div class="flotante div4">Div4</div>
+  </div>
+
+  <p>Soy un párrafo añadido justo después para ilustrar por qué es necesaria la clase <code>clearfix</code>.</p>
+
+  <div class="explanation">
+    <p><strong>Explicación:</strong></p>
+    <p>Si simplemente ponemos los elementos a flotar, el <code>padding</code> nos descuadra todo. El motivo es que al añadir alguna propiedad que modifica la anchura de los elementos, como <code>padding</code> o <code>border</code>, la anchura del 25% no lo tiene en cuenta y, como consecuencia, la anchura total pasa del 100%, por lo que el o los elementos que no quepan pasan a la siguiente línea. Para solucionarlo, tenemos que usar la propiedad <code>box-sizing</code> con el valor <code>border-box</code>.</p>
+    <p>Además, es necesario añadir la clase <code>clearfix</code> al contenedor de los elementos flotantes, como siempre.</p>
+  </div>
+
+</body>
+
+</html>

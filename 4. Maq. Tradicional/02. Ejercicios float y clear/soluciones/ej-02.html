@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicios float y clear. Ej. 2</title>
+  <link rel="stylesheet" href="../../../Utils/css/general.css">
+
+  <style>
+    .div1 {
+      float: right;
+      padding: 50px;
+      background-color: pink;
+    }
+
+    .div2 {
+      float: left;
+      padding: 50px;
+      background-color: aqua;
+    }
+
+    .div3 {
+      float: left;
+      padding: 50px;
+      background-color: coral;
+    }
+
+    .clearfix::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="clearfix">
+    <div class="div1">Div1</div>
+    <div class="div2">Div2</div>
+    <div class="div3">Div3</div>
+  </div>
+
+  <p>Soy un párrafo añadido justo después para ilustrar por qué es necesaria la clase <code>clearfix</code>.</p>
+
+  <div class="explanation">
+    <p><strong>Explicación:</strong></p>
+    <p>En este caso, exactamente igual que en el anterior, es necesario crear un contenedor para los elementos flotantes y añadir la clase <code>clearfix</code> a ese contenedor.</p>
+  </div>
+
+</body>
+
+</html>

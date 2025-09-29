@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicios float y clear. Ej. 4</title>
+  <link rel="stylesheet" href="../../../Utils/css/general.css">
+
+  <!-- Tema CSS para highlight.js -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/night-owl.min.css" integrity="sha512-i5X6Fdn/ZqvGSqPrdMa3FgcpXM/Nr6YccSKFYT93zljl/HZDEpvBbE5Pxp91eiWGccZLrL/LDQJd7fjTRYsVaA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+  <style>
+    .clearfix::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+    .texto {
+      background-color: coral;
+    }
+
+    .div1 {
+      float: right;
+      padding: 50px;
+      background-color: pink;
+      margin-left: 50px;
+    }
+
+    .div2 {
+      float: left;
+      padding: 5px;
+      background-color: aqua;
+    }
+
+    /* Estilos para la imagen de la solución */
+    img.img-centered {
+      box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 1);
+      width: 100%;
+      display: block;
+      margin: 30px auto;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="clearfix">
+    <div class="div1">Div1</div>
+    <div class="texto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit ipsum possimus eius cum a hic excepturi molestias. Neque saepe fugit, placeat dolor autem porro voluptatibus numquam iste reprehenderit molestias ea.</div>
+    <div class="div2">Div2</div>
+  </div>
+
+  <div style="margin-top: 30px">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem corporis perferendis eos facilis, commodi assumenda et sequi eligendi iure? Officiis tempora labore id expedita asperiores aperiam sint doloribus facere qui</div>
+
+  <div class="explanation">
+
+    <p><strong>Explicación:</strong></p>
+
+    <p>El motivo por el que no se desplaza hacia abajo es que está tomando como referencia el borde inferior del párrafo con fondo naranja, no el borde inferior de Div1. Y esto ocurre porque tanto Div1 como Div2 están flotando en la página, por lo que <b>el navegador sitúa el segundo párrafo a continuación del último elemento que no flota</b>, que es el primer párrafo. Lo que sí hace el navegador es desplazar el texto para que sea visible.</p>
+
+    <img class="img-centered max-760px" src="../img/img-ej-4-sol.jpg" alt="Explicación ejercicio 4">
+
+    <p>¿Por qué parece no funcionar <code>clear: both</code> aquí? No es que no funcione, es que tienen comportamientos distintos en esta situación. La clase <code>clearfix</code> obliga al contenedor a comportarse como un bloque, lo que asegura que el contenedor ajuste su altura para incluir los elementos flotantes. Sin embargo, <code>clear</code> lo que hace es que los elementos flotantes previos no interfieran con el siguiente contenido, pero no afecta al contenedor en sí mismo, lo que significa que si el contenido flotante excede la altura de su contenedor, este no ajustará su altura automáticamente.</p>
+
+    <p>Por tanto, lo correcto aquí es usar la clase <code>clearfix</code>.</p>
+
+    <pre><code class="language-css">.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}</code></pre>
+
+    <p>Ahora ya no hace falta usar <code>clear</code> en el último párrafo, quedando el html como sigue:</p>
+    <pre><code class="language-html">&lt;body&gt;
+  &lt;div class=&quot;clearfix&quot;&gt;
+    &lt;div class=&quot;div1&quot;&gt;Div1&lt;/div&gt;
+    &lt;div class=&quot;texto&quot;&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit ipsum possimus eius cum a hic excepturi molestias. Neque saepe fugit, placeat dolor autem porro voluptatibus numquam iste reprehenderit molestias ea.&lt;/div&gt;
+    &lt;div class=&quot;div2&quot;&gt;Div2&lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div style=&quot;margin-top: 30px;&quot;&gt;Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem corporis perferendis eos facilis, commodi assumenda et sequi eligendi iure? Officiis tempora labore id expedita asperiores aperiam sint doloribus facere qui&lt;/div&gt;
+&lt;/body&gt;</code></pre>
+  </div>
+
+  <!-- highlight.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/highlight.min.js" integrity="sha512-6yoqbrcLAHDWAdQmiRlHG4+m0g/CT/V9AGyxabG8j7Jk8j3r3K6due7oqpiRMZqcYe9WM2gPcaNNxnl2ux+3tA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script>hljs.highlightAll();</script>
+
+  <!-- Función para copiar el contenido del pre tag -->
+  <script src="../../../Utils/js/copy-button-pre-tag.js"></script>
+
+</body>
+
+</html>
