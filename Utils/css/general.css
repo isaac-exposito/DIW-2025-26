@@ -50,17 +50,19 @@ h1 {
 
 /* Link para subir arriba un nivel */
 .go-up {
-  position: fixed;
-  bottom: 10px;
-  left: 10px;
-  background-color: #198754;
-  color: white;
-  padding: 10px;
-  border-radius: 5px;
-  font-size: 1rem;
+  position: fixed !important;
+  bottom: 10px !important;
+  left: 10px !important;
+  background-color: #198754 !important;
+  color: white !important;
+  padding: 10px !important;
+  border-radius: 5px !important;
+  font-size: 1rem !important;
 }
 
 .go-up a {
-  text-decoration: none;
-  color: white;
+  text-transform: lowercase !important;
+  font-weight: normal !important;
+  text-decoration: none !important;
+  color: white !important;
 }
