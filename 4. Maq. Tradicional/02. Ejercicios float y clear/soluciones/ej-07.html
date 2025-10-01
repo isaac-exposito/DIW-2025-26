@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicios float y clear. Ej. 7</title>
+  <link rel="stylesheet" href="../../../Utils/css/general.css">
+
+  <style>
+    .header,
+    .footer {
+      background-color: grey;
+      color: white;
+      padding: 15px;
+    }
+
+    .column {
+      float: left;
+      padding: 15px;
+    }
+
+    .clearfix::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+    .menu {
+      width: 25%;
+    }
+
+    .content {
+      width: 75%;
+    }
+
+    .menu ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .menu li {
+      padding: 8px;
+      margin-bottom: 8px;
+      background-color: #33b5e5;
+      color: #ffffff;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="header">
+    <h1>Cabecera</h1>
+  </div>
+
+  <div class="clearfix">
+    <div class="column menu">
+      <ul>
+        <li>Lorem</li>
+        <li>Ipsum</li>
+        <li>Dolor</li>
+        <li>Sit</li>
+      </ul>
+    </div>
+
+    <div class="column content">
+      <h1>Lorem ipsum</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae illum cum quidem! Velit minima libero quasi aspernatur commodi explicabo adipisci, quis facilis, veniam, quae aperiam unde numquam magnam minus nesciunt.</p>
+      <p>Veritatis numquam fugiat rem odit perferendis maiores delectus et reiciendis, saepe optio ipsum facere ipsam accusantium maxime ab deleniti neque quod? Vitae, nulla illo deleniti commodi quaerat ab tempora dicta!</p>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>Pie de página</p>
+  </div>
+
+  <div class="explanation">
+    <p><strong>Explicación:</strong></p>
+    <p>Para hacer la parte central hay una manera más rebuscada, pero también válida. Basándonos en la solución del ejercicio anterior, podríamos hacer que sólo la zona derecha flotase (a la derecha), pero tendríamos el problema de que la zona izquierda sigue siendo un elemento de bloque, aunque le hayamos dado una anchura del 25%, por lo que sigue ocupando toda la línea y la parte derecha se desplazaría hacia abajo. Para resolver esto tenemos que cambiar el valor de <code>display</code>, pero no podemos poner <code>inline</code> porque a los elementos inline no se les aplica <code>width</code>, así que tendría que sea <code>inline-block</code>.</p>
+  </div>
+</body>
+
+</html>

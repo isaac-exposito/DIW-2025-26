@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicios float y clear. Ej. 16</title>
+  <link rel="stylesheet" href="../../../Utils/css/general.css">
+  <link rel="stylesheet" href="ej-16.css">
+
+  <style>
+    /* Estilos para este ejercicio concreto */
+    /* To Do List */
+    .todo-list {
+      width: 700px;
+      padding: 15px;
+      margin: 0 auto;
+      border: 1px solid black;
+      background-color: white;
+    }
+
+    /* Individual Todo */
+    .todo {
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 8px;
+    }
+
+    /* Priority icon dot */
+    .icon {
+      float: left;
+      margin: 0 10px;
+    }
+
+    /* Info of the todo, title and date */
+    .todo-info {
+      float: left;
+      margin: 10px;
+    }
+
+    /* Title */
+    .todo-title {
+      font-size: 24pt;
+    }
+
+    /* Date */
+    .todo-date {
+      font-size: 12pt;
+    }
+
+    /* Checkboxes */
+    .check {
+      float: right;
+      margin: 35px 35px 0 0;
+    }
+
+    .clearfix::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <!-- To Do list -->
+    <div class="todo-list">
+
+      <!-- To Do Item -->
+      <div class="todo clearfix">
+        <div class="icon urgent">&#9679;</div>
+        <div class="todo-info">
+          <div class="todo-title">Pay Rent</div>
+          <div class="todo-date">April 1</div>
+        </div>
+        <div class="check">
+          <input type="checkbox" class="checkbox-right" value="None" name="check">
+          <label for="check"></label>
+        </div>
+      </div>
+
+      <!-- To Do Item -->
+      <div class="todo clearfix">
+        <div class="icon urgent">&#9679;</div>
+        <div class="todo-info">
+          <div class="todo-title">Pay taxes</div>
+          <div class="todo-date">April 14</div>
+        </div>
+        <div class="check">
+          <input type="checkbox" class="checkbox-right" value="None" name="check">
+          <label for="check"></label>
+        </div>
+      </div>
+
+      <!-- To Do Item -->
+      <div class="todo clearfix">
+        <div class="icon medium">&#9679;</div>
+        <div class="todo-info">
+          <div class="todo-title">Do floats homework</div>
+          <div class="todo-date">Monday, April 21</div>
+        </div>
+        <div class="check">
+          <input type="checkbox" class="checkbox-right" value="None" name="check">
+          <label for="check"></label>
+        </div>
+      </div>
+
+      <!-- To Do Item -->
+      <div class="todo clearfix">
+        <div class="icon medium">&#9679;</div>
+        <div class="todo-info">
+          <div class="todo-title">Get groceries</div>
+          <div class="todo-date">Friday, April 18</div>
+        </div>
+        <div class="check">
+          <input type="checkbox" class="checkbox-right" value="None" name="check">
+          <label for="check"></label>
+        </div>
+      </div>
+
+      <!-- To Do Item -->
+      <div class="todo clearfix">
+        <div class="icon">&#9679;</div>
+        <div class="todo-info">
+          <div class="todo-title">Get a haircut</div>
+          <div class="todo-date">Friday, April 18</div>
+        </div>
+        <div class="check">
+          <input type="checkbox" class="checkbox-right" value="None" name="check">
+          <label for="check"></label>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="explanation">
+    <p><strong>Explicación:</strong></p>
+
+    <p>Hay varias maneras de hacer este layout. La más sencilla, probablemente, es flotar a la izquierda las clases <code>.icon urgent</code> y <code>.todo-info</code> y a la derecha la clase <code>.check</code>, posicionando luego el <code>check</code> con los márgenes adecuados.</p>
+
+    <p>También podrías posicionar el <code>check</code> con <code>position: absolute</code>, dando <code>position: relative</code> a la clase <code>.todo</code>.</p>
+  </div>
+
+</body>
+
+</html>

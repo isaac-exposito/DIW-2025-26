@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicios float y clear. Ej. 14</title>
+  <link rel="stylesheet" href="../../../Utils/css/general.css">
+  <link rel="stylesheet" href="ej-10.css">
+
+  <style>
+    /* Estilos para este ejercicio concreto */
+    .container {
+      max-width: 1024px;
+      margin: 0 auto;
+    }
+
+    .sidebar {
+      float: left;
+      width: 33.3333%;
+      height: 300px;
+    }
+
+    .main-content {
+      float: left;
+      width: 33.3333%;
+      height: 300px;
+    }
+
+    .sub-content {
+      float: left;
+      width: 33.3333%;
+      height: 300px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="header">header</div>
+
+  <div class="container clearfix">
+    <div class="sidebar">sidebar</div>
+    <div class="main-content">main content</div>
+    <div class="sub-content">sub content </div>
+  </div>
+
+  <div class="footer">footer</div>
+
+  <div class="explanation">
+    <p><strong>Explicación:</strong></p>
+    <p>La primera modificación, la más obvia, es sacar el <code>footer</code> del contenedor principal. La segunda es añadir la clase <code>clearfix</code> a <code>container</code>, dado que es quien tiene elementos flotantes ahora.</p>
+  </div>
+
+</body>
+
+</html>

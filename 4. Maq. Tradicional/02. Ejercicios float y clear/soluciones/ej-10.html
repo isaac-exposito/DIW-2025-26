@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicios float y clear. Ej. 10</title>
+  <link rel="stylesheet" href="../../../Utils/css/general.css">
+  <link rel="stylesheet" href="ej-10.css">
+
+  <style>
+    /* Estilos para este ejercicio concreto */
+    .container {
+      max-width: 1024px;
+      margin: 0 auto;
+      /*       
+        Para centrar la página también valdría:
+        margin-inline: auto;
+      */
+    }
+
+    .logo {
+      float: right;
+    }
+
+    .navigation {
+      float: left;
+    }
+
+    .sidebar {
+      float: left;
+      width: 25%;
+      height: 300px;
+    }
+
+    .sub-content {
+      height: 140px;
+      margin-bottom: 20px;
+    }
+
+    .sub-content-2 {
+      height: 140px;
+    }
+
+    .sub-content-wrapper {
+      width: 70%;
+      float: right;
+      padding: 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="header clearfix">
+      <div class="logo">logo</div>
+      <div class="navigation">navigation</div>
+    </div>
+
+    <div class="main-content clearfix">
+      <div class="sidebar">sidebar</div>
+      <div class="sub-content-wrapper clearfix">
+        <div class="sub-content">sub content</div>
+        <div class="sub-content-2">sub content 2</div>
+      </div>
+    </div>
+
+    <div class="footer">footer</div>
+
+  </div>
+
+  <div class="explanation">
+    <p><strong>Explicación:</strong></p>
+    <p>La principal dificultad está en la zona central. La manera más sencilla de hacer este layout es agrupar los dos elementos <i>sub content</i> en un contenedor flotante, formando un layout de dos columnas flotantes. Por supuesto, hay que añadir la clase <code>clearfix</code> a cada contenedor de elementos flotantes.</p>
+    <p>Para hacer que la página ocupe 1024px podrías pensar en poner al contenedor <code>max-width: 1024px</code>. Sin embargo, eso crea problemas cuando la anchura del viewport es menor de 1024px. La solución es usar <code>max-width</code>, no <code>width</code>. Para centrar la página podemos optar por el clásico <code>margin: 0 auto</code> o el más moderno <code>margin-inline: auto</code>.</p>
+  </div>
+
+</body>
+
+</html>

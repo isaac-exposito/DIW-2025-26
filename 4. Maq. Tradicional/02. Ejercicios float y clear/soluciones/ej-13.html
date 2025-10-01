@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicios float y clear. Ej. 13</title>
+  <link rel="stylesheet" href="../../../Utils/css/general.css">
+  <link rel="stylesheet" href="ej-10.css">
+
+  <style>
+    /* Estilos para este ejercicio concreto */
+    .container {
+      max-width: 1024px;
+      margin: 0 auto;
+    }
+
+    .sidebar {
+      float: left;
+      width: 33.3333%;
+      height: 300px;
+    }
+
+    .main-content {
+      float: left;
+      width: 33.3333%;
+      height: 300px;
+    }
+
+    .sub-content {
+      float: left;
+      width: 33.3333%;
+      height: 300px;
+    }
+
+    .main {
+      padding: 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="header">header</div>
+
+  <div class="container">
+
+    <div class="main clearfix">
+      <div class="sidebar">sidebar</div>
+      <div class="main-content">main content</div>
+      <div class="sub-content">sub content </div>
+    </div>
+
+    <div class="footer">footer</div>
+  </div>
+
+  <div class="explanation">
+    <p><strong>Explicación:</strong></p>
+    <p>La primera modificación es sacar el <code>header</code> del contenedor principal. La segunda es que en el CSS hay que establecer la anchura de <code>container</code> a <code>max-width: 1024px</code>.</p>
+
+    <p>Para centrar <code>container</code> ya sabemos que podemos optar por <code>margin: 0 auto</code> o por <code>margin-inline: auto</code>.</p>
+
+    <p>No hace falta indicar expresamente que la cabecera adopte el 100% de la anchura de pantalla, dado que es un div y ese es su comportamiento por defecto (aunque ya veremos que esto no es así exactamente).</p>
+  </div>
+
+</body>
+
+</html>

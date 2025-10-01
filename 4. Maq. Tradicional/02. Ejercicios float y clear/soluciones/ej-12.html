@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicios float y clear. Ej. 12</title>
+  <link rel="stylesheet" href="../../../Utils/css/general.css">
+  <link rel="stylesheet" href="ej-10.css">
+
+  <style>
+    /* Estilos para este ejercicio concreto */
+    .container {
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .sidebar {
+      float: left;
+      width: 33.3333%;
+      height: 300px;
+    }
+
+    .main-content {
+      float: left;
+      width: 33.3333%;
+      height: 300px;
+    }
+
+    .sub-content {
+      float: left;
+      width: 33.3333%;
+      height: 300px;
+    }
+
+    .main {
+      padding: 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="header">header</div>
+
+    <div class="main clearfix">
+      <div class="sidebar">sidebar</div>
+      <div class="main-content">main content</div>
+      <div class="sub-content">sub content </div>
+    </div>
+
+    <div class="footer">footer</div>
+  </div>
+
+  <div class="explanation">
+    <p><strong>Explicación:</strong></p>
+    <p>En esta ocasión debemos añadir la clase <code>clearfix</code> a un contenedor de los 3 elementos flotantes.</p>
+    <p>Podríamos pensar que no es necesario crear un contenedor y añadirle la clase <code>clearfix</code>, sino simplemente incluir <code>clear: both</code> en el footer para que el navegador lo sitúe debajo de los 3 elementos flotantes. Esto funcionaría, puedes probarlo con el inspector. Sin embargo, si ese footer tuviera un <code>margin-top</code>, no se aplicaría correctamente.</p>
+  </div>
+
+</body>
+
+</html>

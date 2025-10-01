@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicios float y clear. Ej. 8</title>
+  <link rel="stylesheet" href="../../../Utils/css/general.css">
+
+  <style>
+    .img-container {
+      float: left;
+      width: 33.33%;
+      padding: 5px;
+    }
+
+    .img-container img {
+      width: 100%;
+    }
+
+    .titulo_imagen {
+      text-align: center;
+      font-weight: bold;
+    }
+
+    #footer {
+      background-color: gray;
+      margin-top: 20px;
+      padding: 20px;
+      font-weight: bold;
+    }
+
+    .f-right {
+      float: right;
+    }
+
+    .f-left {
+      float: left;
+    }
+
+    .clearfix::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="clearfix">
+
+    <div class="img-container">
+      <img src="https://picsum.photos/id/14/400/200" alt="random image">
+      <div class="titulo_imagen">Lorem ipsum dolor sit amet</div>
+    </div>
+
+    <div class="img-container">
+      <img src="https://picsum.photos/id/16/400/200" alt="random image">
+      <div class="titulo_imagen">Facilis tempora ab quibusdam</div>
+    </div>
+
+    <div class="img-container">
+      <img src="https://picsum.photos/id/17/400/200" alt="random image">
+      <div class="titulo_imagen">Autem saepe accusantium</div>
+    </div>
+
+  </div>
+
+  <div id="footer" class="clearfix">
+    <div class="f-right">Isaac Expósito</div>
+    <div class="f-left">2º DAW. Diseño de Interfaces Web</div>
+  </div>
+
+  <div class="explanation">
+    <p><strong>Explicación:</strong></p>
+    <p>La manera más sencilla de hacer este tipo de layouts, donde dos o más elementos comparten anchura en disposición de columnas, es crear contenedores para esos elementos (<code>.img-container</code> en este caso) .</p>
+  </div>
+
+</body>
+
+</html>

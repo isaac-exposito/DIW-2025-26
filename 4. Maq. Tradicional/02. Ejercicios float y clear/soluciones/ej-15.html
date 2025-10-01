@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicios float y clear. Ej. 15</title>
+  <link rel="stylesheet" href="../../../Utils/css/general.css">
+  <link rel="stylesheet" href="ej-10.css">
+
+  <style>
+    /* Estilos para este ejercicio concreto */
+    .logo {
+      float: left;
+    }
+
+    .navigation {
+      float: right;
+    }
+
+    .image {
+      float: left;
+      width: 20%;
+      height: 150px;
+    }
+
+    .post_excerpt {
+      float: right;
+      width: 70%;
+    }
+
+    .post-content {
+      padding: 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="header clearfix">
+    <div class="logo">logo</div>
+    <div class="navigation">navigation</div>
+  </div>
+
+  <div class="main-content">
+
+    <div class="post">
+      <h2>Post Title</h2>
+      <div class="post-content clearfix">
+        <div class="image">IMAGE</div>
+        <p class="post_excerpt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, dignissimos, consectetur, ab inventore quibusdam natus a tenetur perspiciatis nihil nulla facilis aliquam nesciunt illo animi illum mollitia numquam id modi.</p>
+      </div>
+    </div>
+
+    <div class="post">
+      <h2>Post Title</h2>
+      <div class="post-content clearfix">
+        <div class="image">IMAGE</div>
+        <p class="post_excerpt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, dignissimos, consectetur, ab inventore quibusdam natus a tenetur perspiciatis nihil nulla facilis aliquam nesciunt illo animi illum mollitia numquam id modi.</p>
+      </div>
+    </div>
+
+    <div class="post">
+      <h2>Post Title</h2>
+      <div class="post-content clearfix">
+        <div class="image">IMAGE</div>
+        <p class="post_excerpt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, dignissimos, consectetur, ab inventore quibusdam natus a tenetur perspiciatis nihil nulla facilis aliquam nesciunt illo animi illum mollitia numquam id modi.</p>
+      </div>
+    </div>
+
+    <div class="post">
+      <h2>Post Title</h2>
+      <div class="post-content clearfix">
+        <div class="image">IMAGE</div>
+        <p class="post_excerpt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, dignissimos, consectetur, ab inventore quibusdam natus a tenetur perspiciatis nihil nulla facilis aliquam nesciunt illo animi illum mollitia numquam id modi.</p>
+      </div>
+    </div>
+
+    <div class="post">
+      <h2>Post Title</h2>
+      <div class="post-content clearfix">
+        <div class="image">IMAGE</div>
+        <p class="post_excerpt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, dignissimos, consectetur, ab inventore quibusdam natus a tenetur perspiciatis nihil nulla facilis aliquam nesciunt illo animi illum mollitia numquam id modi.</p>
+      </div>
+    </div>
+
+    <div class="post">
+      <h2>Post Title</h2>
+      <div class="post-content clearfix">
+        <div class="image">IMAGE</div>
+        <p class="post_excerpt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, dignissimos, consectetur, ab inventore quibusdam natus a tenetur perspiciatis nihil nulla facilis aliquam nesciunt illo animi illum mollitia numquam id modi.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="explanation">
+    <p><strong>Explicación:</strong></p>
+    <p>La mayor dificultad del ejercicio es detectar que los elementos <code>post</code> no son los que deben llevar la clase <code>clearfix</code>. Si lo hiciéramos de esa manera parecería que todo funciona, pero la estructura de la página se nos caería si añadiésemos contenido justo después de <code>post_excerpt</code>.</p>
+
+    <p>Lo que debemos hacer es crear un contenedor interno para los elementos flotantes, en este caso <code>image</code> y <code>post_excerpt</code> y a ese contenedor es al que debemos ponerle la clase <code>clearfix</code>.</p>
+  </div>
+
+</body>
+
+</html>

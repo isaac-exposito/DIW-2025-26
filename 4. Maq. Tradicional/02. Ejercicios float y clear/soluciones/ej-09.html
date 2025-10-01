@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicios float y clear. Ej. 9</title>
+  <link rel="stylesheet" href="../../../Utils/css/general.css">
+
+  <style>
+    nav {
+      background-color: #333;
+    }
+
+    nav a {
+      padding: 14px 18px;
+      color: white;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      background-color: red;
+    }
+
+    .f-left {
+      float: left;
+    }
+
+    .f-right {
+      float: right;
+    }
+
+    .clearfix::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="clearfix">
+    <a class="f-left" href="#">Inicio</a>
+    <a class="f-left" href="#">Inicio</a>
+    <a class="f-left" href="#">Nosotros</a>
+    <a class="f-left" href="#">Productos</a>
+    <a class="f-left" href="#">Contacto</a>
+    <a class="f-right" href="#">Salir</a>
+  </nav>
+
+  <div class="explanation">
+    <p><strong>Explicación:</strong></p>
+    <p>Esta es una distribución muy típica de una barra de navegación. La clase <code>clearfix</code> en este caso es absolutamente necesaria. Sin ella, la altura de la barra de navegación sería 0, ya que todos los elementos interiores de la barra de navegación son flotantes.</p>
+  </div>
+
+</body>
+
+</html>
