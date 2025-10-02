@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio Responsive Design (II)</title>
+  <link rel="stylesheet" href="../../Utils/css/general.css">
+  <link rel="stylesheet" href="../../Utils/highlightjs/highlight.css">
+  <link rel="stylesheet" href="../02. Ejercicios float y clear/estilos-ejercicios.css">
+
+  <!-- Tema CSS para highlight.js -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/night-owl.min.css" integrity="sha512-i5X6Fdn/ZqvGSqPrdMa3FgcpXM/Nr6YccSKFYT93zljl/HZDEpvBbE5Pxp91eiWGccZLrL/LDQJd7fjTRYsVaA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+  <style>
+    h4 {
+      margin-block: 0.75em 0.25em;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+      margin-bottom: 50px !important;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Ejercicio Responsive Design (II)</h1>
+  </header>
+
+  <main>
+    <div class="container">
+      <section class="ejercicio">
+        <h2>Utilizando como base el CSS proporcionado, crea un HTML con el siguiente layout y comportamiento adaptativo.</h2>
+
+        <h3>1. Para anchuras de pantalla mayores de 900px:</h3>
+        <img class="img-centered max-760px" src="img/950px.png" alt="Layout 950px">
+
+        <h3>2. Para anchuras de pantalla entre 750px y 900px:</h3>
+        <img class="img-centered max-760px" src="img/850px.png" alt="Layout 850px">
+
+        <h3>3. Para anchuras de pantalla entre 600px y 750px:</h3>
+        <img class="img-centered max-760px" src="img/700px.png" alt="Layout 700px">
+
+        <h3>4. Para anchuras de pantalla menores de 600px:</h3>
+        <img class="img-centered max-760px" src="img/550px.png" alt="Layout 700px">
+
+        <h4>CSS para este ejercicio:</h4>
+        <pre><code class="language-css">* {
+  box-sizing: border-box;
+}
+
+header {
+  background-color: lightpink;
+  padding: 20px;
+}
+
+aside {
+  background-color: lightblue;
+  padding: 20px;
+}
+
+article {
+  background-color: lightgreen;
+  padding: 20px;
+}
+
+footer {
+  background-color: darkgray;
+  padding: 20px;
+}</code></pre>
+
+      </section>
+
+    </div>
+  </main>
+
+  <!-- highlight.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/highlight.min.js" integrity="sha512-6yoqbrcLAHDWAdQmiRlHG4+m0g/CT/V9AGyxabG8j7Jk8j3r3K6due7oqpiRMZqcYe9WM2gPcaNNxnl2ux+3tA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script>hljs.highlightAll();</script>
+
+  <!-- Función para copiar el contenido del pre tag -->
+  <script src="../../Utils/js/copy-button-pre-tag.js"></script>
+
+</body>
+
+</html>

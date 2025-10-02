@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio Responsive Design (I)</title>
+  <link rel="stylesheet" href="../../Utils/css/general.css">
+  <link rel="stylesheet" href="../../Utils/highlightjs/highlight.css">
+  <link rel="stylesheet" href="../02. Ejercicios float y clear/estilos-ejercicios.css">
+
+  <!-- Tema CSS para highlight.js -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/night-owl.min.css" integrity="sha512-i5X6Fdn/ZqvGSqPrdMa3FgcpXM/Nr6YccSKFYT93zljl/HZDEpvBbE5Pxp91eiWGccZLrL/LDQJd7fjTRYsVaA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+  <style>
+    h4 {
+      margin-block: 0.75em 0.25em;
+    }
+
+    img {
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Ejercicio Responsive Design (I)</h1>
+  </header>
+
+  <main>
+    <div class="container">
+      <section class="ejercicio">
+        <h2>Utilizando como base el CSS proporcionado, crea un HTML con el siguiente layout y comportamiento adaptativo.</h2>
+
+        <br>
+        <h3>1. Para anchuras de pantalla mayores de 900px:</h3>
+        <p>El <code class="inline-code">header</code> ocupará 1 columna. El <code class="inline-code">aside</code> ocupará 2 columnas. Los <code class="inline-code">articles</code> ocuparán el espacio restante y se distribuirán 3+2.</p>
+        <img class="img-centered max-760px" src="img/950px.png" alt="Layout 950px">
+
+        <br>
+        <h3>2. Para anchuras de pantalla entre 600px y 900px:</h3>
+        <p>El <code class="inline-code">aside</code> ocupará 3 columnas. Los <code class="inline-code">articles</code> ocuparán el espacio restante y se distribuirán 2+1+1+1.</p>
+        <img class="img-centered max-760px" src="img/750px.png" alt="Layout 750px">
+
+        <br>
+        <h3>3. Para anchuras de pantalla menores de 600px:</h3>
+        <p>Todos los elementos ocuparán toda la anchura disponible.</p>
+        <img class="img-centered max-760px" src="img/550px.png" alt="Layout 550px">
+
+        <h4>CSS:</h4>
+        <pre><code class="language-css">* {
+  box-sizing: border-box;
+}
+
+header {
+  background-color: lightpink;
+  padding: 20px;
+}
+
+aside {
+  background-color: lightblue;
+  padding: 20px;
+}
+
+article {
+  background-color: lightgreen;
+  padding: 20px;
+}
+
+footer {
+  background-color: darkgray;
+  padding: 20px;
+}</code></pre>
+
+      </section>
+
+    </div>
+  </main>
+
+  <!-- highlight.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/highlight.min.js" integrity="sha512-6yoqbrcLAHDWAdQmiRlHG4+m0g/CT/V9AGyxabG8j7Jk8j3r3K6due7oqpiRMZqcYe9WM2gPcaNNxnl2ux+3tA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script>hljs.highlightAll();</script>
+
+  <!-- Función para copiar el contenido del pre tag -->
+  <script src="../../Utils/js/copy-button-pre-tag.js"></script>
+
+</body>
+
+</html>
