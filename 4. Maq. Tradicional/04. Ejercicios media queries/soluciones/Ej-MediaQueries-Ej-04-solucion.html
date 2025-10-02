@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicios Media Queries. Ej. 4</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    .topnav {
+      background-color: #333;
+    }
+
+    .topnav a {
+      display: block;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    .topnav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    @media (min-width: 600px) {
+      .topnav {
+        overflow: hidden;
+      }
+
+      .topnav a {
+        float: left;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <p>Ejercicio 4. Crea un menú de navegación adaptativo. Se mostrará horizontalmente para anchuras mayores de 600px y verticalmente para menores de 600px.</p>
+
+  <div class="topnav">
+    <a href="#">Link</a>
+    <a href="#">Link</a>
+    <a href="#">Link</a>
+  </div>
+
+  <hr>
+
+  <p>Relación de ejercicios extraída de <a href="https://www.w3schools.com/cssref/css3_pr_mediaquery.asp" target="_blank">w3schools</a></p>
+
+</body>
+
+</html>

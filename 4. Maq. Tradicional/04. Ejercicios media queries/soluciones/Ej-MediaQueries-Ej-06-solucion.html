@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicios Media Queries. Ej. 6</title>
+  <style>
+    /* Usamos operadores lógicos para definir los rangos de anchura */
+    @media (min-width: 600px) and (max-width: 900px),
+    (min-width: 1100px) {
+      div.example {
+        font-size: 50px;
+        padding: 50px;
+        border: 8px solid black;
+        background: yellow;
+      }
+    }
+
+    /* Podemos usar la sintaxis de nivel 4 de media queries para escribirlo de forma más matemática */
+    @media (600px <=width <=900px),
+    (width > 1100px) {
+      div.example {
+        font-size: 50px;
+        padding: 50px;
+        border: 8px solid black;
+        background: yellow;
+      }
+    }
+
+    /* Usando operadores lógicos sería: */
+  </style>
+</head>
+
+<body>
+
+  <p>Ejercicio 6. Modifica el aspecto de un div añadiendo un padding, borde y color de fondo que resalte sólo para anchuras de pantalla entre 600 y 900px y para anchuras mayores de 1100px. Hazlo usando <u>solamente una media query</u>.</p>
+  <div class="example">Hola mundo</div>
+
+  <hr>
+
+  <p>Relación de ejercicios extraída de <a href="https://www.w3schools.com/cssref/css3_pr_mediaquery.asp" target="_blank">w3schools</a></p>
+
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicios Media Queries. Ej. 5</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    .column {
+      padding: 20px;
+    }
+
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    @media (min-width: 600px) {
+      .column {
+        float: left;
+        width: 50%;
+      }
+    }
+
+    @media (min-width: 992px) {
+      .column {
+        float: left;
+        width: 25%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <p>Ejercicio 5. Crea un layout adaptativo como el siguiente, donde los dos breakpoints son a 600px y 992px.</p>
+
+  <div class="row">
+
+    <div class="column" style="background-color:#aaa;">
+      <h2>Column 1</h2>
+      <p>Some text...</p>
+    </div>
+
+    <div class="column" style="background-color:#bbb;">
+      <h2>Column 2</h2>
+      <p>Some text...</p>
+    </div>
+
+    <div class="column" style="background-color:#ccc;">
+      <h2>Column 3</h2>
+      <p>Some text...</p>
+    </div>
+
+    <div class="column" style="background-color:#ddd;">
+      <h2>Column 4</h2>
+      <p>Some text...</p>
+    </div>
+  </div>
+
+  <hr>
+
+  <p>Relación de ejercicios extraída de <a href="https://www.w3schools.com/cssref/css3_pr_mediaquery.asp" target="_blank">w3schools</a></p>
+
+</body>
+
+</html>

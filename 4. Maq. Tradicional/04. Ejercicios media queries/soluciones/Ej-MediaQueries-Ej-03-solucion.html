@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicios Media Queries. Ej. 3</title>
+  <link rel="stylesheet" href="../../../Utils/css/general.css">
+  <link rel="stylesheet" href="../../../Utils/highlightjs/highlight.css">
+
+  <!-- Tema CSS para highlight.js -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/night-owl.min.css" integrity="sha512-i5X6Fdn/ZqvGSqPrdMa3FgcpXM/Nr6YccSKFYT93zljl/HZDEpvBbE5Pxp91eiWGccZLrL/LDQJd7fjTRYsVaA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <style>
+    body {
+      background-color: lightblue;
+    }
+
+    @media (min-width: 400px) {
+      body {
+        background-color: lightgreen;
+      }
+    }
+
+    @media (min-width: 800px) {
+      body {
+        background-color: pink;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <p>Ejercicio 3. Modifica el color de fondo de <code>&lt;body&gt;</code> a “pink” si la anchura del viewport es de 800px o mayor, a “lightgreen” si está entre 400 y 799px. Si es menor de 400px, color de fondo será “lightblue”.</p>
+
+  <hr>
+
+  <p><b>¡Cuidado!</b> La siguiente solución funciona, pero no respeta el principio de <b>mobile first</b>:</p>
+
+  <pre><code class="language-css">body {
+  background-color: pink;
+}
+
+@media (max-width: 800px) {
+  body {
+    background-color: lightgreen;
+  }
+}
+
+@media (max-width: 400px) {
+  body {
+    background-color: lightblue;
+  }
+}</code></pre>
+
+  <p><b>SIEMPRE</b> es mejor hacerlo <b>mobile first</b>. Es decir, establecer primero los estilos para pantallas pequeñas y añadir las media queries después para anchuras mayores. Por tanto, mejor así:</p>
+
+  <pre><code class="language-css">body {
+  background-color: lightblue;
+}
+
+@media (min-width: 400px) {
+  body {
+    background-color: lightgreen;
+  }
+}
+
+@media (min-width: 800px) {
+  body {
+    background-color: pink;
+  }
+}</code></pre>
+
+  <p>Relación de ejercicios extraída de <a href="https://www.w3schools.com/cssref/css3_pr_mediaquery.asp" target="_blank">w3schools</a></p>
+
+  <!-- highlight.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/highlight.min.js" integrity="sha512-6yoqbrcLAHDWAdQmiRlHG4+m0g/CT/V9AGyxabG8j7Jk8j3r3K6due7oqpiRMZqcYe9WM2gPcaNNxnl2ux+3tA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script>hljs.highlightAll();</script>
+
+  <!-- Función para copiar el contenido del pre tag -->
+  <script src="../../../Utils/js/copy-button-pre-tag.js"></script>
+</body>
+
+</html>
