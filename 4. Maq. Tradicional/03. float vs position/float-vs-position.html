@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Float vs Position</title>
+</head>
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  .container-float {
+    background-color: lightblue;
+    padding: 20px;
+  }
+
+  .container-float span {
+    float: right;
+    background-color: lightgreen;
+    padding: 20px;
+  }
+
+  .container-position {
+    background-color: lightcoral;
+    padding: 20px;
+    position: relative;
+  }
+
+  .container-position span {
+    background-color: lightgreen;
+    padding: 20px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+  }
+
+  .clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+</style>
+
+<body>
+
+  <div class="container-float clearfix">
+    <span>Con float</span>
+  </div>
+
+  <div class="container-position">
+    <span>Con position</span>
+  </div>
+
+  <p>Puedes observar en el ejemplo que </p>
+
+</body>
+
+</html>
