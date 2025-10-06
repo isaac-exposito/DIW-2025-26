@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio Responsive Design (I). Solución</title>
+  <link rel="stylesheet" href="columnas.css">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    header {
+      background-color: lightpink;
+      padding: 20px;
+    }
+
+    aside {
+      background-color: lightblue;
+      padding: 20px;
+    }
+
+    article {
+      background-color: lightgreen;
+      padding: 20px;
+    }
+
+    footer {
+      background-color: darkgray;
+      padding: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>HEADER</header>
+
+  <div class="row">
+
+    <div class="col-sm-3 col-lg-2">
+      <aside>ASIDE</aside>
+    </div>
+
+    <div class="col-sm-9 col-lg-10">
+
+      <div class="row">
+        <div class="col-sm-6 col-lg-4">
+          <article>ARTICLE</article>
+        </div>
+
+        <div class="col-sm-6 col-lg-4">
+          <article>ARTICLE</article>
+        </div>
+
+        <div class="col-sm-12 col-lg-4">
+          <article>ARTICLE</article>
+        </div>
+
+        <div class="col-sm-12 col-lg-6">
+          <article>ARTICLE</article>
+        </div>
+
+        <div class="col-sm-12 col-lg-6">
+          <article>ARTICLE</article>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>FOOTER</footer>
+
+</body>
+
+</html>
