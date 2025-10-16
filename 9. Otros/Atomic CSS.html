@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atomic CSS</title>
+  <link rel="stylesheet" href="../Utils/css/general.css">
+
+  <!-- Tema CSS para highlight.js -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/night-owl.min.css" integrity="sha512-i5X6Fdn/ZqvGSqPrdMa3FgcpXM/Nr6YccSKFYT93zljl/HZDEpvBbE5Pxp91eiWGccZLrL/LDQJd7fjTRYsVaA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      line-height: 1.6;
+      background-color: #f4f4f9;
+    }
+
+    h1 {
+      color: #333;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 1024px;
+      margin: 0 auto;
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Ejemplo de Atomic CSS */
+    /* Creamos clases atómicas para color de fondo, color de texto, margen y padding */
+    .bg-light {
+      background-color: #f9f9f9;
+    }
+
+    .bg-blue {
+      background-color: #0074D9;
+    }
+
+    .text-white {
+      color: #fff;
+    }
+
+    .text-dark {
+      color: #222;
+    }
+
+    .m-20 {
+      margin: 20px;
+    }
+
+    .p-10 {
+      padding: 10px;
+    }
+
+    .p-20 {
+      padding: 20px;
+    }
+
+    .border {
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>Atomic CSS</h1>
+    <p><strong>Atomic CSS</strong>, también conocido como <strong>Utility-First CSS</strong>, es una técnica que consiste en crear clases que aplican una única propiedad CSS. Estas clases se reutilizan para componer el diseño de una página. Uno de los framework CSS más conocidos que usan esta técnica es <strong>Tailwind CSS</strong>.</p>
+
+    <p>Por ejemplo, con Atomic CSS, en lugar de crear una clase específica para un componente, usamos clases que aplican una sola propiedad CSS. Por ejemplo, para aplicar un color de fondo azul, usamos la clase <code>bg-blue</code>:</p>
+
+    <pre><code class="language-css">.bg-blue {
+  background-color: #0074D9;
+}</code></pre>
+
+    <p>Luego, podemos combinarlas para crear estilos más complejos:</p>
+    <!-- Ejemplo visual usando clases de color, margen y padding -->
+    <div class="bg-blue text-white p-20 m-20 border">
+      <p>Este es un ejemplo usando Atomic CSS para colores, margen y padding.</p>
+    </div>
+    <pre><code class="language-html">&lt;div class=&quot;bg-blue text-white p-20 m-20 border&quot;&gt;
+  &lt;p&gt;Este es un ejemplo usando Atomic CSS para colores, margen y padding.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+
+    <h2>Pros y contras de Atomic CSS</h2>
+    <h3>Pros</h3>
+    <ul>
+      <li>Facilita la reutilización de clases y estilos en diferentes elementos.</li>
+      <li>Permite que el diseño sea más rápido y flexible, ya que combinamos clases según lo que necesitamos.</li>
+      <li>Reduce la necesidad de escribir CSS personalizado para cada componente.</li>
+      <li>Ayuda a mantener el código CSS más sencillo y fácil de entender.</li>
+    </ul>
+    <h3>Contras</h3>
+    <ul>
+      <li>Puede hacer que el HTML tenga muchas clases, lo que a veces dificulta la lectura.</li>
+      <li>Si no seguimos una convención clara, podemos perder organización en el proyecto.</li>
+      <li>En proyectos grandes, puede ser complicado mantener la coherencia visual si no documentamos bien las clases.</li>
+      <li>No siempre es la mejor opción para estilos muy personalizados o complejos.</li>
+    </ul>
+  </div>
+
+  <!-- highlight.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/highlight.min.js" integrity="sha512-6yoqbrcLAHDWAdQmiRlHG4+m0g/CT/V9AGyxabG8j7Jk8j3r3K6due7oqpiRMZqcYe9WM2gPcaNNxnl2ux+3tA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script>hljs.highlightAll();</script>
+</body>
+
+</html>
