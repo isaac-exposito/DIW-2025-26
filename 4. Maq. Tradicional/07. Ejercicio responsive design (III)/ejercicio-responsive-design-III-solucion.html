@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio Responsive Design (III). Solución</title>
+  <link rel="stylesheet" href="columnas.css">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    header {
+      background-color: lightcoral;
+      padding: 20px;
+      text-align: center;
+      color: white;
+    }
+
+    nav {
+      background-color: #4CAF50;
+      padding: 15px;
+      color: white;
+    }
+
+    aside {
+      background-color: lightblue;
+      padding: 20px;
+      min-height: 200px;
+    }
+
+    .sidebar-left {
+      background-color: #FFE5B4;
+    }
+
+    .sidebar-right {
+      background-color: #E6E6FA;
+    }
+
+    article {
+      background-color: lightgreen;
+      padding: 20px;
+      margin-bottom: 10px;
+      min-height: 150px;
+    }
+
+    .banner {
+      background-color: #9370DB;
+      padding: 15px;
+      text-align: center;
+      color: white;
+      font-weight: bold;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Cabecera principal -->
+  <header>HEADER - LOGO Y TÍTULO PRINCIPAL</header>
+
+  <div class="row">
+
+    <!-- Sidebar izquierdo -->
+    <div class="col-xs-12 col-sm-12 col-md-3 col-lg-2 col-xl-2">
+      <aside class="sidebar-left">SIDEBAR IZQUIERDO<br>Menú secundario</aside>
+    </div>
+
+    <!-- Área de contenido central -->
+    <div class="col-xs-12 col-sm-9 col-md-6 col-lg-8 col-xl-8">
+
+      <!-- Banner secundario -->
+      <div class="banner">BANNER SECUNDARIO</div>
+
+      <!-- Contenido principal con artículos -->
+      <div class="row">
+        <!-- Artículo principal - destacado en pantallas grandes -->
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+          <article>ARTÍCULO 1<br>Lorem ipsum</article>
+        </div>
+
+        <!-- Artículo 2 -->
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+          <article>ARTÍCULO 2<br>Lorem ipsum</article>
+        </div>
+
+        <!-- Artículo 3 -->
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+          <article>ARTÍCULO 3<br>Lorem ipsum</article>
+        </div>
+
+        <!-- Artículo 4 -->
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+          <article>ARTÍCULO 4<br>Lorem ipsum</article>
+        </div>
+
+        <!-- Artículo 5 -->
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+          <article>ARTÍCULO 5<br>Lorem ipsum</article>
+        </div>
+
+        <!-- Artículo 6 -->
+        <div class="col-xs-6 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+          <article>ARTÍCULO 6<br>Lorem ipsum</article>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Sidebar derecho -->
+    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-2 col-xl-2">
+      <aside class="sidebar-right">SIDEBAR DERECHO<br>Publicidad<br>Widget social</aside>
+    </div>
+
+  </div>
+
+  <!-- Pie de página -->
+  <footer>FOOTER - INFORMACIÓN DE CONTACTO Y COPYRIGHT</footer>
+
+</body>
+
+</html>
