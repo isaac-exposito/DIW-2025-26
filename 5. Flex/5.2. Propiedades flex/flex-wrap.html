@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>flex-wrap</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/nav-styles.css">
+  <link rel="stylesheet" href="css/estilos.css">
+
+  <style>
+    #contenedor-flex {
+      width: 300px;
+      padding: 10px 0px;
+    }
+
+    #contenedor-flex .item {
+      width: 75px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="container">
+
+    <nav></nav>
+
+    <main>
+
+      <h2>flex-wrap</h2>
+
+      <div id="options">
+        <div class="option default">nowrap</div>
+        <div class="option">wrap</div>
+        <div class="option">wrap-reverse</div>
+
+        <div class="break"></div>
+
+        <div class="no-effect">
+          <label for="anchura-contenedor">Anchura contenedor: </label>
+          <div id="anchura-contenedor-value" class="range-indicator">300</div>
+          <input type="range" id="anchura-contenedor" name="anchura-contenedor" min="25" max="300" value="300">
+        </div>
+
+        <div class="no-effect">
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" role="switch" id="cb-overflow-hidden">
+            <label class="form-check-label" for="cb-overflow-hidden"><code>overflow: hidden</code></label>
+          </div>
+        </div>
+      </div>
+
+      <div id="contenedor-flex" class="my-3">
+        <div class="item">Rojo</div>
+        <div class="item">Verde</div>
+        <div class="item">Azul</div>
+      </div>
+
+      <div id="explicacion">
+        <p>Con <code>flex-wrap</code> especificamos el comportamiento del contenedor en caso de desbordamiento. Cuando el valor de esta propiedad es <code>wrap</code> o <code>wrap-reverse</code>, si alguno de los hijos no cabe en el contenedor baja una línea, convirtiéndose así el contenedor en multilínea.</p>
+
+        <p>Hay que tener cuidado con esto porque el comportamiento depende de otras propiedades y situaciones:</p>
+        <ul>
+          <li>Si los items tienen una anchura fija (75px en este ejemplo) y el contenedor se estrecha, entonces los ítems se estrecharán también hasta que su contenido lo permita (esto ocurre por el valor por defecto de otra propiedad, <code>flex-shrink</code>).</li>
+          <li>Si los items no tienen una anchura fija y esta depende de su contenido, entonces los ítems no se estrecharán con el contenedor. Puedes probar este comportamiento quitando <code>width: 75px</code> de la clade <code>.item</code> y poniendo <code>padding: 1em</code>.</li>
+        </ul>
+
+        <p class="mb-0">Documentación:</p>
+        <ul>
+          <li><a href="https://www.w3.org/TR/css-flexbox-1/#flex-wrap-property" target="_blank" rel="noopener noreferrer">www.w3.org</a></li>
+          <li><a href="https://developer.mozilla.org/es/docs/Web/CSS/flex-wrap" target="_blank" rel="noopener noreferrer">MDN Web Docs</a></li>
+        </ul>
+      </div>
+
+    </main>
+
+  </div>
+
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <!-- Bootstrap Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+  <script src="js/scripts.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      const $options = $("#options > .option");
+      const $contenedorFlex = $("#contenedor-flex");
+
+      $options.click(function () {
+        $contenedorFlex.css("flex-wrap", $(this).html());
+
+        // Quitamos la clase active a todos los items y se lo ponemos al que se ha hecho clic.
+        $options.removeClass("active");
+        $(this).addClass("active");
+      });
+
+      // Simulamos clic en el elemento por defecto
+      $("#options > .option.default").click();
+
+      // Modificación del input range
+      $('#anchura-contenedor').on('input', function () {
+        var valor = $(this).val();
+        $('#anchura-contenedor-value').text(valor);
+        $contenedorFlex.css("width", valor);
+      });
+
+      // Clic sobre el checkbox
+      $('#cb-overflow-hidden').change(function () {
+        if ($(this).is(':checked')) {
+          $contenedorFlex.css("overflow", "hidden");
+        }
+        else {
+          $contenedorFlex.css("overflow", "initial");
+        }
+      });
+    });
+  </script>
+
+</body>
+
+</html>

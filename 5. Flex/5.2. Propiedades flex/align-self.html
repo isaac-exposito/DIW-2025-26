@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>align-self</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/nav-styles.css">
+  <link rel="stylesheet" href="css/estilos.css">
+
+  <style>
+    #contenedor-flex {
+      height: 250px;
+      width: 400px;
+      align-items: baseline;
+    }
+
+    #contenedor-flex .item {
+      padding: 20px;
+    }
+
+    #contenedor-flex .item:nth-child(1),
+    #contenedor-flex .item:nth-child(3) {
+      margin-top: 40px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="container">
+
+    <nav></nav>
+
+    <main>
+
+      <h2>align-self</h2>
+
+      <div id="options">
+        <div class="option default">auto</div>
+        <div class="option">flex-start</div>
+        <div class="option">flex-end</div>
+        <div class="option">center</div>
+        <div class="option">stretch</div>
+        <div class="option">baseline</div>
+      </div>
+
+      <div class="d-flex align-items-start gap-4">
+
+        <div id="contenedor-flex">
+          <div class="item">Texto</div>
+          <div class="item">Más texto</div>
+          <div class="item">Un texto mucho más largo que ocupa más espacio</div>
+        </div>
+
+        <div id="explicacion">
+          <p>La propiedad <code>align-self</code> actúa exactamente igual que <code>align-items</code>, salvo que se utiliza sobre un ítem hijo específico y no sobre el elemento contenedor.</p>
+          <p>Gracias a ese detalle, <code>align-self</code> permite cambiar el comportamiento de <code>align-items</code> y sobrescribirlo con comportamientos específicos para ítems concretos que no queremos que se comporten igual que el resto.</p>
+          <p>En este ejemplo, el valor <code>auto</code> se comporta como <code>baseline</code> porque el contenedor flex tiene <code>align-items: baseline</code>.</p>
+
+          <p class="mb-0">Documentación:</p>
+          <ul>
+            <li><a href="https://www.w3.org/TR/css-flexbox-1/#align-items-property" target="_blank" rel="noopener noreferrer">www.w3.org</a></li>
+            <li><a href="https://developer.mozilla.org/es/docs/Web/CSS/align-self" target="_blank" rel="noopener noreferrer">MDN Web Docs</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+    </main>
+
+  </div>
+
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <!-- Bootstrap Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+  <script src="js/scripts.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      const $options = $("#options > .option");
+      const $contenedorFlex = $("#contenedor-flex");
+
+      $options.click(function () {
+        $("#contenedor-flex > .item:nth-child(2)").css("align-self", $(this).html());
+
+        // Quitamos la clase active a todos los items y se lo ponemos al que se ha hecho clic
+        $options.removeClass("active");
+        $(this).addClass("active");
+      });
+
+      // Simulamos clic en el elemento por defecto
+      $("#options > .default").click();
+    });
+  </script>
+
+</body>
+
+</html>

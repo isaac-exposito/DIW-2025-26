@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>align-content</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/nav-styles.css">
+  <link rel="stylesheet" href="css/estilos.css">
+
+  <style>
+    #contenedor-flex {
+      width: 300px;
+      height: 300px;
+      flex-wrap: wrap;
+    }
+
+    #contenedor-flex .item {
+      padding: 30px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="container">
+
+    <nav></nav>
+
+    <main>
+
+      <h2>align-content</h2>
+
+      <div id="options">
+        <div class="option">flex-start</div>
+        <div class="option">flex-end</div>
+        <div class="option">center</div>
+        <div class="option default">stretch</div>
+
+        <div class="break"></div>
+
+        <div class="option">space-between</div>
+        <div class="option">space-around</div>
+        <div class="option">space-evenly</div>
+
+        <div class="break"></div>
+
+        <div class="no-effect">
+          <label for="anchura-contenedor">Anchura contenedor: </label>
+          <div id="anchura-contenedor-value" class="range-indicator">300</div>
+          <input type="range" id="anchura-contenedor" name="anchura-contenedor" min="100" max="300" value="300">
+        </div>
+      </div>
+
+
+      <div class="d-flex align-items-start gap-4">
+        <div id="contenedor-flex">
+          <div class="item">1</div>
+          <div class="item">2</div>
+          <div class="item">3</div>
+        </div>
+
+        <div id="explicacion">
+          <p class="mb-0">La propiedad <code>align-content</code> es un caso particular de <code>align-items</code>.</p>
+          <ul>
+            <li>Cuando el valor de <code>flex-wrap</code> es <code>nowrap</code>, esta propiedad no hace nada, no entra en acción. Puedes probarlo con el inspector y verás que cualquier cambio en el valor de la propiedad no afecta a lo ítems.</li>
+            <li>Cuando el valor de <code>flex-wrap</code> es <code>wrap</code> o <code>wrap-reverse</code> podemos diferenciar dos situaciones:</li>
+            <ul>
+              <li>Cuando los ítems <b>sí</b> caben en el contenedor, esta propiedad se comporta exactamente igual que <code>align-items</code>. Puedes comprobarlo poniendo ambas en su valor por defecto, que es <code>stretch</code>.</li>
+              <li>Cuando los ítems <b>no</b> caben en el contenedor, esta propiedad alinea los ítems en el eje secundario pero dividiendo el espacio disponible entre el número de líneas necesarias para albergar a los ítems.</li>
+            </ul>
+          </ul>
+
+          <p class="mb-0">Documentación:</p>
+          <ul>
+            <li><a href="https://www.w3.org/TR/css-flexbox-1/#align-content-property" target="_blank" rel="noopener noreferrer">www.w3.org</a></li>
+            <li><a href="https://developer.mozilla.org/es/docs/Web/CSS/align-content" target="_blank" rel="noopener noreferrer">MDN Web Docs</a></li>
+          </ul>
+        </div>
+      </div>
+
+    </main>
+
+  </div>
+
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <!-- Bootstrap Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+  <script src="js/scripts.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      const $options = $("#options > .option");
+      const $contenedorFlex = $("#contenedor-flex");
+
+      $options.click(function () {
+        $contenedorFlex.css("align-content", $(this).html());
+
+        // Quitamos la clase active a todos los items y se lo ponemos al que se ha hecho clic
+        $options.removeClass("active");
+        $(this).addClass("active");
+      });
+
+      // Simulamos clic en el elemento por defecto
+      $("#options > .option.default").click();
+
+      // Modificación de la anchura del input range
+      $('#anchura-contenedor').on('input', function () {
+        var valor = $(this).val();
+        $('#anchura-contenedor-value').text(valor);
+        $contenedorFlex.css("width", valor);
+      });
+
+      // Para evitar modificaciones en el ancho del div donde está el slider, cogemos su anchura al cargar, que es la máxima, y se la ponemos definitiva.
+      var anchura = $('#anchura-contenedor-value').css("width");
+      $('#anchura-contenedor-value').css("width", anchura);
+    });
+  </script>
+
+</body>
+
+</html>

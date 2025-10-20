@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>flex-basis</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/nav-styles.css">
+  <link rel="stylesheet" href="css/estilos.css">
+
+  <style>
+    #contenedor-flex {
+      padding: 20px 0px;
+      width: 700px;
+    }
+
+    #contenedor-flex .item {
+      position: relative;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="container">
+
+    <nav></nav>
+
+    <main>
+
+      <h2>flex-basis</h2>
+
+      <div id="options">
+        <div class="option default" data-item1="auto" data-item2="auto" data-item3="auto">[auto, auto, auto]</div>
+        <div class="option" data-item1="150px" data-item2="150px" data-item3="auto">[150px, 150px, auto]</div>
+        <div class="option" data-item1="150px" data-item2="150px" data-item3="content">[150px, 150px, content]</div>
+
+        <div class="break"></div>
+
+        <div class="option" data-item1="150px" data-item2="150px" data-item3="min-content">[150px, 150px, min-content]</div>
+        <div class="option" data-item1="150px" data-item2="150px" data-item3="max-content">[150px, 150px, max-content]</div>
+        <div class="option" data-item1="150px" data-item2="150px" data-item3="50%">[150px, 150px, 50%]</div>
+        <div class="option" data-item1="33.3%" data-item2="33.3%" data-item3="33.3%">[33.3%, 33.3%, 33.3%]</div>
+      </div>
+
+      <div id="contenedor-flex" class="my-3">
+        <div class="item">Lorem<span class="width-indicator"></span></div>
+        <div class="item">Lorem ipsum<span class="width-indicator"></span></div>
+        <div class="item">Lorem ipsum dolor<span class="width-indicator"></span></div>
+      </div>
+
+      <p>La propiedad <code>flex-basis</code> define el tamaño base por defecto que tendrán los ítems <u>antes de aplicarle una cierta distribución de espacio</u> (como con <code>flex-grow</code>).</p>
+
+      <p class="mb-0">Según la especificación, <code>flex-basis</code> se resuelve de la misma manera que <code>width</code> salvo para los valores <code>auto</code> y <code>content</code>, aunque en la mayoría de los casos estos se comportan de la misma manera:</p>
+      <ul>
+        <li>Cuando el valor es <code>auto</code>, el tamaño se establecerá según el valor de <code>width</code>. Si <code>width</code> es también <code>auto</code>, entonces se aplicará <code>content</code>.</li>
+        <li>Cuando el valor es <code>content</code>, el tamaño se establecerá según el tamaño del ítem flexible. Suele ser equivalente a <code>max-content</code>.</li>
+      </ul>
+
+      <p class="mb-0">Documentación:</p>
+      <ul>
+        <li><a href="https://www.w3.org/TR/css-flexbox-1/#flex-basis-property" target="_blank" rel="noopener noreferrer">www.w3.org</a></li>
+        <li><a href="https://developer.mozilla.org/es/docs/Web/CSS/flex-basis" target="_blank" rel="noopener noreferrer">MDN Web Docs</a></li>
+      </ul>
+    </main>
+
+  </div>
+
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <!-- Bootstrap Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+  <script src="js/scripts.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      const $options = $("#options > .option");
+      const $contenedorFlex = $("#contenedor-flex");
+      const $item1 = $("#contenedor-flex > .item:nth-child(1)");
+      const $item2 = $("#contenedor-flex > .item:nth-child(2)");
+      const $item3 = $("#contenedor-flex > .item:nth-child(3)");
+
+      $options.click(function () {
+        $item1.css("flex-basis", $(this).data("item1"));
+        $item2.css("flex-basis", $(this).data("item2"));
+        $item3.css("flex-basis", $(this).data("item3"));
+
+        // Ponemos la anchura de cada ítem flexible
+        showSizes();
+
+        // Eliminamos la clase active a todos los elementos y se la ponemos al que hemos hecho click
+        $("#options>*").removeClass("active");
+        $(this).addClass("active");
+      });
+
+      // Ponemos la anchura de cada ítem flexible
+      showSizes();
+
+      // Simulamos clic en el elemento por defecto
+      $("#options > .default").click();
+    });
+  </script>
+
+</body>
+
+</html>

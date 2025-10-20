@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>row-gap | column-gap</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/nav-styles.css">
+  <link rel="stylesheet" href="css/estilos.css">
+
+  <style>
+    #options label {
+      width: 100px;
+    }
+
+    #contenedor-flex {
+      flex-wrap: wrap;
+      padding: 20px;
+      width: 200px;
+    }
+
+    #contenedor-flex .item {
+      padding: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="container">
+
+    <nav></nav>
+
+    <main>
+      <h2>row-gap | column-gap</h2>
+
+      <div class="d-flex align-items-start gap-4 mb-4">
+
+        <div class="flex-shrink-0">
+          <div id="options" class="flex-column">
+
+            <div class="no-effect">
+              <label for="gap-slider">gap: </label>
+              <div id="gap-value" class="range-indicator">0</div>
+              <input type="range" id="gap-slider" name="gap-slider" min="0" max="100" value="0">
+            </div>
+
+            <div class="no-effect">
+              <label for="row-gap-slider">row-gap: </label>
+              <div id="row-gap-value" class="range-indicator">0</div>
+              <input type="range" id="row-gap-slider" name="row-gap-slider" min="0" max="100" value="0">
+            </div>
+
+            <div class="no-effect">
+              <label for="column-gap-slider">column-gap: </label>
+              <div id="column-gap-value" class="range-indicator">0</div>
+              <input type="range" id="column-gap-slider" name="column-gap-slider" min="0" max="100" value="0">
+            </div>
+          </div>
+
+          <div id="contenedor-flex">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+          </div>
+        </div>
+
+        <div id="explicacion">
+          <p>La propiedad <code>row-gap</code> establece la separación entre filas si <code>flex-direction: column</code> o si estamos en un contenedor multilínea (<code>flex-wrap: wrap</code>).</p>
+
+          <p>La propiedad <code>column-gap</code> establece la separación entre columnas si <code>flex-direction: row</code> o si estamos en un contenedor multilínea (<code>flex-wrap: wrap</code>).</p>
+
+          <p>La propiedad <code>gap</code> permite establecer <code>row-gap</code> y <code>column-gap</code> al mismo tiempo.</p>
+        </div>
+
+      </div>
+
+      <p>Las tres propiedades admiten valores dados en porcentajes. Tal y como indica la <a href="https://www.w3.org/TR/css-align-3/#gap-percent" target="_blank" rel="noopener noreferrer">especificación de W3C</a>, cuando se indica un valor en porcentaje este se resuelve computando el tamaño del <u>content box</u> del contenedor. Esto lo puedes comprobar en este mismo ejemplo utilizando las DevTools del navegador. Como hemos indicado en el CSS que el contenedor sea de 200px de ancho y con un padding de 20px, la anchura del <u>content box</u> es de 200-20-20 = 160px. Si pones <code>column-gap: 10%</code> el navegador calculará el 10% de 160px, 16px, y lo aplicará.</p>
+
+      <p class="mb-0">Documentación:</p>
+      <ul>
+        <li><a href="https://www.w3.org/TR/css-grid-1/#gutters" target="_blank" rel="noopener noreferrer">www.w3.org</a></li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/gap" target="_blank" rel="noopener noreferrer">MDN Web Docs</a></li>
+      </ul>
+
+    </main>
+
+  </div>
+
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <!-- Bootstrap Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+  <script src="js/scripts.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      // Modificación de la anchura del input range gap
+      $('#gap-slider').on('input', function () {
+        var valor = $(this).val();
+        $('#contenedor-flex').css("gap", valor + "px");
+
+        $('#gap-value').text(valor);
+        $('#row-gap-value').text(valor);
+        $('#column-gap-value').text(valor);
+
+        $('#row-gap-slider').val(valor);
+        $('#column-gap-slider').val(valor);
+      });
+
+      $('#row-gap-slider').on('input', function () {
+        var valor = $(this).val();
+        $('#row-gap-value').text(valor);
+        $('#contenedor-flex').css("row-gap", valor + "px");
+      });
+
+      $('#column-gap-slider').on('input', function () {
+        var valor = $(this).val();
+        $('#column-gap-value').text(valor);
+        $('#contenedor-flex').css("column-gap", valor + "px");
+      });
+
+    });
+  </script>
+
+</body>
+
+</html>

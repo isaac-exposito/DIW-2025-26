@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>flex-shrink</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/nav-styles.css">
+  <link rel="stylesheet" href="css/estilos.css">
+
+  <style>
+    #contenedor-flex {
+      padding: 20px 0px;
+      width: 660px;
+    }
+
+    #contenedor-flex .item {
+      position: relative;
+      width: 200px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="container">
+
+    <nav></nav>
+
+    <main>
+
+      <h2>flex-shrink</h2>
+
+      <div id="options">
+        <div class="option" data-item1="0" data-item2="0" data-item3="0">[0,0,0]</div>
+        <div class="option default" data-item1="1" data-item2="1" data-item3="1">[1,1,1]</div>
+        <div class="option" data-item1="0" data-item2="1" data-item3="0">[0,1,0]</div>
+        <div class="option" data-item1="0" data-item2="2" data-item3="0">[0,2,0]</div>
+        <div class="option" data-item1="1" data-item2="0" data-item3="3">[1,0,3]</div>
+
+        <div class="break"></div>
+
+        <div class="no-effect">
+          <label for="anchura-contenedor">Anchura contenedor: </label>
+          <div id="anchura-contenedor-value" class="range-indicator">660</div>
+          <input type="range" id="anchura-contenedor" name="anchura-contenedor" min="120" max="660" step="60" value="660">
+        </div>
+
+        <div class="break"></div>
+
+        <div class="no-effect">
+          <input type="radio" id="rb-items-iguales" name="rb-items" checked>
+          <label for="rb-items-iguales" class="ms-1">Items iguales</label>
+        </div>
+
+        <div class="no-effect">
+          <input type="radio" id="rb-items-distintos" name="rb-items">
+          <label for="rb-items-distintos" class="ms-1">Items distintos</label>
+        </div>
+
+      </div>
+
+      <div id="contenedor-flex" class="my-3">
+        <div class="item">Lorem<span class="width-indicator"></span></div>
+        <div class="item">Lorem<span class="width-indicator"></span></div>
+        <div class="item">Lorem<span class="width-indicator"></span></div>
+      </div>
+
+      <p>La propiedad <code>flex-shrink</code> especifica el factor de contracción de un elemento flexible en la dirección del eje principal. Esta propiedad sólo tiene efecto cuando la suma de las anchuras (o alturas) de los items flexibles es mayor que la anchura (o altura) total del contenedor.</p>
+
+      <p class="mb-1">Observa lo que sucede en las siguientes situaciones:</p>
+
+      <ul class="ul-situaciones ul-items-iguales">
+        <li><b>Situación 1.</b> Todos los ítems tienen <code>flex-shrink: 0</code>. Ningún ítem se encoge, por lo que si no hay suficiente espacio en el contenedor se producirá desbordamiento. Por supuesto, podemos evitar mostrar el desbordamiento con <code>overflow: hidden</code> en el contenedor.</li>
+
+        <li><b>Situación 2.</b> Todos los ítems tienen <code>flex-shrink: 1</code>. Cuando no haya espacio disponible en el contenedor, los ítems se encogerán en proporción a su tamaño original. Como los 3 ítems son iguales, el factor de contracción será el mismo para todos y todos se encogerán lo mismo.</li>
+
+        <li><b>Situación 3.</b> Los ítems 1 y 3 tienen <code>flex-shrink: 0</code> y el ítem 2 tiene <code>flex-shrink: 1</code>. El único ítem que se encoge es este último, el único que tiene <code>flex-shrink</code> distinto de cero. Se encoge hasta alcanzar su contenido mínimo, es decir, ocupa lo mismo que tuviera <code>width: min-content</code>.</li>
+
+        <li><b>Situación 4.</b> Misma situación que la anterior. Observa que no cambia nada el hecho de que el valor de <code>flex-shrink</code> haya pasado de 1 a 2, dado que ninguno de sus hermano se encoge.</li>
+
+        <li><b>Situación 5.</b> Sólo se encojen los ítems 1 y 3. Como originalmente todos los ítems son iguales, el factor de contracción del ítem 3 será 3 veces mayor que el del ítem 1. Por tanto, por cada 60px de reducción de espacio, el ítem 3 se contraerá 45px y el ítem 1 sólo 15px.</li>
+      </ul>
+
+      <ul class="ul-situaciones ul-items-distintos d-none">
+        <li><b>Situación 1.</b> Todos los ítems tienen <code>flex-shrink: 0</code>. Ningún ítem se encoge, por lo que si no hay suficiente espacio en el contenedor se producirá desbordamiento. Por supuesto, podemos evitar mostrar el desbordamiento con <code>overflow: hidden</code> en el contenedor.</li>
+
+        <li><b>Situación 2.</b> Todos los ítems tienen <code>flex-shrink: 1</code>. Cuando no haya espacio disponible en el contenedor, los ítems se encogerán en proporción a su tamaño original. Es decir, el ítem 3 se encogerá el 50% del espacio negativo (300/(100+200+300)), el ítem 2 se encogerá el 33.3% (200/600) y el ítem 1 se encogerá el 16.6% (100/600).</li>
+
+        <li><b>Situación 3.</b> Los ítems 1 y 3 tienen <code>flex-shrink: 0</code> y el ítem 2 tiene <code>flex-shrink: 1</code>. El único ítem que se encoge es este último, el único que tiene <code>flex-shrink</code> distinto de cero. Se encoge hasta alcanzar su contenido mínimo, es decir, ocupa lo mismo que tuviera <code>flex-shrink: 0</code> y <code>width: min-content</code>.</li>
+
+        <li><b>Situación 4.</b> Misma situación que la anterior. Observa que no cambia nada el hecho de que el valor de <code>flex-shrink</code> haya pasado de 1 a 2, dado que ninguno de sus hermano se encoge.</li>
+
+        <li><b>Situación 5.</b> Sólo se encojen los ítems 1 y 3. Como originalmente el ítem 3 es el triple de grande que el ítem 1, su factor de contracción es de 3. Pero, además, tiene el triple de valor de <code>flex-shrink</code>. Por tanto, su factor de contracción será 3*3=9 veces mayor que el del ítem 1. O, lo que es lo mismo, por cada 60px de reducción de espacio, el ítem 3 se encogerá 55px y el ítem 1 lo hará sólo 5px.</li>
+      </ul>
+
+      <p class="mb-0">Documentación:</p>
+      <ul>
+        <li><a href="https://www.w3.org/TR/css-flexbox-1/#flex-shrink-property" target="_blank" rel="noopener noreferrer">www.w3.org</a></li>
+        <li><a href="https://developer.mozilla.org/es/docs/Web/CSS/flex-shrink" target="_blank" rel="noopener noreferrer">MDN Web Docs</a></li>
+      </ul>
+    </main>
+
+  </div>
+
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <!-- Bootstrap Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+  <script src="js/scripts.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      const $options = $("#options > .option");
+      const $contenedorFlex = $("#contenedor-flex");
+      const $item1 = $("#contenedor-flex > .item:nth-child(1)");
+      const $item2 = $("#contenedor-flex > .item:nth-child(2)");
+      const $item3 = $("#contenedor-flex > .item:nth-child(3)");
+
+      $options.click(function () {
+        $item1.css("flex-shrink", $(this).data("item1"));
+        $item2.css("flex-shrink", $(this).data("item2"));
+        $item3.css("flex-shrink", $(this).data("item3"));
+
+        // Ponemos la anchura de cada ítem flexible
+        showSizes();
+
+        // Eliminamos la clase highlight a todos los li y se la ponemos al que corresponda
+        $(".ul-situaciones>li").removeClass("highlight");
+        $(".ul-situaciones>li:nth-child(" + ($(this).index() + 1) + ")").addClass("highlight");
+
+        // Eliminamos la clase active a todos los elementos y se la ponemos al que hemos hecho click
+        $("#options>*").removeClass("active");
+        $(this).addClass("active");
+      });
+
+      // Modificación de la anchura del input range
+      $('#anchura-contenedor').on('input', function () {
+        var valor = $(this).val();
+        $('#anchura-contenedor-value').text(valor);
+        $('#contenedor-flex').css("width", valor);
+
+        // Ponemos la anchura de cada ítem flexible
+        showSizes();
+      });
+
+      // Click en los radiobuttons para seleccionar tamaños de los ítems
+      $("input[name=rb-items]").on('change', function () {
+        if ($("#rb-items-iguales").prop("checked")) {
+          $("#contenedor-flex > .item").css("width", "200px");
+
+          $(".ul-items-distintos").addClass("d-none");
+          $(".ul-items-iguales").removeClass("d-none");
+        }
+        else {
+          $("#contenedor-flex > .item:nth-child(1)").css("width", "100px");
+          $("#contenedor-flex > .item:nth-child(2)").css("width", "200px");
+          $("#contenedor-flex > .item:nth-child(3)").css("width", "300px");
+
+          $(".ul-items-distintos").removeClass("d-none");
+          $(".ul-items-iguales").addClass("d-none");
+        }
+        showSizes();
+      });
+
+      // Simulamos clic en el primer elemento
+      $("#options>.default").click();
+    });
+  </script>
+
+</body>
+
+</html>

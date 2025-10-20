@@ -1,0 +1,144 @@
+:root {
+  --bg-clr-contenedor-badge: #00ff00;
+  --bg-clr-item-badge: #00ffff;
+  --bg-clr-option: #ccc;
+  --bg-clr-option-hover: #fff;
+}
+
+body {
+  padding: 1em;
+  background-color: #f6f6f6;
+}
+
+#container {
+  display: flex;
+  max-width: 1100px;
+  margin: 0 auto;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(2, 6, 23, 0.08), 0 2px 6px rgba(2, 6, 23, 0.04);
+  background-color: #fff;
+  overflow: hidden;
+  transition: box-shadow 0.2s ease, transform 0.12s ease;
+}
+
+main {
+  padding-inline: 1rem;
+}
+
+h2 {
+  text-align: center;
+  font-family: "Consolas", "Lucida Console", "Courier New", Courier, monospace;
+  padding: 10px;
+  margin: 0px 0px 10px 0px;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+#options {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#options > *:not(.break) {
+  font-family: consolas, "Lucida Console", "Courier New";
+  margin: 0px 10px 10px 0px;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: var(--bg-clr-option);
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+}
+
+#options > .break {
+  flex-basis: 100%;
+  height: 0;
+  padding: 0;
+}
+
+#options > *.active:not(.no-effect),
+#options > *:hover:not(.no-effect) {
+  background-color: #333;
+  color: white;
+}
+
+#options > .option.default::before,
+#options > .option.default::after {
+  content: "*";
+  font-size: 0.75em;
+  margin-top: -5px;
+}
+
+#options .range-indicator {
+  background-color: #fff;
+  font-size: 0.875em;
+  text-align: center;
+  border-radius: 8px;
+  padding: 3px 6px;
+  margin: 0px 10px;
+  width: 40px;
+}
+
+sub {
+  display: block;
+  margin-bottom: 20px;
+}
+
+#contenedor-flex {
+  background-color: #ccc;
+  display: flex;
+  /* flex-shrink: 0; */
+}
+
+#contenedor-flex .item {
+  text-align: center;
+  padding: 20px 0px;
+}
+
+#contenedor-flex .item .width-indicator {
+  font-size: 1rem;
+  padding: 0.25em 0.5em;
+  box-shadow: 0 0 0.5em hsl(0 0% 0% / 0.2);
+  background: white;
+  color: black;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  text-align: center;
+  bottom: -14px;
+  z-index: 999;
+  transform: scale(0.9);
+}
+
+#contenedor-flex .item:nth-child(1) {
+  background-color: lightcoral;
+}
+
+#contenedor-flex .item:nth-child(2) {
+  background-color: lightgreen;
+}
+
+#contenedor-flex .item:nth-child(3) {
+  background-color: skyblue;
+}
+
+.ul-situaciones > li {
+  padding: 5px 10px;
+  margin: 0;
+}
+
+.highlight {
+  background-color: rgb(172, 255, 172);
+  transition: background-color 0.25s linear;
+}
+
+code {
+  font-weight: 600;
+}
+
+label,
+input[type="checkbox"],
+input[type="range"] {
+  cursor: pointer;
+}

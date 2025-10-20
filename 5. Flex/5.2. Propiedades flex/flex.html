@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>flex</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/nav-styles.css">
+  <link rel="stylesheet" href="css/estilos.css">
+
+  <style>
+    #contenedor-flex {
+      padding: 20px 0px;
+      width: 700px;
+    }
+
+    #contenedor-flex .item {
+      position: relative;
+    }
+
+    #contenedor-flex .item:nth-child(2) {
+      /* Comenta/descomenta esta línea para observar el efecto del padding cuando seleccionas flex: 1 */
+      /* padding-inline: 100px; */
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="container">
+
+    <nav></nav>
+
+    <main>
+
+      <h2>flex</h2>
+
+      <div id="options">
+        <div class="option default" data-flex="initial">initial</div>
+        <div class="option" data-flex="none">none</div>
+        <div class="option" data-flex="auto">auto</div>
+        <div class="option" data-flex="1 1 0%">1</div>
+        <div class="option" data-flex="0 1 0%">0</div>
+
+        <div class="break"></div>
+
+        <div class="no-effect">
+          <label for="anchura-contenedor">Anchura contenedor: </label>
+          <div id="anchura-contenedor-value" class="range-indicator">700</div>
+          <input type="range" id="anchura-contenedor" name="anchura-contenedor" min="300" max="700" value="700">
+        </div>
+
+        <div class="no-effect">
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" role="switch" id="cb-remove-width">
+            <label class="form-check-label" for="cb-remove-width">Establecer <code>width</code> en items</label>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="contenedor-flex" class="my-3">
+        <div class="item" data-width="150px">Contenido corto<span class="width-indicator"></span></div>
+        <div class="item" data-width="200px">Contenido medio aquí<span class="width-indicator"></span></div>
+        <div class="item" data-width="250px">Este es un contenido muy largo que puede causar desbordamiento<span class="width-indicator"></span></div>
+      </div>
+
+      <p>La propiedad <code>flex</code> es un atajo que combina las propiedades <code>flex-grow</code>, <code>flex-shrink</code> y <code>flex-basis</code> en una sola declaración. Su sintaxis es: <code>flex: [flex-grow] [flex-shrink] [flex-basis]</code>.</p>
+
+      <p class="mb-1">Los valores especiales de <code>flex</code> son:</p>
+
+      <ul class="ul-situaciones">
+
+        <li><code><b>flex: initial</b></code> (valor por defecto). Equivale a <code>flex: 0 1 auto</code>. El elemento no crece (<code>flex-grow: 0</code>), pero puede encogerse (<code>flex-shrink: 1</code>) si es necesario. Su tamaño base es automático (<code>flex-basis: auto</code>).
+          <br><strong>Con width establecido:</strong> Los elementos mantienen su width definido (150px, 200px, 250px) y solo se encogen si el contenedor es demasiado pequeño para contenerlos.
+          <br><strong>Sin width:</strong> Los elementos toman el tamaño de su contenido y se encogen proporcionalmente si es necesario para caber en el contenedor.
+        </li>
+
+        <li><code><b>flex: none</b></code>. Equivale a <code>flex: 0 0 auto</code>. El elemento no crece ni se encoge (<code>flex-grow: 0</code> y <code>flex-shrink: 0</code>), manteniendo siempre su tamaño natural. Es completamente inflexible.
+          <br><strong>Con width establecido:</strong> Los elementos mantienen estrictamente su width definido (150px, 200px, 250px) sin cambios, pudiendo causar desbordamiento si el contenedor es más pequeño.
+          <br><strong>Sin width:</strong> Los elementos mantienen exactamente el tamaño de su contenido sin modificaciones, pudiendo desbordarse si el contenido es muy largo para el contenedor.
+        </li>
+
+        <li><code><b>flex: auto</b></code>. Equivale a <code>flex: 1 1 auto</code>. El elemento puede crecer y encogerse (<code>flex-grow: 1</code> y <code>flex-shrink: 1</code>), usando su contenido como tamaño base (<code>flex-basis: auto</code>). Los elementos se distribuyen el espacio extra proporcionalmente a su tamaño inicial.
+          <br><strong>Con width establecido:</strong> Los elementos usan su width definido como base y se distribuyen el espacio restante proporcionalmente, manteniendo sus diferencias de tamaño relativas.
+          <br><strong>Sin width:</strong> Los elementos usan el tamaño de su contenido como base y se distribuyen el espacio extra proporcionalmente a su contenido inicial, los elementos con más contenido crecen más.
+        </li>
+
+        <li><code><b>flex: 1</b></code>. Equivale a <code>flex: 1 1 0%</code>. El elemento puede crecer y encogerse (<code>flex-grow: 1</code> y <code>flex-shrink: 1</code>), pero su tamaño base es 0 (<code>flex-basis: 0%</code>). Los elementos se distribuyen todo el espacio disponible de forma equitativa.
+          <br>El valor de <code>width</code> aquí es irrelevante, ya que se ignora debido a <code>flex-basis: 0%</code>. Los elementos se distribuyen el espacio equitativamente (cada uno ocupa 1/3 del contenedor). Pero, <strong>cuidado</strong>, lo que distribuye equitativamente <code>flex: 1</code> es el <i>content-box</i> de los elementos, no el tamaño total incluyendo padding y border. Por eso, si los elementos tienen diferentes paddings o borders, el espacio visual ocupado puede variar ligeramente. Puedes comprobar este efecto añadiendo un <code>padding</code> a uno de los ítems.
+        </li>
+
+        <li><code><b>flex: 0</b></code>. Equivale a <code>flex: 0 1 0%</code>. El elemento no crece (<code>flex-grow: 0</code>), pero puede encogerse (<code>flex-shrink: 1</code>) si es necesario. Su tamaño base es 0 (<code>flex-basis: 0%</code>), por lo que depende completamente de su contenido.
+          <br>El valor de <code>width</code> aquí es irrelevante, ya que se ignora debido a <code>flex-basis: 0%</code>. Los elementos toman el tamaño mínimo necesario para su contenido y se encogen proporcionalmente si el contenedor es muy pequeño.
+        </li>
+
+      </ul>
+
+      <p><strong>Nota:</strong> La diferencia clave entre <code>flex: auto</code> y <code>flex: 1</code> está en el <code>flex-basis</code>: <code>auto</code> respeta el tamaño del contenido como base, mientras que <code>flex: 1</code> ignora el contenido (basis: 0%) y distribuye equitativamente. Entre <code>flex: initial</code> y <code>flex: 0</code> la diferencia está en el <code>flex-basis</code>: <code>initial</code> usa el tamaño natural (auto) mientras que <code>0</code> parte de tamaño cero y se ajusta al contenido.</p>
+
+      <p class="mb-0">Documentación:</p>
+      <ul>
+        <li><a href="https://www.w3.org/TR/css-flexbox-1/#flex-property" target="_blank" rel="noopener noreferrer">www.w3.org</a></li>
+        <li><a href="https://developer.mozilla.org/es/docs/Web/CSS/flex" target="_blank" rel="noopener noreferrer">MDN Web Docs</a></li>
+      </ul>
+    </main>
+
+  </div>
+
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <!-- Bootstrap Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+  <script src="js/scripts.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      const $options = $("#options > .option");
+      const $contenedorFlex = $("#contenedor-flex");
+      const $item1 = $("#contenedor-flex > .item:nth-child(1)");
+      const $item2 = $("#contenedor-flex > .item:nth-child(2)");
+      const $item3 = $("#contenedor-flex > .item:nth-child(3)");
+
+      $options.click(function () {
+        $item1.css("flex", $(this).data("flex"));
+        $item2.css("flex", $(this).data("flex"));
+        $item3.css("flex", $(this).data("flex"));
+
+        // Ponemos la anchura de cada ítem flexible
+        showSizes();
+
+        // Eliminamos la clase highlight a todos los li y se la ponemos al que corresponda
+        $(".ul-situaciones>li").removeClass("highlight");
+        $(".ul-situaciones>li:nth-child(" + ($(this).index() + 1) + ")").addClass("highlight");
+
+        // Eliminamos la clase active a todos los elementos y se la ponemos al que hemos hecho click
+        $options.removeClass("active");
+        $(this).addClass("active");
+      });
+
+      // Modificación de la anchura del input range
+      $('#anchura-contenedor').on('input', function () {
+        var valor = $(this).val();
+        $('#anchura-contenedor-value').text(valor);
+        $('#contenedor-flex').css("width", valor + "px");
+
+        // Ponemos la anchura de cada ítem flexible
+        showSizes();
+      });
+
+      // Clic sobre el checkbox para eliminar/restaurar width
+      $('#cb-remove-width').change(function () {
+        if ($(this).is(':checked')) {
+          // Establecemos width en los ítems
+          $item1.css("width", $item1.data("width"));
+          $item2.css("width", $item2.data("width"));
+          $item3.css("width", $item3.data("width"));
+        }
+        else {
+          // Eliminamos el width de los ítems
+          $item1.css("width", "");
+          $item2.css("width", "");
+          $item3.css("width", "");
+        }
+
+        // Actualizamos los tamaños mostrados
+        showSizes();
+      });
+
+      // Simulamos clic en el elemento por defecto
+      $("#options > .default").click();
+    });
+  </script>
+
+</body>
+
+</html>
