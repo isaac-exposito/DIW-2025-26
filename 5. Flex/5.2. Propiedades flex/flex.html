@@ -7,7 +7,7 @@
   <title>flex</title>
 
   <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
   <link rel="stylesheet" href="css/nav-styles.css">
   <link rel="stylesheet" href="css/estilos.css">
 
@@ -20,11 +20,6 @@
     #contenedor-flex .item {
       position: relative;
     }
-
-    #contenedor-flex .item:nth-child(2) {
-      /* Comenta/descomenta esta línea para observar el efecto del padding cuando seleccionas flex: 1 */
-      /* padding-inline: 100px; */
-    }
   </style>
 </head>
 
@@ -32,7 +27,22 @@
 
   <div id="container">
 
-    <nav></nav>
+    <nav>
+      <h1>Propiedades Flex</h1>
+
+      <a href="flex-direction.html" data-type="contenedor">flex-direction</a>
+      <a href="flex-wrap.html" data-type="contenedor">flex-wrap</a>
+      <a href="gap.html" data-type="contenedor">row-gap | column-gap</a>
+      <a href="justify-content.html" data-type="contenedor">justify-content</a>
+      <a href="align-items.html" data-type="contenedor">align-items</a>
+      <a href="align-content.html" data-type="contenedor">align-content</a>
+      <a href="align-self.html" data-type="item">align-self</a>
+      <a href="flex-grow.html" data-type="item">flex-grow</a>
+      <a href="flex-shrink.html" data-type="item">flex-shrink</a>
+      <a href="flex-basis.html" data-type="item">flex-basis</a>
+      <a href="flex.html" class="active" data-type="item">flex (atajo)</a>
+      <a href="order.html" data-type="item">order</a>
+    </nav>
 
     <main>
 
@@ -74,32 +84,32 @@
 
       <ul class="ul-situaciones">
 
-        <li><code><b>flex: initial</b></code> (valor por defecto). Equivale a <code>flex: 0 1 auto</code>. El elemento no crece (<code>flex-grow: 0</code>), pero puede encogerse (<code>flex-shrink: 1</code>) si es necesario. Su tamaño base es automático (<code>flex-basis: auto</code>).
-          <br><strong>Con width establecido:</strong> Los elementos mantienen su width definido (150px, 200px, 250px) y solo se encogen si el contenedor es demasiado pequeño para contenerlos.
-          <br><strong>Sin width:</strong> Los elementos toman el tamaño de su contenido y se encogen proporcionalmente si es necesario para caber en el contenedor.
+        <li><code><b>flex: initial</b></code> (valor por defecto). Equivale a poner cada una de las 3 propiedades a su valor por defecto, es decir, <code>flex: 0 1 auto</code>. El elemento no crece (<code>flex-grow: 0</code>), pero puede encogerse (<code>flex-shrink: 1</code>) si es necesario. Su tamaño base es automático (<code>flex-basis: auto</code>).
+          <br><strong>Con width establecido:</strong> Los elementos mantienen su width definido (150px, 200px, 250px), pero se encogerán si es necesario.
+          <br><strong>Sin width:</strong> Los elementos toman el tamaño de su contenido y se encogen proporcionalmente si es necesario.
         </li>
 
-        <li><code><b>flex: none</b></code>. Equivale a <code>flex: 0 0 auto</code>. El elemento no crece ni se encoge (<code>flex-grow: 0</code> y <code>flex-shrink: 0</code>), manteniendo siempre su tamaño natural. Es completamente inflexible.
-          <br><strong>Con width establecido:</strong> Los elementos mantienen estrictamente su width definido (150px, 200px, 250px) sin cambios, pudiendo causar desbordamiento si el contenedor es más pequeño.
-          <br><strong>Sin width:</strong> Los elementos mantienen exactamente el tamaño de su contenido sin modificaciones, pudiendo desbordarse si el contenido es muy largo para el contenedor.
+        <li><code><b>flex: none</b></code>. Equivale a <code>flex: 0 0 auto</code>. El elemento no crece ni se encoge, manteniendo su tamaño natural. Es completamente inflexible.
+          <br><strong>Con width establecido:</strong> Los elementos mantienen estrictamente su width definido (150px, 200px, 250px) sin cambios, pudiendo causar desbordamiento.
+          <br><strong>Sin width:</strong> Los elementos mantienen el tamaño de su contenido sin cambios, pudiendo causar desbordamiento si el contenido es muy largo.
         </li>
 
-        <li><code><b>flex: auto</b></code>. Equivale a <code>flex: 1 1 auto</code>. El elemento puede crecer y encogerse (<code>flex-grow: 1</code> y <code>flex-shrink: 1</code>), usando su contenido como tamaño base (<code>flex-basis: auto</code>). Los elementos se distribuyen el espacio extra proporcionalmente a su tamaño inicial.
-          <br><strong>Con width establecido:</strong> Los elementos usan su width definido como base y se distribuyen el espacio restante proporcionalmente, manteniendo sus diferencias de tamaño relativas.
-          <br><strong>Sin width:</strong> Los elementos usan el tamaño de su contenido como base y se distribuyen el espacio extra proporcionalmente a su contenido inicial, los elementos con más contenido crecen más.
+        <li><code><b>flex: auto</b></code>. Equivale a <code>flex: 1 1 auto</code>. El elemento puede crecer y encogerse, pero su tamaño base es automático (basado en su contenido). Los elementos se ajustan proporcionalmente a su contenido inicial.
+          <br><strong>Con width establecido:</strong> Los elementos parten del width definido como base y crecen/encogen proporcionalmente, manteniendo sus diferencias de tamaño relativas.
+          <br><strong>Sin width:</strong> Los elementos parten del tamaño de su contenido como base y se distribuyen el espacio extra proporcionalmente a su contenido inicial.
         </li>
 
-        <li><code><b>flex: 1</b></code>. Equivale a <code>flex: 1 1 0%</code>. El elemento puede crecer y encogerse (<code>flex-grow: 1</code> y <code>flex-shrink: 1</code>), pero su tamaño base es 0 (<code>flex-basis: 0%</code>). Los elementos se distribuyen todo el espacio disponible de forma equitativa.
-          <br>El valor de <code>width</code> aquí es irrelevante, ya que se ignora debido a <code>flex-basis: 0%</code>. Los elementos se distribuyen el espacio equitativamente (cada uno ocupa 1/3 del contenedor). Pero, <strong>cuidado</strong>, lo que distribuye equitativamente <code>flex: 1</code> es el <i>content-box</i> de los elementos, no el tamaño total incluyendo padding y border. Por eso, si los elementos tienen diferentes paddings o borders, el espacio visual ocupado puede variar ligeramente. Puedes comprobar este efecto añadiendo un <code>padding</code> a uno de los ítems.
+        <li><code><b>flex: 1</b></code>. Equivale a <code>flex: 1 1 0%</code>. El elemento puede crecer y encogerse con un factor de 1, y su tamaño base es 0. Los elementos se distribuyen el espacio disponible equitativamente.
+          <br><strong>Con width establecido:</strong> A pesar del width definido, los elementos se distribuyen el espacio total equitativamente (cada uno ocupa 1/3 del contenedor).
+          <br><strong>Sin width:</strong> Los elementos se distribuyen el espacio disponible de forma totalmente equitativa, ignorando las diferencias de contenido.
         </li>
 
-        <li><code><b>flex: 0</b></code>. Equivale a <code>flex: 0 1 0%</code>. El elemento no crece (<code>flex-grow: 0</code>), pero puede encogerse (<code>flex-shrink: 1</code>) si es necesario. Su tamaño base es 0 (<code>flex-basis: 0%</code>), por lo que depende completamente de su contenido.
-          <br>El valor de <code>width</code> aquí es irrelevante, ya que se ignora debido a <code>flex-basis: 0%</code>. Los elementos toman el tamaño mínimo necesario para su contenido y se encogen proporcionalmente si el contenedor es muy pequeño.
+        <li><code><b>flex: 0</b></code>. Equivale a <code>flex: 0 1 0%</code>. El elemento no puede crecer (<code>flex-grow: 0</code>), pero puede encogerse (<code>flex-shrink: 1</code>) si es necesario, y su tamaño base es 0 (<code>flex-basis: 0%</code>). Los elementos se ajustan únicamente a su contenido mínimo.
+          <br><strong>Con width establecido:</strong> Los elementos ignoran el width definido y se ajustan al tamaño mínimo necesario para su contenido, sin crecer aunque haya espacio disponible.
+          <br><strong>Sin width:</strong> Los elementos se ajustan al tamaño mínimo de su contenido y no crecen, ocupando solo el espacio estrictamente necesario.
         </li>
 
       </ul>
-
-      <p><strong>Nota:</strong> La diferencia clave entre <code>flex: auto</code> y <code>flex: 1</code> está en el <code>flex-basis</code>: <code>auto</code> respeta el tamaño del contenido como base, mientras que <code>flex: 1</code> ignora el contenido (basis: 0%) y distribuye equitativamente. Entre <code>flex: initial</code> y <code>flex: 0</code> la diferencia está en el <code>flex-basis</code>: <code>initial</code> usa el tamaño natural (auto) mientras que <code>0</code> parte de tamaño cero y se ajusta al contenido.</p>
 
       <p class="mb-0">Documentación:</p>
       <ul>
@@ -111,10 +121,10 @@
   </div>
 
   <!-- jQuery -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
   <!-- Bootstrap Bundle -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 
   <script src="js/scripts.js"></script>
 
