@@ -1,0 +1,93 @@
+:root {
+  --header-bg: black;
+  --header-color: white;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.f-left {
+  float: left;
+}
+
+.f-right {
+  float: right;
+}
+
+/* HEADER */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background-color: black;
+  padding: 15px;
+}
+
+header a.logo {
+  text-decoration: none;
+  color: black;
+}
+
+header a.logo span {
+  color: white;
+  vertical-align: middle;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+header a.logo img {
+  width: 25px;
+  vertical-align: middle;
+}
+
+header a.login {
+  border-radius: 3px;
+  border: 2px solid white;
+  padding: 5px 10px;
+  text-decoration: none;
+  color: var(--header-color);
+}
+
+header a.login:hover {
+  color: var(--header-bg);
+  background-color: var(--header-color);
+}
+
+/* MAIN */
+main {
+  background-color: #eee;
+  padding: 20px;
+}
+
+main .title {
+  margin: 0;
+  text-align: center;
+  padding: 10px;
+  background-color: white;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+main .img-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+main .img-container .img-title {
+  position: relative;
+  top: -20px;
+  margin: 0 auto;
+  background-color: white;
+  color: black;
+  padding: 3px 6px;
+  font-size: 16pt;
+  font-weight: bold;
+  text-align: center;
+  width: 80%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
