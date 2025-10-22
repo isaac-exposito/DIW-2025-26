@@ -29,7 +29,7 @@
 
     <nav>
       <h1>Propiedades Flex</h1>
-    
+
       <a href="flex-direction.html" data-type="contenedor">flex-direction</a>
       <a href="flex-wrap.html" data-type="contenedor">flex-wrap</a>
       <a href="gap.html" data-type="contenedor">row-gap | column-gap</a>
@@ -67,12 +67,20 @@
         <div class="item">Lorem ipsum dolor<span class="width-indicator"></span></div>
       </div>
 
-      <p>La propiedad <code>flex-basis</code> define el tamaño base por defecto que tendrán los ítems <u>antes de aplicarle una cierta distribución de espacio</u> (como con <code>flex-grow</code>).</p>
+      <p>
+        La propiedad <code>flex-basis</code> establece el tamaño inicial de los ítems flexibles <u>antes de que el espacio disponible se reparta entre ellos</u> (por ejemplo, usando <code>flex-grow</code>). Es decir, define el tamaño base que tendrá cada elemento dentro del contenedor flex.
+      </p>
 
-      <p class="mb-0">Según la especificación, <code>flex-basis</code> se resuelve de la misma manera que <code>width</code> salvo para los valores <code>auto</code> y <code>content</code>, aunque en la mayoría de los casos estos se comportan de la misma manera:</p>
+      <p class="mb-0">
+        Según la especificación, <code>flex-basis</code> funciona de forma muy similar a la propiedad <code>width</code>, pero existen algunas diferencias importantes cuando se usan los valores <code>auto</code> y <code>content</code>:
+      </p>
       <ul>
-        <li>Cuando el valor es <code>auto</code>, el tamaño se establecerá según el valor de <code>width</code>. Si <code>width</code> es también <code>auto</code>, entonces se aplicará <code>content</code>.</li>
-        <li>Cuando el valor es <code>content</code>, el tamaño se establecerá según el tamaño del ítem flexible. Suele ser equivalente a <code>max-content</code>.</li>
+        <li>
+          Si el valor es <code>auto</code>, el tamaño base del ítem será el que indique la propiedad <code>width</code>. Si <code>width</code> también es <code>auto</code>, entonces el tamaño se calculará automáticamente según el contenido del elemento (como si fuera <code>content</code>).
+        </li>
+        <li>
+          Si el valor es <code>content</code>, el tamaño base será exactamente el tamaño del contenido del ítem flexible, sin recortes ni expansiones. En la práctica, suele comportarse igual que <code>max-content</code>, es decir, el ancho mínimo necesario para mostrar todo el contenido en una sola línea.
+        </li>
       </ul>
 
       <p class="mb-0">Documentación:</p>

@@ -67,6 +67,12 @@
             <label class="form-check-label" for="cb-flex-wrap"><code>flex-wrap: wrap</code></label>
           </div>
         </div>
+
+        <div class="no-effect">
+          <label for="anchura-contenedor">Anchura contenedor: </label>
+          <div id="anchura-contenedor-value" class="range-indicator">400</div>
+          <input type="range" id="anchura-contenedor" name="anchura-contenedor" min="100" max="600" value="400">
+        </div>
       </div>
 
       <div id="contenedor-flex" class="mb-3">
@@ -116,11 +122,26 @@
         if ($(this).is(":checked")) {
           $contenedorFlex.css("flex-wrap", "wrap");
           $contenedorFlex.css("width", "200px");
+          $('#anchura-contenedor').val(200);
+          $('#anchura-contenedor-value').text(200);
         } else {
           $contenedorFlex.css("flex-wrap", "nowrap");
           $contenedorFlex.css("width", "400px");
+          $('#anchura-contenedor').val(400);
+          $('#anchura-contenedor-value').text(400);
         }
       });
+
+      // Modificación de la anchura del input range
+      $('#anchura-contenedor').on('input', function () {
+        var valor = $(this).val();
+        $('#anchura-contenedor-value').text(valor);
+        $contenedorFlex.css("width", valor);
+      });
+
+      // Para evitar modificaciones en el ancho del div donde está el slider, cogemos su anchura al cargar, que es la máxima, y se la ponemos definitiva.
+      var anchura = $('#anchura-contenedor-value').css("width");
+      $('#anchura-contenedor-value').css("width", anchura);
     });
   </script>
 
