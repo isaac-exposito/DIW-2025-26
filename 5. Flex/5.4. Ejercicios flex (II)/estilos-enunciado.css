@@ -1,0 +1,141 @@
+div {
+  padding: 10px;
+  box-sizing: border-box;
+  border: 2px solid black;
+}
+
+#container-ppal {
+  height: 500px;
+  border: 4px solid black;
+}
+
+/***************** Contenedor izquierda *****************/
+#container-izq {
+  border: 4px solid red;
+  width: 20%;
+}
+
+#container-izq #container-izq-1 {
+  width: 50px;
+  height: 50px;
+}
+
+#container-izq #container-izq-2 {
+  border-width: 0px;
+}
+
+#container-izq #container-izq-3 {
+  width: 50px;
+  height: 50px;
+}
+
+#container-izq #container-izq-4 {
+  width: 50px;
+  height: 50px;
+}
+
+#container-izq #container-izq-5 {}
+
+#container-izq #container-izq-6 {
+  background-color: lightcoral;
+  height: 75px;
+  width: 75px;
+}
+
+#container-izq #container-izq-7 {
+  background-color: lightgreen;
+  height: 75px;
+  width: 75px;
+}
+
+#container-izq #container-izq-8 {
+  background-color: lightblue;
+  height: 75px;
+  width: 75px;
+}
+
+/***************** Contenedor centro *****************/
+#container-centro {
+  border: 4px solid green;
+  width: 50%;
+}
+
+#container-centro #container-centro-1 {
+  height: 100px;
+  border-width: 0px;
+}
+
+#container-centro #container-centro-2 {
+  height: 100px;
+}
+
+#container-centro #container-centro-3 {
+  border: 0px;
+}
+
+#container-centro #container-centro-4 {
+  width: 50px;
+  height: 50px;
+}
+
+#container-centro #container-centro-5 {
+  width: 50px;
+  height: 50px;
+}
+
+#container-centro #container-centro-6 {
+  width: 50px;
+}
+
+#container-centro #container-centro-7 {
+  width: 50px;
+  height: 50px;
+}
+
+#container-centro #container-centro-8 {
+  width: 50px;
+  height: 50px;
+  background-color: lightcoral;
+}
+
+#container-centro #container-centro-9 {
+  background-color: lightblue;
+  width: 50px;
+  height: 50px;
+}
+
+/***************** Contenedor derecha *****************/
+#container-dcha {
+  border: 4px solid blue;
+  width: 30%;
+}
+
+#container-dcha #container-dcha-1 {
+  height: 50px;
+  background-color: lightblue;
+}
+
+#container-dcha #container-dcha-2 {
+  background-color: lightcoral;
+  border: 0px;
+}
+
+#container-dcha #container-dcha-3 {
+  background-color: lightgreen;
+  height: 50px;
+  border: 0px;
+}
+
+#container-dcha #container-dcha-4 {
+  width: 50px;
+  height: 50px;
+}
+
+#container-dcha #container-dcha-5 {
+  width: 50px;
+  height: 50px;
+}
+
+#container-dcha #container-dcha-6 {}
+
+#container-dcha #container-dcha-7 {}
