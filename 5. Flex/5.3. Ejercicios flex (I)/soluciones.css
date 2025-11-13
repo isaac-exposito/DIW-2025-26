@@ -1,0 +1,130 @@
+/***** Ejercicio 1 *****/
+main {
+  flex-direction: row-reverse;
+}
+
+/***** Ejercicio 2 *****/
+main {
+  flex-direction: column;
+}
+
+/***** Ejercicio 3 *****/P
+main {
+  flex-direction: column-reverse;
+}
+
+/***** Ejercicio 4 *****/
+main {
+  justify-content: flex-end;
+}
+
+/***** Ejercicio 5 *****/
+main {
+  justify-content: center;
+}
+
+/***** Ejercicio 6 *****/
+main {
+  justify-content: space-between;
+}
+
+/***** Ejercicio 7 *****/
+main {
+  justify-content: space-around;
+}
+
+/***** Ejercicio 8 *****/
+main {
+  align-items: flex-end;
+}
+
+/***** Ejercicio 9 *****/
+main {
+  justify-content: center;
+  align-items: center;
+}
+
+/***** Ejercicio 10 *****/
+main {
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+/***** Ejercicio 11 *****/
+main {
+  justify-content: space-between;
+}
+
+main .verde {
+  align-self: flex-end;
+}
+
+/***** Ejercicio 12 *****/
+main {
+  justify-content: space-around;
+  align-items: flex-end;
+}
+
+main .verde {
+  align-self: center;
+}
+
+/***** Ejercicio 13 *****/
+main {
+  justify-content: center;
+}
+
+main .verde {
+  align-self: center;
+}
+
+main .azul {
+  align-self: flex-end;
+}
+
+/***** Ejercicio 14 *****/
+main {
+  justify-content: space-between;
+}
+
+main .rojo {
+  align-self: flex-end;
+}
+
+main .azul {
+  align-self: flex-end;
+}
+
+/***** Ejercicio 15 *****/
+main {
+  flex-direction: row-reverse;
+  align-items: flex-end;
+}
+
+main .rojo {
+  align-self: center;
+  flex-grow: 1;
+}
+
+main .verde {
+  flex-grow: 2;
+}
+
+main .azul {
+  flex-grow: 3;
+}
+
+/***** Ejercicio 16 *****/
+main .rojo {
+  flex-grow: 1;
+}
+
+main .verde {
+  flex-grow: 2;
+  align-self: center;
+}
+
+main .azul {
+  flex-grow: 1;
+  align-self: flex-end;
+}
