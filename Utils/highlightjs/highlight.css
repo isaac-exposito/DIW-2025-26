@@ -27,10 +27,33 @@ pre {
   word-wrap: break-word; /* Internet Explorer 5.5+ */
   overflow-x: auto;
   max-width: 100%;
-  margin: 0 !important;
+  margin: 0 0 0.75em 0 !important;
 }
 
 code {
   white-space: pre-wrap;
   word-break: break-word;
+}
+
+.code-label {
+  display: inline-block;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 2px 8px;
+  border-radius: 5px 5px 0 0;
+  letter-spacing: 1px;
+}
+
+.code-label.html-label {
+  background: #e44d26; /* Naranja HTML5 */
+}
+
+.code-label.css-label {
+  background: #264de4; /* Azul CSS3 */
+}
+
+.code-label.js-label {
+  background: #f0db4f; /* Amarillo JavaScript */
+  color: #000;
 }
