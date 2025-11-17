@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicios Float. Ej. 8. Ahora con flex</title>
+  <link rel="stylesheet" href="../../Utils/css/general.css">
+  <link rel="stylesheet" href="css/Ej-Float-Ej-08.css">
+
+  <!-- Tema CSS para highlight.js -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/night-owl.min.css" integrity="sha512-i5X6Fdn/ZqvGSqPrdMa3FgcpXM/Nr6YccSKFYT93zljl/HZDEpvBbE5Pxp91eiWGccZLrL/LDQJd7fjTRYsVaA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+
+<body>
+
+  <div id="container">
+    <div class="img-container">
+      <img src="https://picsum.photos/id/14/600/200" alt="random image">
+      <div class="titulo_imagen">Lorem ipsum dolor sit amet</div>
+    </div>
+
+    <div class="img-container">
+      <img src="https://picsum.photos/id/16/400/200" alt="random image">
+      <div class="titulo_imagen">Facilis tempora ab quibusdam</div>
+    </div>
+
+    <div class="img-container">
+      <img src="https://picsum.photos/id/17/200/200" alt="random image">
+      <div class="titulo_imagen">Autem saepe accusantium</div>
+    </div>
+  </div>
+
+  <div id="footer">
+    <div>Isaac Expósito</div>
+    <div>2º DAW. Diseño de Interfaces Web</div>
+  </div>
+
+  <div class="explanation">
+    <p><strong>Explicación:</strong></p>
+
+    <p>Aquí tenemos 3 opciones para establecer la anchura de los tres elementos centrales.</p>
+
+    <ol>
+      <li>Con <code>width: 33.3%</code>.</li>
+      <li>Con <code>flex-basis: 33.3%</code>.</li>
+      <li>Con <code>flex-grow: 1</code>. Esto sólo establece 3 columnas iguales si los 3 elementos tienen la misma anchura inicial porque <code>flex-grow</code> distribuye el espacio <strong>sobrante</strong>, pero si no hay espacio sobrante, no hace nada. Por tanto, para asegurarnos de que haya espacio restante hay que añadir <code>flex-basis: 0%</code> (también funcionaría con <code>width: 0%</code>, pero mejor usar propiedades de flex). Esto (<code>flex-grow: 1</code>, <code>flex-shrink: 1</code> y <code>flex-basis: 0%</code>) se puede establecer con el famoso atajo <code>flex: 1</code>, que consigue columnas iguales (aunque esto tiene problemas cuando entra en juego <code>padding</code>).</li>
+    </ol>
+
+    <p>Por supuesto, para hacer las imágenes <i>responsive</i> hay que añadir <code>width: 100%</code>, <code>aspect-ratio</code> y <code>object-fit: cover</code>.</p>
+
+    <p>Por último, el footer hay que modificarlo añadiendo <code>display: flex</code> y <code>justify-content: space-between</code>.</p>
+  </div>
+
+  <!-- highlight.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/highlight.min.js" integrity="sha512-6yoqbrcLAHDWAdQmiRlHG4+m0g/CT/V9AGyxabG8j7Jk8j3r3K6due7oqpiRMZqcYe9WM2gPcaNNxnl2ux+3tA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>hljs.highlightAll();</script>
+
+  <!-- Función para copiar el contenido del pre tag -->
+  <script src="../../Utils/js/copy-button-pre-tag.js"></script>
+</body>
+
+</html>

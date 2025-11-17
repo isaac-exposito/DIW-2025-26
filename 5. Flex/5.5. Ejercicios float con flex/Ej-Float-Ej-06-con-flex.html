@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicios Float. Ej. 6. Ahora con flex</title>
+  <link rel="stylesheet" href="../../Utils/css/general.css">
+  <link rel="stylesheet" href="css/Ej-Float-Ej-06.css">
+
+  <!-- Tema CSS para highlight.js -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/night-owl.min.css" integrity="sha512-i5X6Fdn/ZqvGSqPrdMa3FgcpXM/Nr6YccSKFYT93zljl/HZDEpvBbE5Pxp91eiWGccZLrL/LDQJd7fjTRYsVaA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+
+<body>
+  <div id="container">
+    <img src="https://picsum.photos/id/684/600/400" alt="">
+
+    <div class="div-texto">
+      <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque cupiditate aperiam distinctio error exercitationem reiciendis tenetur, nostrum impedit ut necessitatibus, ipsa voluptates repudiandae perspiciatis amet adipisci nihil dignissimos tempore ab!</div>
+      <div>Accusantium itaque culpa ratione maxime aliquam necessitatibus voluptatem atque, ea ab expedita voluptates voluptas magni vel rem accusamus explicabo tempora quisquam aperiam officia? Asperiores accusantium numquam adipisci suscipit facere consequatur.</div>
+    </div>
+  </div>
+
+  <div class="explanation">
+    <p><strong>Explicación:</strong></p>
+
+    <p>Tenemos que añadir <code>align-items: flex-start</code> para que no se estire la imagen cuando la anchura de pantalla sea demasiado pequeña.</p>
+    <p>También valdría <code>align-self: flex-start</code> al div con clase div-texto para conseguir el mismo efecto.</p>
+  </div>
+
+  <!-- highlight.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/highlight.min.js" integrity="sha512-6yoqbrcLAHDWAdQmiRlHG4+m0g/CT/V9AGyxabG8j7Jk8j3r3K6due7oqpiRMZqcYe9WM2gPcaNNxnl2ux+3tA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>hljs.highlightAll();</script>
+
+  <!-- Función para copiar el contenido del pre tag -->
+  <script src="../../Utils/js/copy-button-pre-tag.js"></script>
+</body>
+
+</html>

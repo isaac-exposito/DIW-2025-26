@@ -1,0 +1,39 @@
+* {
+  box-sizing: border-box;
+}
+
+#container {
+  display: flex;
+}
+
+.img-container {
+  flex-basis: 33.33%;
+  padding: 5px;
+}
+
+.img-container img {
+  width: 100%;
+  aspect-ratio: 2/1;
+  object-fit: cover;
+}
+
+.titulo_imagen {
+  text-align: center;
+  font-weight: bold;
+}
+
+#footer {
+  background-color: gray;
+  margin-top: 20px;
+  padding: 20px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+}
+
+code {
+  font-size: 90%;
+  background-color: lightgrey;
+  padding: 2px 5px;
+  font-family: "Consolas", "Lucida Console", "Courier New", Courier, monospace;
+}

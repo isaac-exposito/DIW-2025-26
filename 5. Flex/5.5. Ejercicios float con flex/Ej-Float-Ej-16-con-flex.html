@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicios Float. Ej. 16. Ahora con flex</title>
+  <link rel="stylesheet" href="../../Utils/css/general.css">
+  <link rel="stylesheet" href="css/Ej-Float-Ej-16-dado.css">
+  <link rel="stylesheet" href="css/Ej-Float-Ej-16.css">
+
+  <!-- Tema CSS para highlight.js -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/night-owl.min.css" integrity="sha512-i5X6Fdn/ZqvGSqPrdMa3FgcpXM/Nr6YccSKFYT93zljl/HZDEpvBbE5Pxp91eiWGccZLrL/LDQJd7fjTRYsVaA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+
+<body>
+  <div class="container">
+    <!-- To Do list -->
+    <div class="todo-list">
+
+      <!-- To Do Item -->
+      <div class="todo">
+        <div class="icon urgent">&#9679;</div>
+        <div class="todo-info">
+          <div class="todo-title">Pay Rent</div>
+          <div class="todo-date">April 1</div>
+        </div>
+
+        <div class="check">
+          <input type="checkbox" class="checkbox-right" value="None" name="check">
+          <label for="check"></label>
+        </div>
+      </div>
+
+      <!-- To Do Item -->
+      <div class="todo">
+        <div class="icon urgent">&#9679;</div>
+        <div class="todo-info">
+          <div class="todo-title">Pay taxes</div>
+          <div class="todo-date">April 14</div>
+        </div>
+
+        <div class="check">
+          <input type="checkbox" class="checkbox-right" value="None" name="check">
+          <label for="check"></label>
+        </div>
+      </div>
+
+      <!-- To Do Item -->
+      <div class="todo">
+        <div class="icon medium">&#9679;</div>
+        <div class="todo-info">
+          <div class="todo-title">Do floats homework</div>
+          <div class="todo-date">Monday, April 21</div>
+        </div>
+
+        <div class="check">
+          <input type="checkbox" class="checkbox-right" value="None" name="check">
+          <label for="check"></label>
+        </div>
+      </div>
+
+      <!-- To Do Item -->
+      <div class="todo">
+        <div class="icon medium">&#9679;</div>
+        <div class="todo-info">
+          <div class="todo-title">Get groceries</div>
+          <div class="todo-date">Friday, April 18</div>
+        </div>
+
+        <div class="check">
+          <input type="checkbox" class="checkbox-right" value="None" name="check">
+          <label for="check"></label>
+        </div>
+      </div>
+
+      <!-- To Do Item -->
+      <div class="todo">
+        <div class="icon">&#9679;</div>
+        <div class="todo-info">
+          <div class="todo-title">Get a haircut</div>
+          <div class="todo-date">Friday, April 18</div>
+        </div>
+
+        <div class="check">
+          <input type="checkbox" class="checkbox-right" value="None" name="check">
+          <label for="check"></label>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="explanation">
+    <p><strong>Explicación:</strong></p>
+
+    <p>Aquí basta con poner <code>display: flex</code> a la clase <code>.todo</code> y <code>margin-left: auto</code> a la clase <code>.check</code> para que se vaya a la izquierda.</p>
+
+    <p>También ese <code>width: 50%</code> de la clase <code>.todo-list</code> habría que modificarlo, que es un espanto.</p>
+  </div>
+
+  <!-- highlight.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/highlight.min.js" integrity="sha512-6yoqbrcLAHDWAdQmiRlHG4+m0g/CT/V9AGyxabG8j7Jk8j3r3K6due7oqpiRMZqcYe9WM2gPcaNNxnl2ux+3tA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>hljs.highlightAll();</script>
+
+  <!-- Función para copiar el contenido del pre tag -->
+  <script src="../../Utils/js/copy-button-pre-tag.js"></script>
+</body>
+
+</html>

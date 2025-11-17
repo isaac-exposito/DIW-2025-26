@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicios Float. Ej. 12. Ahora con flex</title>
+  <link rel="stylesheet" href="../../Utils/css/general.css">
+  <link rel="stylesheet" href="css/Ej-Float-Ej-10-comun.css">
+  <link rel="stylesheet" href="css/Ej-Float-Ej-12.css">
+
+  <!-- Tema CSS para highlight.js -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/night-owl.min.css" integrity="sha512-i5X6Fdn/ZqvGSqPrdMa3FgcpXM/Nr6YccSKFYT93zljl/HZDEpvBbE5Pxp91eiWGccZLrL/LDQJd7fjTRYsVaA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">header</div>
+
+    <main>
+      <div class="sidebar">sidebar</div>
+      <div class="main-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit perspiciatis hic facilis voluptatum consequuntur voluptatibus quos fugiat veritatis doloribus non, ducimus laboriosam temporibus fuga repellendus nisi vero expedita ad quaerat.</div>
+      <div class="sub-content">sub content </div>
+    </main>
+
+    <div class="footer">footer</div>
+  </div>
+
+  <div class="explanation">
+    <p><strong>Explicación:</strong></p>
+
+    <p>Como en el ejercicio 8, aquí tenemos 3 opciones para establecer la anchura de los elementos centrales.</p>
+
+    <ol>
+      <li>Con <code>width: 33.3%</code>.</li>
+      <li>Con <code>flex-basis: 33.3%</code>.</li>
+      <li>Con <code>flex-grow: 1</code>. Esto sólo establece 3 columnas iguales si los 3 elementos tienen la misma anchura inicial porque <code>flex-grow</code> distribuye el espacio <strong>sobrante</strong>, pero si no hay espacio sobrante, no hace nada. Por tanto, para asegurarnos de que haya espacio restante hay que añadir <code>flex-basis: 0%</code> (también funcionaría con <code>width: 0%</code>). Es por esta razón por la que se suele utilizar <code>flex: 1</code> para lograr columnas iguales (aunque esto tiene problemas cuando entra en juego <code>padding</code>).</li>
+    </ol>
+  </div>
+
+  <!-- highlight.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/highlight.min.js" integrity="sha512-6yoqbrcLAHDWAdQmiRlHG4+m0g/CT/V9AGyxabG8j7Jk8j3r3K6due7oqpiRMZqcYe9WM2gPcaNNxnl2ux+3tA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>hljs.highlightAll();</script>
+
+  <!-- Función para copiar el contenido del pre tag -->
+  <script src="../../Utils/js/copy-button-pre-tag.js"></script>
+</body>
+
+</html>

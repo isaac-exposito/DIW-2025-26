@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicios Float. Ej. 3. Ahora con flex</title>
+  <link rel="stylesheet" href="../../Utils/css/general.css">
+  <link rel="stylesheet" href="css/Ej-Float-Ej-03.css">
+
+  <!-- Tema CSS para highlight.js -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/night-owl.min.css" integrity="sha512-i5X6Fdn/ZqvGSqPrdMa3FgcpXM/Nr6YccSKFYT93zljl/HZDEpvBbE5Pxp91eiWGccZLrL/LDQJd7fjTRYsVaA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="container-flex">
+      <div class="div1">Div1</div>
+
+      <div id="container-interior">
+        <div class="div-texto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit ipsum possimus eius cum a hic excepturi molestias. Neque saepe fugit, placeat dolor autem porro voluptatibus numquam iste reprehenderit molestias ea.</div>
+        <div class="div2">Div2</div>
+      </div>
+
+    </div>
+
+    <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem corporis perferendis eos facilis, commodi assumenda et sequi eligendi iure? Officiis tempora labore id expedita asperiores aperiam sint doloribus facere qui</div>
+
+    <div class="explanation">
+      <p><strong>Explicación:</strong></p>
+      <p>Primero creamos un contenedor interior para el texto y Div2. A ese contenedor interior le ponemos <code>display: flex</code> y <code>flex-direction: column</code> para que se pongan en una sola columna. Añadimos al Div2 <code>align-self: flex-start</code> para que no se estire.</p>
+
+      <p>Al contenedor principal hay que añadirle <code>flex-direction: row-reverse</code> para que div1 esté a la derecha.</p>
+
+      <p>Al Div1 tenemos que ponerle <code>align-self: flex-start</code> para evitar que se estire cuando la pantalla se hace pequeña y div-texto se estire hacia abajo.</p>
+    </div>
+
+  </div>
+
+  <!-- highlight.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/highlight.min.js" integrity="sha512-6yoqbrcLAHDWAdQmiRlHG4+m0g/CT/V9AGyxabG8j7Jk8j3r3K6due7oqpiRMZqcYe9WM2gPcaNNxnl2ux+3tA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>hljs.highlightAll();</script>
+
+  <!-- Función para copiar el contenido del pre tag -->
+  <script src="../../Utils/js/copy-button-pre-tag.js"></script>
+</body>
+
+</html>

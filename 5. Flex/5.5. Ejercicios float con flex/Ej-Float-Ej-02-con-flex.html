@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicios Float. Ej. 2. Ahora con flex</title>
+  <link rel="stylesheet" href="../../Utils/highlightjs/highlight.css">
+  <link rel="stylesheet" href="../../Utils/css/general.css">
+  <link rel="stylesheet" href="css/Ej-Float-Ej-02.css">
+
+  <!-- Tema CSS para highlight.js -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/night-owl.min.css" integrity="sha512-i5X6Fdn/ZqvGSqPrdMa3FgcpXM/Nr6YccSKFYT93zljl/HZDEpvBbE5Pxp91eiWGccZLrL/LDQJd7fjTRYsVaA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+
+<body>
+  <div id="container">
+    <div class="div1">Div1</div>
+    <div class="div2">Div2</div>
+    <div class="div3">Div3</div>
+  </div>
+
+  <div class="explanation">
+    <p><strong>Explicación:</strong></p>
+
+    <p>Hay varias maneras de hacer esto. Probablemente la más sencilla sea poner al Div1 <code>order: 1</code> para que se sitúe al final y <code>margin-left: auto</code> para separar al elemento de los demás, aunque esto no incluya propiedades flex más allá de <code>display: flex</code>.</p>
+
+    <p>Otra forma de hacerlo, más fea pero válida, sería usando con un contenedor interior añadiendo <code>flex-direction: row-reverse</code> y <code>justify-content: space-between</code> para separar los elementos:</p>
+
+    <div class="code-label html-label">HTML</div>
+    <pre><code class="language-html">&lt;div id=&quot;container&quot;&gt;
+  &lt;div class=&quot;div1&quot;&gt;Div1&lt;/div&gt;
+  &lt;div id=&quot;container-interior&quot;&gt;
+    &lt;div class=&quot;div2&quot;&gt;Div2&lt;/div&gt;
+    &lt;div class=&quot;div3&quot;&gt;Div3&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+    <div class="code-label css-label">CSS</div>
+    <pre><code class="language-css">#container {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+
+#container-interior {
+  display: flex;
+}</code></pre>
+  </div>
+
+  <!-- highlight.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/highlight.min.js" integrity="sha512-6yoqbrcLAHDWAdQmiRlHG4+m0g/CT/V9AGyxabG8j7Jk8j3r3K6due7oqpiRMZqcYe9WM2gPcaNNxnl2ux+3tA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>hljs.highlightAll();</script>
+
+  <!-- Función para copiar el contenido del pre tag -->
+  <script src="../../Utils/js/copy-button-pre-tag.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+#container {
+  display: flex;
+}
+
+#header {
+  background-color: #333;
+  display: flex;
+}
+
+#header>*:last-child {
+  margin-left: auto;
+}
+
+#header a.item {
+  padding: 14px 18px;
+  color: white;
+  text-decoration: none;
+}
+
+#header a.item:hover {
+  background-color: red;
+}

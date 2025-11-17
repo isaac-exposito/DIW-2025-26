@@ -1,0 +1,24 @@
+* {
+  box-sizing: border-box;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.image-text-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+}
+
+.image-text-container .image {
+  width: 20%;
+  height: 150px;
+}
+
+.image-text-container .post_excerpt {
+  width: 70%;
+  align-self: flex-start;
+}

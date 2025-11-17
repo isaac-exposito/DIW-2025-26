@@ -1,0 +1,112 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+div {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+p {
+  text-transform: none;
+  font-weight: normal;
+}
+
+a,
+a:active,
+a:visited {
+  text-decoration: none;
+  color: #88ABC2;
+}
+
+a:hover {
+  color: #FFBE56;
+}
+
+.example {
+  margin-bottom: 60px;
+}
+
+.example img {
+  max-width: 80%;
+}
+
+div {
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+.container {
+  background: #EBF7F8;
+}
+
+.container.index {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.header {
+  background: #FF9C56;
+}
+
+.logo {
+  background: #FF4D79;
+}
+
+.navigation {
+  background: #E85F43;
+}
+
+.sidebar {
+  background: #FFBE56;
+}
+
+.main-content {
+  background: #88ABC2;
+  color: #fff;
+}
+
+.sub-content {
+  background: #49708A;
+}
+
+.sub-content-2 {
+  background: #355163;
+}
+
+.footer {
+  background: #AAD637;
+}
+
+.post {
+  background: #AAD637;
+  margin-bottom: 20px;
+}
+
+.image {
+  background: #8EB22E;
+}
+
+.post_excerpt {
+  background: #708C24;
+  padding: 20px;
+  margin: 0;
+}
+
+.widget {
+  background: #BB326B;
+  margin: 10px;
+  width: 200px;
+  height: 200px;
+  font-size: 36px;
+  text-align: center;
+  padding-top: 75px;
+}
+
+code {
+  font-size: 90%;
+  background-color: lightgrey;
+  padding: 2px 5px;
+  font-family: 'Consolas', 'Lucida Console', 'Courier New', Courier, monospace;
+}

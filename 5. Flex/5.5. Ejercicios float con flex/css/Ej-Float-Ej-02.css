@@ -1,0 +1,27 @@
+#container {
+  display: flex;
+}
+
+.div1 {
+  padding: 50px;
+  background-color: pink;
+  order: 1;
+  margin-left: auto;
+}
+
+.div2 {
+  padding: 50px;
+  background-color: aqua;
+}
+
+.div3 {
+  padding: 50px;
+  background-color: coral;
+}
+
+code {
+  font-size: 90%;
+  background-color: lightgrey;
+  padding: 2px 5px;
+  font-family: 'Consolas', 'Lucida Console', 'Courier New', Courier, monospace;
+}
