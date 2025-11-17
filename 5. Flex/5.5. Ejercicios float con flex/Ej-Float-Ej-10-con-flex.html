@@ -7,10 +7,49 @@
   <title>Ejercicios Float. Ej. 10. Ahora con flex</title>
   <link rel="stylesheet" href="../../Utils/css/general.css">
   <link rel="stylesheet" href="css/Ej-Float-Ej-10-comun.css">
-  <link rel="stylesheet" href="css/Ej-Float-Ej-10.css">
 
   <!-- Tema CSS para highlight.js -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/night-owl.min.css" integrity="sha512-i5X6Fdn/ZqvGSqPrdMa3FgcpXM/Nr6YccSKFYT93zljl/HZDEpvBbE5Pxp91eiWGccZLrL/LDQJd7fjTRYsVaA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+  <style>
+    .container {
+      max-width: 1024px;
+      margin: 0 auto;
+    }
+
+    .header {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+    }
+
+    .main-content {
+      justify-content: space-between;
+      display: flex;
+      column-gap: 40px;
+    }
+
+    .sidebar {
+      flex-basis: 25%;
+      height: 300px;
+    }
+
+    .sub-content-wrapper {
+      flex-basis: 70%;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding: 0px;
+    }
+
+    .sub-content {
+      height: 140px;
+    }
+
+    .sub-content-2 {
+      height: 140px;
+    }
+  </style>
 </head>
 
 <body>
