@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bookify - Biblioteca Digital</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/columnas.css">
+</head>
+
+<body>
+  <header>
+    <nav class="container clearfix">
+      <a href="index.html" class="logo f-left">
+        <img src="img/logo.svg" alt="Bookify Logo"><span>Bookify</span>
+      </a>
+      <a href="contacto.html" class="f-right link">Contacto</a>
+      <a href="index.html" class="active f-right link">Inicio</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="container">
+      <!-- Sección principal -->
+      <div class="row">
+        <div class="col-12">
+          <h1>Bienvenidos a Bookify</h1>
+          <p class="intro-text">Tu biblioteca digital del futuro. Descubre miles de libros, revistas y recursos académicos al alcance de un clic</p>
+        </div>
+      </div>
+
+      <!-- Sección Libros Destacados -->
+      <div class="row">
+        <div class="col-12">
+          <h2>Libros Destacados del Mes</h2>
+        </div>
+
+        <div class="col-md-7 col-lg-8">
+          <article class="card">
+            <img class="aspect-ratio-16-9" src="https://picsum.photos/seed/book1/800/450" alt="Libro destacado">
+            <h3>El Arte de la Programación</h3>
+            <p class="autor">Por Donald E. Knuth</p>
+            <p class="mb-2">Una obra maestra que explora los fundamentos matemáticos y algorítmicos de la programación de computadoras. Considerado la biblia de todo programador serio.</p>
+            <div class="book-meta">
+              <span class="genre">Informática</span>
+              <span class="rating">★★★★★</span>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-md-5 col-lg-4">
+          <aside class="card sidebar-card">
+            <h3>Novedades</h3>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="book-item">
+                  <img src="https://picsum.photos/seed/book2/160/90" alt="Libro" class="mini-book">
+                  <div>
+                    <strong>Inteligencia Artificial</strong>
+                    <p>Stuart Russell</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="book-item">
+                  <img src="https://picsum.photos/seed/book3/160/90" alt="Libro" class="mini-book">
+                  <div>
+                    <strong>Clean Code</strong>
+                    <p>Robert C. Martin</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+
+      <!-- Sección Géneros Populares -->
+      <div class="row">
+        <div class="col-12">
+          <h2>Géneros Populares</h2>
+        </div>
+
+        <div class="col-sm-6 col-md-4">
+          <article class="card genre-card">
+            <img class="aspect-ratio-4-3" src="https://picsum.photos/seed/tech/400/300" alt="Tecnología">
+            <div class="genre-content">
+              <h3>Tecnología</h3>
+              <p>Explora el mundo digital con nuestros libros de programación, IA y desarrollo web.</p>
+              <span class="book-count">1.247 libros</span>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-sm-6 col-md-4">
+          <article class="card genre-card">
+            <img class="aspect-ratio-4-3" src="https://picsum.photos/seed/science/400/300" alt="Ciencia">
+            <div class="genre-content">
+              <h3>Ciencia</h3>
+              <p>Descubre los misterios del universo y los avances científicos más recientes.</p>
+              <span class="book-count">892 libros</span>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-sm-6 col-md-4 card-last">
+          <article class="card genre-card">
+            <img class="aspect-ratio-4-3" src="https://picsum.photos/seed/literature/400/300" alt="Literatura">
+            <div class="genre-content">
+              <h3>Literatura</h3>
+              <p>Sumérgete en las mejores obras de la literatura clásica y contemporánea.</p>
+              <span class="book-count">2.156 libros</span>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- Sección Servicios -->
+      <div class="row">
+        <div class="col-12">
+          <h2>Nuestros Servicios</h2>
+        </div>
+
+        <div class="col-sm-6 col-lg-6">
+          <article class="card service-card">
+            <div class="service-icon">📚</div>
+            <h3>Préstamo Digital</h3>
+            <p class="mb-2">Accede a miles de libros digitales que puedes leer en cualquier dispositivo. Sin límites de tiempo ni restricciones geográficas.</p>
+            <ul class="service-features">
+              <li>✓ Acceso 24/7</li>
+              <li>✓ Descarga offline</li>
+              <li>✓ Multiplataforma</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="col-sm-6 col-lg-6">
+          <article class="card service-card">
+            <div class="service-icon">🎓</div>
+            <h3>Recursos Académicos</h3>
+            <p class="mb-2">Encuentra artículos científicos, tesis doctorales y material de estudio para potenciar tu formación académica.</p>
+            <ul class="service-features">
+              <li>✓ Base de datos especializada</li>
+              <li>✓ Búsqueda avanzada</li>
+              <li>✓ Citas automáticas</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container clearfix">
+      <div class="footer-content f-left">
+        <p>Bookify | &copy; 2025</p>
+      </div>
+
+      <div class="footer-links f-right">
+        <span class="footer-author">Autor: John Doe</span>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" class="scroll-to-top">↑</a>
+</body>
+
+</html>

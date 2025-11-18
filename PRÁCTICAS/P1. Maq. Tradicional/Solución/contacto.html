@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto - Bookify</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/columnas.css">
+</head>
+
+<body>
+  <header>
+    <nav class="container clearfix">
+      <a href="index.html" class="logo f-left">
+        <img src="img/logo.svg" alt="Bookify Logo"><span>Bookify</span>
+      </a>
+      <a href="contacto.html" class="active f-right link">Contacto</a>
+      <a href="index.html" class="f-right link">Inicio</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="container">
+      <!-- Título principal -->
+      <div class="row">
+        <div class="col-12">
+          <h1>Contacta con Nosotros</h1>
+          <p class="intro-text">¿Tienes preguntas sobre nuestros servicios? ¿Necesitas ayuda técnica? Estamos aquí para ayudarte.</p>
+        </div>
+      </div>
+
+      <!-- Contenido principal -->
+      <div class="row">
+        <!-- Información de contacto -->
+        <div class="col-md-5 col-lg-6">
+          <section class="card contact-info">
+            <h2>Información de Contacto</h2>
+
+            <div class="contact-item">
+              <h3>📍 Dirección</h3>
+              <p>Avenida del Conocimiento, 123<br>
+                28001 Madrid, España</p>
+            </div>
+
+            <div class="contact-item">
+              <h3>📞 Teléfono</h3>
+              <p><strong>General:</strong> +34 91 123 45 67<br>
+                <strong>Soporte técnico:</strong> +34 91 765 43 21
+              </p>
+            </div>
+
+            <div class="contact-item">
+              <h3>✉️ Email</h3>
+              <p><strong>General:</strong> info@bookify.es<br>
+                <strong>Soporte:</strong> soporte@bookify.es
+              </p>
+            </div>
+
+            <div class="contact-item">
+              <h3>🕒 Horario de Atención</h3>
+              <p><strong>Lunes - Viernes:</strong> 9:00 - 18:00<br>
+                <strong>Sábados:</strong> 10:00 - 14:00<br>
+                <strong>Domingos:</strong> Cerrado
+              </p>
+            </div>
+
+            <div class="contact-item">
+              <h3>📱 Redes Sociales</h3>
+              <p>Síguenos para estar al día de todas las novedades:<br>
+                <strong>Twitter:</strong> @Bookify_ES<br>
+                <strong>LinkedIn:</strong> Bookify España
+              </p>
+            </div>
+          </section>
+        </div>
+
+        <!-- Formulario de contacto -->
+        <div class="col-md-7 col-lg-6">
+          <section class="card contact-form-section">
+            <h2>Envíanos un mensaje</h2>
+
+            <form class="contact-form" action="#" method="post">
+              <div class="row">
+                <div class="col-sm-3 col-lg-3">
+                  <label for="nombre">Nombre:</label>
+                </div>
+                <div class="col-sm-9 col-lg-9">
+                  <input type="text" id="nombre" name="nombre" required>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-sm-3 col-lg-3">
+                  <label for="email">Email:</label>
+                </div>
+                <div class="col-sm-9 col-lg-9">
+                  <input type="email" id="email" name="email" required>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-sm-3 col-lg-3">
+                  <label for="telefono">Teléfono:</label>
+                </div>
+                <div class="col-sm-9 col-lg-9">
+                  <input type="tel" id="telefono" name="telefono">
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-sm-3 col-lg-3">
+                  <label for="asunto">Asunto:</label>
+                </div>
+                <div class="col-sm-9 col-lg-9">
+                  <select id="asunto" name="asunto" required>
+                    <option value="">Selecciona un asunto</option>
+                    <option value="soporte">Soporte técnico</option>
+                    <option value="sugerencia">Sugerencias</option>
+                    <option value="colaboracion">Colaboración</option>
+                    <option value="otro">Otro</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-sm-3 col-lg-3">
+                  <label for="mensaje">Mensaje:</label>
+                </div>
+                <div class="col-sm-9 col-lg-9">
+                  <textarea id="mensaje" name="mensaje" rows="6" placeholder="Escribe aquí tu mensaje..." required></textarea>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-12">
+                  <label class="checkbox-wrapper">
+                    <input type="checkbox" id="newsletter" name="newsletter">
+                    <span class="checkmark"></span>
+                    Quiero recibir información sobre nuevas publicaciones y servicios
+                  </label>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-12">
+                  <div class="text-center">
+                    <button type="reset" class="btn btn-secondary">Limpiar</button>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </section>
+        </div>
+      </div>
+
+      <!-- Sección adicional -->
+      <div class="row">
+        <div class="col-12">
+          <section class="card faq-section">
+            <h2>Preguntas Frecuentes</h2>
+            <div class="row">
+              <div class="col-lg-4">
+                <div class="faq-item">
+                  <h3>¿Cómo puedo registrarme?</h3>
+                  <p>El registro es completamente gratuito. Solo necesitas una dirección de email válida.</p>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="faq-item">
+                  <h3>¿Hay límite en las descargas?</h3>
+                  <p>Los usuarios registrados pueden descargar hasta 5 libros simultáneamente.</p>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="faq-item">
+                  <h3>¿Funciona en todos los dispositivos?</h3>
+                  <p>Sí, nuestra plataforma es completamente responsive y funciona en móviles, tablets y ordenadores.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container clearfix">
+      <div class="footer-content f-left">
+        <p>Bookify | &copy; 2025</p>
+      </div>
+
+      <div class="footer-links f-right">
+        <span class="footer-author">Autor: John Doe</span>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" class="scroll-to-top">↑</a>
+</body>
+
+</html>

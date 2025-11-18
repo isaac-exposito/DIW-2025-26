@@ -1,0 +1,623 @@
+/* Estilos generales */
+:root {
+  --primary-color: #2c5530;
+  --secondary-color: #ff6b35;
+  --accent-color: #8b4513;
+  --bg-color: #faf9f6;
+  --shadow-color: #d4d4aa;
+  --text-color: #333;
+  --white: #ffffff;
+  --hover-primary: #1a3d1e;
+  --hover-secondary: #e55a2b;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Georgia", "Times New Roman", serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+}
+
+h1,
+h2,
+h3 {
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+  border-bottom: 3px solid var(--primary-color);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+h3 {
+  font-size: 1.3rem;
+  border-bottom: 1px solid var(--shadow-color);
+  padding-bottom: 0.3rem;
+}
+
+.intro-text {
+  font-size: 1.2rem;
+  text-align: center;
+  color: var(--accent-color);
+  margin-bottom: 2rem;
+  font-style: italic;
+}
+
+/* Utilidades de float */
+.f-left {
+  float: left;
+}
+
+.f-right {
+  float: right;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Utilidades de aspecto */
+.aspect-ratio-16-9 {
+  aspect-ratio: 16/9;
+}
+
+.aspect-ratio-4-3 {
+  aspect-ratio: 4/3;
+}
+
+.aspect-ratio-2-1 {
+  aspect-ratio: 2/1;
+}
+
+/* Utilidades de margen */
+.mb-0 {
+  margin-bottom: 0 !important;
+}
+
+.mb-1 {
+  margin-bottom: 0.5rem !important;
+}
+
+.mb-2 {
+  margin-bottom: 1rem !important;
+}
+
+.mb-3 {
+  margin-bottom: 1.5rem !important;
+}
+
+/* Utilidades de padding */
+.p-0 {
+  padding: 0 !important;
+}
+
+.p-1 {
+  padding: 0.5rem !important;
+}
+
+.p-2 {
+  padding: 1rem !important;
+}
+
+.p-3 {
+  padding: 1.5rem !important;
+}
+
+/* Utilidades de width */
+.w-100 {
+  width: 100% !important;
+}
+
+.w-auto {
+  width: auto !important;
+}
+
+/* Otras utilidades */
+.text-center {
+  text-align: center !important;
+}
+
+.text-right {
+  text-align: right !important;
+}
+
+.cursor-pointer {
+  cursor: pointer !important;
+}
+
+/* Container */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Header y navegación */
+header {
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  text-decoration: none;
+  color: var(--white);
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.logo img {
+  width: 50px;
+  height: 50px;
+  margin-right: 15px;
+  vertical-align: middle;
+}
+
+.logo span {
+  vertical-align: middle;
+}
+
+header ul {
+  list-style: none;
+  height: 50px;
+  line-height: 50px;
+}
+
+header li {
+  display: inline-block;
+  margin-left: 30px;
+}
+
+header a {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  display: block;
+}
+
+header a.link {
+  padding: 10px 15px;
+}
+
+header a:hover,
+header a.active {
+  color: var(--secondary-color);
+}
+
+/* Main content */
+main {
+  padding: 40px 0;
+  min-height: calc(100vh - 200px);
+}
+
+/* Tarjetas */
+.card {
+  background: var(--white);
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+  border: 1px solid var(--shadow-color);
+  position: relative;
+  top: 0;
+}
+
+.card:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+  top: -10px;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  object-fit: cover;
+}
+
+/* Libro destacado */
+.autor {
+  color: var(--accent-color);
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+.book-meta {
+  margin-top: 15px;
+}
+
+.book-meta::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.genre {
+  float: left;
+  background: var(--primary-color);
+  color: var(--white);
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.rating {
+  float: right;
+  color: var(--secondary-color);
+  font-size: 1.2rem;
+}
+
+/* Sidebar */
+.sidebar-card {
+  background: linear-gradient(135deg, var(--white) 0%, #f8f8f8 100%);
+}
+
+/* Lista de novedades */
+.book-list {
+  .book-item {
+    padding: 15px 0;
+    border-bottom: 1px solid var(--shadow-color);
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  img {
+    margin-right: 15px;
+    border-radius: 4px;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+  }
+
+  strong {
+    color: var(--primary-color);
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  p {
+    color: var(--accent-color);
+    font-size: 0.9rem;
+    margin: 0;
+  }
+}
+
+/* Tarjetas de género */
+.genre-card {
+  text-align: center;
+  /* position: relative; */
+  /* overflow: hidden; */
+}
+
+.genre-content {
+  padding-top: 15px;
+}
+
+.book-count {
+  display: inline-block;
+  background: var(--secondary-color);
+  color: var(--white);
+  padding: 8px 15px;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* Tarjetas de servicio */
+.service-card {
+  text-align: center;
+}
+
+.service-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.service-features {
+  list-style: none;
+  text-align: left;
+  margin-top: 20px;
+}
+
+.service-features li {
+  padding: 8px 0;
+  color: var(--primary-color);
+  font-weight: 500;
+}
+
+/* Página de contacto */
+.contact-info {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--hover-primary) 100%);
+  color: var(--white);
+}
+
+.contact-info h2 {
+  color: var(--white);
+  border-bottom-color: var(--secondary-color);
+}
+
+.contact-item {
+  margin-bottom: 25px;
+}
+
+.contact-item h3 {
+  color: var(--secondary-color);
+  border-bottom-color: var(--secondary-color);
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.contact-item p {
+  margin: 0;
+  line-height: 1.8;
+}
+
+/* Formulario */
+.contact-form-section {
+  background: var(--white);
+}
+
+.contact-form label {
+  font-weight: bold;
+  color: var(--primary-color);
+  display: block;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid var(--shadow-color);
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(44, 85, 48, 0.1);
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Botones */
+.btn {
+  display: inline-block;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-right: 15px;
+  margin-bottom: 10px;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+.btn-primary:hover {
+  background-color: var(--hover-primary);
+}
+
+.btn-secondary {
+  background-color: var(--shadow-color);
+  color: var(--text-color);
+}
+
+.btn-secondary:hover {
+  background-color: #c0c09a;
+}
+
+/* Checkbox personalizado */
+.checkbox-wrapper {
+  cursor: pointer;
+}
+
+.checkbox-wrapper input[type="checkbox"] {
+  width: auto;
+  margin: 0 10px 0 0;
+  transform: scale(1.2);
+  vertical-align: middle;
+}
+
+/* FAQ */
+.faq-section {
+  margin-top: 30px;
+}
+
+.faq-item {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 4px solid var(--secondary-color);
+  margin-bottom: 20px;
+}
+
+.faq-item h3 {
+  color: var(--primary-color);
+  margin-bottom: 10px;
+  border-bottom: none;
+}
+
+/* Footer */
+footer {
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 30px 0;
+  margin-top: 50px;
+}
+
+.footer-content {
+  overflow: hidden;
+}
+
+.footer-content p {
+  margin: 0;
+  font-size: 1rem;
+  float: left;
+}
+
+.footer-links {
+  float: right;
+}
+
+.footer-links::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.footer-link {
+  display: inline-block;
+  vertical-align: middle;
+  color: var(--white);
+  text-decoration: none;
+  margin-left: 25px;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+  position: relative;
+  padding-left: 10px;
+}
+
+.footer-link:hover {
+  color: var(--secondary-color);
+}
+
+.footer-link:hover::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 5px;
+  background-color: var(--white);
+}
+
+.footer-link img {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
+
+/* Scroll to top */
+.scroll-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: var(--secondary-color);
+  color: var(--white);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 50px;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.scroll-to-top:hover {
+  background-color: var(--hover-secondary);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 899px) {
+  .contact-form label {
+    text-align: left;
+  }
+}
+
+@media (max-width: 599px) {
+  .scroll-to-top {
+    display: none;
+  }
+
+  header ul {
+    display: block;
+    text-align: right;
+    height: auto;
+    line-height: normal;
+  }
+
+  header li {
+    display: block;
+    margin: 5px 0;
+    text-align: right;
+  }
+
+  .footer-links {
+    float: none;
+    text-align: right;
+  }
+
+  .footer-link {
+    display: block;
+    margin: 5px 0;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .intro-text {
+    font-size: 1rem;
+  }
+
+  .btn {
+    display: block;
+    width: 100%;
+    margin-right: 0;
+    text-align: center;
+  }
+}
+
+.d-none {
+  display: none !important;
+}
