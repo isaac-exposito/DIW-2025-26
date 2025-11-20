@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2024-12-12. Examen flex</title>
+  <link rel="stylesheet" href="examen-flex-ejercicio-2-solucion.css">
+  <link rel="stylesheet" href="examen-flex-ejercicio-2-columnas.css">
+</head>
+
+<body>
+  <div class="container">
+
+    <h2>El contenedor general ocupará toda la anchura de la pantalla en todos los casos.</h2>
+
+    <hr>
+
+    <h2>Fila 1.</h2>
+    <ul>
+      <li>La zona izquierda ocupa 6 columnas para escritorio y tablets. Para móviles ocupa el 100% de la pantalla.</li>
+      <li>La zona centro ocupa 3 columnas para escritorio y solo ocupa el espacio necesario verticalmente. Para tablets y móviles ocupa el 100% de la anchura de pantalla.</li>
+      <li>La zona derecha ocupa 3 columnas para escritorio, 6 para tablets y el 100% para móviles. Para tablets, está situada junto a la zona izquierda.</li>
+    </ul>
+
+    <div class="row fila-1">
+      <div class="col-d-6 col-t-6 zona-izqda">
+        <p>Zona izquierda</p>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus pariatur, neque delectus alias praesentium in quibusdam, dicta voluptatum iusto ea explicabo blanditiis aut tenetur cum beatae mollitia ipsa dignissimos accusantium.</p>
+      </div>
+
+      <div class="col-d-3 zona-centro">
+        <p>Zona centro</p>
+        <p>Lorem ipsum dolor sit amet.</p>
+      </div>
+
+      <div class="col-d-3 col-t-6 zona-dcha">
+        <p>Zona derecha</p>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus pariatur, neque delectus alias praesentium in quibusdam, dicta voluptatum iusto ea explicabo blanditiis aut tenetur cum beatae mollitia ipsa dignissimos accusantium.</p>
+      </div>
+    </div>
+
+    <h2>Fila 2.</h2>
+    <ul>
+      <li>La zona izquierda ocupa 7 columnas para escritorio y el 100% de la anchura disponible para tablets y móviles.</li>
+      <li>La zona centro y la zona derecha se reparten el espacio restante para escritorio. Para tablets ocupan el 50% cada una.</li>
+      <li>Para móviles, las 3 zonas ocupan el 100% de la anchura de pantalla.</li>
+    </ul>
+
+    <div class="row fila-2">
+      <div class="col-d-7 zona-izqda">
+        <p>Zona izquierda.</p>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+      </div>
+      <div class="col zona-centro">
+        <p>Zona central.</p>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+      </div>
+      <div class="col zona-dcha">
+        <p>Zona derecha.</p>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+      </div>
+    </div>
+
+  </div>
+</body>
+
+</html>
