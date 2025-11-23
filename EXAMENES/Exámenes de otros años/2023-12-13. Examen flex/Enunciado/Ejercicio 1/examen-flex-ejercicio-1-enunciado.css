@@ -1,0 +1,60 @@
+* {
+  box-sizing: border-box;
+}
+
+.contenedor-ejercicio {
+  padding: 15px;
+  border: 2px solid #333;
+  margin-bottom: 20px;
+  background-color: beige !important;
+}
+
+.contenedor-ejercicio h2 {
+  margin: 0 0 10px 0;
+}
+
+.contenedor-flex {
+  min-height: 250px;
+  background-color: #ddd;
+  display: flex;
+  border: 2px solid#333;
+}
+
+.contenedor-flex>* {
+  font-size: 2rem;
+  color: #fff;
+  font-weight: bold;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contenedor-ejercicio .explicacion {
+  font-size: 1.25rem;
+  border: 1px solid#333;
+  background-color: #ddd;
+  padding: 4px 8px;
+  margin-top: 10px;
+}
+
+.rojo {
+  background-color: red;
+}
+
+.verde {
+  background-color: green;
+}
+
+.azul {
+  background-color: blue;
+}
+
+.naranja {
+  background-color: orangered;
+}
+
+.violeta {
+  background-color: darkviolet;
+}
