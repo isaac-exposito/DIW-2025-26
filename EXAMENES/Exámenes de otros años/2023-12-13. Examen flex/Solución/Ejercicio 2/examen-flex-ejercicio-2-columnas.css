@@ -1,0 +1,137 @@
+/* MOBILE FIRST */
+[class*="col-"] {
+  width: 100%;
+  padding: 15px;
+  flex: 0 0 auto;
+}
+
+.col {
+  padding: 15px;
+  flex: 1 1 0;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.row > * {
+  border: 1px solid #999;
+}
+
+.fila-1 :first-child {
+  /* Para móviles, la zona derecha debe aparecer antes que la izquierda, así que damos un orden mayor que 0 al otro elemento */
+  order: 1;
+}
+
+/* TABLETS: 600-900px */
+@media only screen and (min-width: 600px) {
+  /* Reseteamos el valor de order a partir de 600px */
+  .fila-1 :first-child {
+    order: 0;
+  }
+
+  .col-t-1 {
+    width: 8.33%;
+  }
+
+  .col-t-2 {
+    width: 16.66%;
+  }
+
+  .col-t-3 {
+    width: 25%;
+  }
+
+  .col-t-4 {
+    width: 33.33%;
+  }
+
+  .col-t-5 {
+    width: 41.66%;
+  }
+
+  .col-t-6 {
+    width: 50%;
+  }
+
+  .col-t-7 {
+    width: 58.33%;
+  }
+
+  .col-t-8 {
+    width: 66.66%;
+  }
+
+  .col-t-9 {
+    width: 75%;
+  }
+
+  .col-t-10 {
+    width: 83.33%;
+  }
+
+  .col-t-11 {
+    width: 91.66%;
+  }
+
+  .col-t-12 {
+    width: 100%;
+  }
+}
+
+/* ESCRITORIO: 900+px */
+@media only screen and (min-width: 900px) {
+  .container {
+    width: 800px;
+    margin: 0 auto;
+  }
+
+  .col-e-1 {
+    width: 8.33%;
+  }
+
+  .col-e-2 {
+    width: 16.66%;
+  }
+
+  .col-e-3 {
+    width: 25%;
+  }
+
+  .col-e-4 {
+    width: 33.33%;
+  }
+
+  .col-e-5 {
+    width: 41.66%;
+  }
+
+  .col-e-6 {
+    width: 50%;
+  }
+
+  .col-e-7 {
+    width: 58.33%;
+  }
+
+  .col-e-8 {
+    width: 66.66%;
+  }
+
+  .col-e-9 {
+    width: 75%;
+  }
+
+  .col-e-10 {
+    width: 83.33%;
+  }
+
+  .col-e-11 {
+    width: 91.66%;
+  }
+
+  .col-e-12 {
+    width: 100%;
+  }
+}

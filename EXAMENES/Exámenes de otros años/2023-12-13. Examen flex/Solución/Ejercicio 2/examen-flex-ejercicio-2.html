@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2023-12-13. Examen Flex. DIW</title>
+  <link rel="stylesheet" href="examen-flex-ejercicio-2-solucion.css">
+  <link rel="stylesheet" href="examen-flex-ejercicio-2-columnas.css">
+</head>
+
+<body>
+  <div class="container">
+
+    <h2>El contenedor general será de 800px para anchuras mayores de 900px y ocupará toda la anchura disponibble para anchuras menores.</h2>
+
+    <hr>
+
+    <h2>Fila 1. La zona izquierda ocupa 10 columnas para escritorio y 9 para tablets. La zona derecha ocupa el resto del espacio disponible. Ambas ocupan el 100% para móviles. Además, para móviles, la zona derecha debe aparecer antes que la izquierda.</h2>
+
+    <div class="row fila-1">
+      <div class="col-e-10 col-t-9">
+        <p>Zona izquierda</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi voluptas sunt aliquam consectetur accusamus harum obcaecati consequuntur error molestias ab, atque consequatur recusandae unde quaerat, magni tempora, architecto delectus doloremque.</p>
+      </div>
+      <div class="col">Zona derecha</div>
+    </div>
+
+    <h2>Fila 2. La zona central ocupa siempre el 50% del espacio disponible. Las otras dos zonas se reparten el espacio disponible, pero si se elimina una de ellas, la que queda se apropia del espacio que ha dejado la columna eliminada. Todas ocupan el 100% para móviles.</h2>
+
+    <div class="row fila-2">
+      <div class="col">
+        <p>Zona izquierda.</p>
+      </div>
+      <div class="col-e-6 col-t-6">
+        <p>Zona central.</p>
+      </div>
+
+    </div>
+
+  </div>
+</body>
+
+</html>

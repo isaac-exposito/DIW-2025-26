@@ -1,0 +1,31 @@
+/********** Estilos generales **********/
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+/* Contenedor principal */
+.container {
+  padding: 20px;
+  background-color: beige;
+  border: 1px solid #555;
+}
+
+.container h2 {
+  font-size: 1.25rem;
+}
+
+.container h2:first-child {
+  margin: 0 0 10px 0;
+}
+
+.container h2:not(:first-child) {
+  margin: 20px 0 10px 0;
+}
+
+.container p {
+  margin: 0 0 0.5em 0;
+}
