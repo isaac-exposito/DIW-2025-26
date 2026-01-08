@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>auto-fill y auto-fit</title>
+  <meta charset="UTF-8">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../Utils/css/general.css">
+  <style>
+    :root {
+      --bg-clr-option: #ccc;
+      --bg-clr-option-hover: #fff;
+      --bg-color-container: #f2f2f2;
+      --bg-color-container-flex: #fefddc;
+    }
+
+    body {
+      background-color: var(--bg-color-container);
+    }
+
+    #container {
+      background-color: #fff;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1rem;
+      border: 1px solid #333;
+    }
+
+    h1 {
+      text-align: center;
+      margin: 0 0 20px 0;
+      padding: 10px;
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    h2 {
+      font-size: 1.25rem;
+    }
+
+    #options {
+      display: flex;
+    }
+
+    #options>* {
+      font-family: consolas, "Lucida Console", "Courier New";
+      margin: 0px 10px 10px 0px;
+      border-radius: 5px;
+      cursor: pointer;
+      background-color: var(--bg-clr-option);
+      padding: 5px 10px;
+      display: flex;
+      align-items: center;
+    }
+
+    #options .range-indicator {
+      background-color: #fff;
+      font-size: .875em;
+      text-align: center;
+      border-radius: 8px;
+      padding: 3px 6px;
+      margin: 0px 10px;
+      width: 45px;
+    }
+
+    .contenedor-grid {
+      display: grid;
+      gap: 20px;
+      margin-block: 10px;
+      background-color: #ccc;
+      padding: 20px;
+    }
+
+    .contenedor-grid.auto-fill {
+      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    }
+
+    .contenedor-grid.auto-fit {
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+
+    .contenedor-grid .item {
+      position: relative;
+      background-color: lightcoral;
+      outline: 1px solid black;
+      padding: 0 0 20px 0;
+      text-align: center;
+    }
+
+    .contenedor-grid .item .width-indicator {
+      font-size: 1rem;
+      padding: 0.25em 0.5em;
+      box-shadow: 0 0 0.5em hsl(0 0% 0% / 0.2);
+      background: white;
+      color: black;
+      position: absolute;
+      width: 100%;
+      left: 0;
+      text-align: center;
+      bottom: -14px;
+      z-index: 999;
+      transform: scale(0.9);
+    }
+
+    code {
+      font-weight: 600;
+    }
+
+    label,
+    input[type="checkbox"],
+    input[type="range"] {
+      cursor: pointer;
+    }
+
+    #anchura-contenedor {
+      width: 300px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="container">
+
+    <h1><code>auto-fill</code> y <code>auto-fit</code></h1>
+
+    <p>Estas dos propiedades se comportan igual cuando el número de columnas a crear no caben en el contenedor.</p>
+
+    <ul>
+      <li><code>auto-fill</code> <b>rellena</b> cada fila con tantas columnas como quepan. Las columnas pueden estar vacías, pero seguirán ocupando un espacio en la fila.</li>
+      <li><code>auto-fit</code> <b>ajusta</b> las columnas existentes expandiéndolas para que ocupen el espacio disponible.</li>
+    </ul>
+
+
+    <div id="options">
+      <div class="no-effect">
+        <label for="anchura-contenedor">Anchura contenedor: </label>
+        <div id="anchura-contenedor-value" class="range-indicator">100%</div>
+        <input type="range" id="anchura-contenedor" name="anchura-contenedor" min="30" max="100" step="0" value="100">
+      </div>
+    </div>
+
+    <h2><code>auto-fill</code></h2>
+    <div class="contenedor-grid my-3 auto-fill">
+      <div class="item">1<span class="width-indicator"></span></div>
+      <div class="item">2<span class="width-indicator"></span></div>
+      <div class="item">3<span class="width-indicator"></span></div>
+      <div class="item">4<span class="width-indicator"></span></div>
+      <div class="item">5<span class="width-indicator"></span></div>
+    </div>
+
+    <h2><code>auto-fit</code></h2>
+    <div class="contenedor-grid my-3 auto-fit">
+      <div class="item">1<span class="width-indicator"></span></div>
+      <div class="item">2<span class="width-indicator"></span></div>
+      <div class="item">3<span class="width-indicator"></span></div>
+      <div class="item">4<span class="width-indicator"></span></div>
+      <div class="item">5<span class="width-indicator"></span></div>
+    </div>
+
+    <p class="mb-0">Documentación:</p>
+    <ul>
+      <li><a href="https://www.w3.org/TR/css-grid-1/#auto-repeat" target="_blank" rel="noopener noreferrer">www.w3.org</a></li>
+    </ul>
+
+  </div>
+
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <!-- Bootstrap Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+  <script src="js/scripts.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      showSizes();
+
+      // Modificación de la anchura del input range
+      $('#anchura-contenedor').on('input', function () {
+        var valor = $(this).val();
+        $('#anchura-contenedor-value').text(valor + "%");
+        $('.contenedor-grid').css("width", valor + "%");
+
+        // Ponemos la anchura de cada ítem
+        showSizes();
+      });
+    });
+
+    function showSizes() {
+      $(".item").each(function () {
+        $(this).find(".width-indicator").text($(this).width().toFixed(1) + "px");
+      });
+    }
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>fit-content()</title>
+  <link rel="stylesheet" href="../../Utils/css/general.css">
+  <style>
+    :root {
+      --bg-clr-option: #ccc;
+      --bg-clr-option-hover: #fff;
+      --bg-color-container: #f2f2f2;
+      --bg-color-container-flex: #fefddc;
+    }
+
+    body {
+      background-color: var(--bg-color-container);
+      font-size: 1.125rem;
+    }
+
+    #container {
+      background-color: #fff;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1rem;
+      border: 1px solid #333;
+    }
+
+    .contenedor-grid {
+      background-color: #ccc;
+      display: inline-grid;
+      padding: 10px;
+      gap: 5px;
+      grid-template-rows: 50px;
+      grid-template-columns: 75px fit-content(100px);
+      /* Puedes hacer pruebas descomentando las siguientes dos instrucciones */
+      /* grid-template-columns: 75px max-content; */
+      /* grid-template-columns: 75px 1fr; */
+    }
+
+    .item {
+      background-color: lightcoral;
+      outline: 1px solid black;
+    }
+
+    h1 {
+      text-align: center;
+      font-family: "Consolas", "Lucida Console", "Courier New", Courier, monospace;
+      padding: 10px;
+      margin: 0px 0px 10px 0px;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    p {
+      margin-block: 0.5em;
+    }
+
+    code {
+      font-weight: 600;
+      font-size: 1em;
+      color: #d63384;
+      word-wrap: break-word;
+    }
+
+    /* Estilos Generales */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    code {
+      text-wrap: wrap;
+      white-space: pre-wrap;
+    }
+
+    code:not(pre code) {
+      color: #d63384;
+      font-size: 0.9em;
+      font-weight: bold;
+      word-wrap: break-word;
+      background-color: transparent;
+      font-family: "Roboto Mono", monospace;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="container">
+
+    <h1>La función <code>fit-content ()</code></h1>
+
+    <p>La función <code>fit-content ()</code> establece un tamaño que se ajusta al contenido hasta un máximo disponible, comportándose como <code>max-content</code> pero limitado por el espacio del contenedor.</p>
+
+    <p>En todos los ejemplos a continuación tenemos <code>grid-template-columns: 75px fit-content(100px)</code>. Fíjate lo que ocurre con la segunda columna:</p>
+
+    <p><b>Caso 1: </b>Se ajusta al contenido porque éste es menor de 100px.</p>
+
+    <div class="contenedor-grid">
+      <div class="item">Uno</div>
+      <div class="item">Dos</div>
+      <div class="item">Tres</div>
+      <div class="item">Cuatro</div>
+    </div>
+
+    <p><b>Caso 2: </b>Ocupa exactamente 100px porque su contenido es mayor de 100px pero no se produce desbordamiento si reducimos la anchura a 100px.</p>
+    <p>El contenedor ocupa más espacio del imprescindible a pesar de ser <code>inline-grid</code> porque da espacio a la segunda columna como si esta ocupase el espacio necesario. Observa que la anchura del contenedor no cambia si cambias <code>fit-content(100px)</code> por <code>1fr</code> o <code>max-content</code>.</p>
+
+    <div class="contenedor-grid">
+      <div class="item">Uno</div>
+      <div class="item">Dos</div>
+      <div class="item">Tres</div>
+      <div class="item">Cuatro Cuatro Cuatro Cuatro</div>
+    </div>
+
+    <p><b>Caso 3: </b>Ocupa más de 100px porque su contenido es mayor de 100px pero no podemos evitar el desbordamiento con 100px de anchura.</p>
+
+    <div class="contenedor-grid">
+      <div class="item">Uno</div>
+      <div class="item">Dos</div>
+      <div class="item">Tres</div>
+      <div class="item">Supercalifragilísticoespialidoso</div>
+    </div>
+
+    <p><b>Caso 4: </b>Evitamos el overflow del caso anterior poniendo al item en cuestión <code>word-break: break-word</code>, que está <i>deprecated</i> en favor de <code>overflow-wrap: anywhere</code>.</p>
+
+    <div class="contenedor-grid">
+      <div class="item">Uno</div>
+      <div class="item">Dos</div>
+      <div class="item">Tres</div>
+      <div class="item" style="overflow-wrap: anywhere">Supercalifragilísticoespialidoso</div>
+    </div>
+
+  </div>
+</body>
+
+</html>
