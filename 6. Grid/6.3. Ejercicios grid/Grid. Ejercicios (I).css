@@ -31,102 +31,75 @@ h1 {
 }
 
 .ej2 {
-  grid-template-rows: auto 100px auto;
-  grid-template-columns: 100px 200px auto;
-}
-
-.ej3 {
   grid-template-rows: 1fr;
   grid-template-columns: 1fr auto 100px;
 }
 
-.ej4 {
+.ej3 {
   grid-template-rows: auto;
   grid-template-columns: 1fr 2fr 100px;
 }
 
-.ej5 {
+.ej4 {
   grid-template-rows: 100px;
   grid-template-columns: 1fr repeat(2, 50px);
 }
 
-.ej6 {
+.ej5 {
   grid-template-rows: auto 1fr;
   grid-template-columns: 100px repeat(2, 1fr 50px) auto;
 }
 
-.ej7 {
+.ej6 {
   grid-template-rows: 200px 1fr auto;
   grid-template-columns: 100px repeat(2, 1fr 50px) auto;
 }
 
-.ej8 {
-  grid-template-rows: auto;
-  grid-template-columns: 100px repeat(2, 1fr 50px) auto;
-}
-
-.ej9 {
+.ej7 {
   grid-template-rows: auto;
   grid-template-columns: minmax(200px, 500px);
 }
 
-.ej10 {
+.ej8 {
   grid-template-rows: 2fr;
   grid-template-columns: repeat(2, minmax(200px, 500px));
 }
 
-.ej11 {
+.ej9 {
   grid-template-rows: 2fr 1fr;
   grid-template-columns: auto repeat(2, minmax(100px, 1fr));
 }
 
-.ej12 {
-  grid-template-rows: 2fr 1fr;
-  grid-template-columns: 100px repeat(2, minmax(auto, 200px));
-}
-
-.ej13 {
+.ej10 {
   grid-template-rows: auto;
   grid-template-columns: repeat(3, 33.33%);
 }
 
+.ej11 {
+  grid-template-rows: auto;
+  grid-template-columns: 100px minmax(min-content, max-content);
+}
+
+.ej12 {
+  grid-template-rows: auto;
+  grid-template-columns: auto min-content 1fr;
+}
+
+/* Ejercicios con auto-fill */
+.ej13 {
+  grid-template-rows: auto;
+  grid-template-columns: repeat(auto-fill, 100px);
+}
+
 .ej14 {
   grid-template-rows: auto;
-  grid-template-columns: repeat(3, minmax(auto, 33.33%));
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
 }
 
+/* Ejercicios con auto-fit */
 .ej15 {
   grid-template-rows: auto;
-  grid-template-columns: repeat(3, minmax(1fr, 33.33%));
-}
-
-.ej16 {
-  grid-template-rows: auto;
-  grid-template-columns: repeat(3, minmax(min-content, 33.33%));
-}
-
-.ej17 {
-  grid-template-rows: auto;
-  grid-template-columns: repeat(3, minmax(max-content, 33.33%));
-}
-
-.ej18 {
-  grid-template-rows: auto;
-  grid-template-columns: 100px minmax(min-content, max-content);
-}
-
-.ej19 {
-  grid-template-rows: min-content;
-  grid-template-columns: 100px minmax(min-content, max-content);
-}
-
-.ej20 {
-  grid-template-rows: max-content;
-  grid-template-columns: 100px minmax(min-content, max-content);
-}
-
-.ej21 {
-  grid-template-columns: auto min-content 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 }
 
 #styles-display {
