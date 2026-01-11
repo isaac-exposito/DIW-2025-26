@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>grid-area</title>
+  <meta charset="UTF-8">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    h2 {
+      text-align: center;
+      font-family: 'Consolas', 'Lucida Console', 'Courier New', Courier, monospace;
+      padding: 10px;
+      margin: 0px 0px 10px 0px;
+    }
+
+    /* Cuadro de opciones */
+    #options {
+      font-family: 'Consolas', 'Lucida Console', 'Courier New', Courier, monospace;
+      display: inline-flex;
+      gap: 10px;
+    }
+
+    #options .propiedad {
+      padding: 5px 10px;
+      font-weight: bold;
+    }
+
+    #options .valor {
+      font-size: small;
+      border-radius: 5px;
+      cursor: pointer;
+      padding: 5px 10px;
+      background-color: #ccc;
+    }
+
+    #options .valor.active,
+    #options .valor:hover {
+      background-color: #333;
+      color: white;
+    }
+
+    #options span.icono {
+      color: white;
+      padding: 5px;
+      border-radius: 3px;
+      font-family: 'Consolas', 'Lucida Console', 'Courier New', Courier, monospace;
+      font-weight: bold;
+      cursor: help;
+    }
+
+    #options span.horizontal {
+      background-color: blue;
+    }
+
+    #options span.vertical {
+      background-color: green;
+    }
+
+    /* Contenedor grid del ejemplo */
+    #contenedor-grid {
+      background-color: #ccc;
+      width: 600px;
+      margin: 20px 0px 20px 20px;
+      min-height: 200px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: repeat(3, minmax(40px, auto));
+      grid-template-areas:
+        'a a a'
+        'b c c'
+        'b c c';
+    }
+
+    #contenedor-grid .item {
+      padding: 10px;
+      color: white;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    #contenedor-grid .item:nth-child(1) {
+      background-color: darkred;
+    }
+
+    /* Explicación en lista de propiedades */
+    .ul-propiedades>li {
+      padding: 5px;
+      margin: 0;
+    }
+
+    .ul-propiedades>li.highlight {
+      background-color: rgb(172, 255, 172);
+    }
+
+    code {
+      background-color: lightgrey;
+      padding: 2px 5px;
+      font-family: 'Consolas', 'Lucida Console', 'Courier New', Courier, monospace;
+      font-size: medium;
+    }
+
+    pre {
+      font-family: 'Consolas', 'Lucida Console', 'Courier New', Courier, monospace;
+      font-size: smaller;
+    }
+
+    p {
+      line-height: 1.5;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>grid-area</h2>
+
+  <div id="options">
+    <div class="valor active" data-grid-area="a">grid-area: a;</div>
+    <div class="valor" data-grid-area="b">grid-area: b;</div>
+    <div class="valor" data-grid-area="c">grid-area: c;</div>
+    <div class="valor" data-grid-area="2 / 1 / 2 / 4">grid-area: 2 / 1 / 2 / 4;</div>
+  </div>
+
+  <div id="contenedor-grid">
+    <div class="item"></div>
+  </div>
+
+  <p>Hemos definido el grid de la siguiente manera (puedes verlo con el inspector):</p>
+  <pre>
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: repeat(3, minmax(40px, auto));
+  grid-template-areas:
+    'a a a'
+    'b c c'
+    'b c c';
+  </pre>
+  <p>Al seleccionar un área concreta, el ítem se situará ocupando las celdas correspondientes que se han definido en <code>grid-template-areas</code></p>
+  <p>Al seleccionar <code>2 / 1 / 2 / 4</code>, el ítem se sitúa comenzando en la fila 2 / columna 1 y acabando en la fila 2 / columna 4. Date cuenta que ese '4' que indica el final de la columna es <i>no-inclusivo</i>, de forma que el ítem ocupará las columnas 1, 2 y 3.</p>
+
+  <script>
+    $(document).ready(function () {
+      $("#options > .valor").click(function () {
+        var valor = $(this).data("grid-area");;
+        $("#contenedor-grid > .item").css("grid-area", valor);
+
+        // Quitamos la clase active a todos los posibles valores y se la ponemos al que se ha hecho clic
+        $('[data-grid-area!=""]').each(function () {
+          $(this).removeClass("active");
+        });
+        $(this).addClass("active");
+      });
+
+      // Simulamos clic en el primer elemento
+      $("#options>*:nth-child(1)").click();
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GRID. Propiedades de alineación (II)</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    h2 {
+      text-align: center;
+      font-family: 'Consolas', 'Lucida Console', 'Courier New', Courier, monospace;
+      padding: 10px;
+      margin: 0px 0px 10px 0px;
+    }
+
+    /* Cuadro de opciones */
+    #options {
+      font-family: 'Consolas', 'Lucida Console', 'Courier New', Courier, monospace;
+      display: inline-grid;
+      grid-template-rows: repeat(4, auto);
+      grid-template-columns: max-content repeat(7, auto);
+      gap: 10px;
+    }
+
+    #options .propiedad {
+      padding: 5px 10px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      column-gap: 5px;
+    }
+
+    #options .valor {
+      font-size: small;
+      border-radius: 5px;
+      cursor: pointer;
+      padding: 5px 10px;
+      background-color: #ccc;
+      display: flex;
+      align-items: center;
+    }
+
+    #options .valor.active,
+    #options .valor:hover {
+      background-color: #333;
+      color: white;
+    }
+
+    #options span.icono {
+      color: white;
+      padding: 5px;
+      border-radius: 3px;
+      font-family: 'Consolas', 'Lucida Console', 'Courier New', Courier, monospace;
+      font-weight: bold;
+      cursor: help;
+    }
+
+    #options span.horizontal {
+      background-color: blue;
+    }
+
+    #options span.vertical {
+      background-color: green;
+    }
+
+    /* Contenedor grid del ejemplo */
+    #contenedor-grid {
+      background-color: #ccc;
+      width: 770px;
+      margin: 20px 0px 20px 20px;
+      min-height: 300px;
+      display: grid;
+      grid-template-columns: repeat(2, 250px);
+      grid-template-rows: repeat(3, 75px);
+      grid-template-areas:
+        "uno uno"
+        "dos tres"
+        "cuatro cuatro";
+    }
+
+    #contenedor-grid .item {
+      padding: 10px;
+      color: white;
+      font-weight: bold;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #contenedor-grid .item:nth-child(1) {
+      background-color: darkred;
+      grid-area: uno;
+    }
+
+    #contenedor-grid .item:nth-child(2) {
+      background-color: darkgreen;
+      grid-area: dos;
+    }
+
+    #contenedor-grid .item:nth-child(3) {
+      background-color: darkblue;
+      grid-area: tres;
+    }
+
+    #contenedor-grid .item:nth-child(4) {
+      background-color: darkgoldenrod;
+      grid-area: cuatro;
+    }
+
+    /* Explicación en lista de propiedades */
+    .ul-propiedades>li {
+      padding: 5px;
+      margin: 0;
+    }
+
+    .ul-propiedades>li.highlight {
+      background-color: rgb(172, 255, 172);
+    }
+
+    code {
+      background-color: lightgrey;
+      padding: 2px 5px;
+      font-family: 'Consolas', 'Lucida Console', 'Courier New', Courier, monospace;
+      font-size: medium;
+    }
+
+    p,
+    li {
+      line-height: 1.5;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>GRID. Propiedades de alineación (II)</h2>
+
+  <div id="options">
+    <div class="propiedad">
+      <span class="icono horizontal" title="Eje horizontal">H</span>
+      <span class="nombre-prop">justify-items</span>
+    </div>
+
+    <div class="valor" data-prop="justify-items">start</div>
+    <div class="valor" data-prop="justify-items">end</div>
+    <div class="valor" data-prop="justify-items">center</div>
+    <div class="valor active" data-prop="justify-items">stretch</div>
+
+    <div></div>
+    <div></div>
+    <div></div>
+
+    <div class="propiedad">
+      <span class="icono vertical" title="Eje vertical">V</span>
+      <span class="nombre-prop">align-items</span>
+    </div>
+
+    <div class="valor" data-prop="align-items">start</div>
+    <div class="valor" data-prop="align-items">end</div>
+    <div class="valor" data-prop="align-items">center</div>
+    <div class="valor active" data-prop="align-items">stretch</div>
+
+    <div></div>
+    <div></div>
+    <div></div>
+
+    <div class="propiedad">
+      <span class="icono horizontal" title="Eje horizontal">H</span>
+      <span class="nombre-prop">justify-content</span>
+    </div>
+
+    <div class="valor" data-prop="justify-content">start</div>
+    <div class="valor" data-prop="justify-content">end</div>
+    <div class="valor" data-prop="justify-content">center</div>
+    <div class="valor active" data-prop="justify-content">stretch</div>
+    <div class="valor" data-prop="justify-content">space-between</div>
+    <div class="valor" data-prop="justify-content">space-around</div>
+    <div class="valor" data-prop="justify-content">space-evenly</div>
+
+    <div class="propiedad">
+      <span class="icono vertical" title="Eje vertical">V</span>
+      <span class="nombre-prop">align-content</span>
+    </div>
+
+    <div class="valor" data-prop="align-content">start</div>
+    <div class="valor" data-prop="align-content">end</div>
+    <div class="valor" data-prop="align-content">center</div>
+    <div class="valor active" data-prop="align-content">stretch</div>
+    <div class="valor" data-prop="align-content">space-between</div>
+    <div class="valor" data-prop="align-content">space-around</div>
+    <div class="valor" data-prop="align-content">space-evenly</div>
+  </div>
+
+  <div id="contenedor-grid">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+  </div>
+
+  <ul class="ul-propiedades">
+    <li data-prop="justify-items"><code>justify-items</code> alinea los ítems en <b>horizontal</b> dentro de cada celda.</li>
+    <li data-prop="align-items"><code>align-items</code> alinea los ítems en <b>vertical</b> dentro de cada celda.</li>
+    <li data-prop="justify-content"><code>justify-content</code> alinea el contenido (la cuadricula) en <b>horizontal</b> en el contenedor padre.</li>
+    <li data-prop="align-content"><code>align-content</code> alinea el contenido (la cuadricula) en <b>vertical</b> en el contenedor padre.</li>
+  </ul>
+
+  <script>
+    $(document).ready(function () {
+
+      $("#options > .valor").click(function () {
+
+        var propiedad = $(this).data("prop");;
+        var valor = $(this).html();
+        $("#contenedor-grid").css(propiedad, valor);
+
+        // Quitamos la clase active a todos los items de la propiedad seleccionada
+        // y se lo ponemos al que se ha hecho clic
+        $('*[data-prop="' + propiedad + '"]').removeClass("active");
+        $(this).addClass("active");
+
+        // Eliminamos la clase highlight a todos los li y se la ponemos al que corresponda
+        $(".ul-propiedades>li").removeClass("highlight");
+        $('*[data-prop="' + propiedad + '"]').addClass("highlight");
+
+      });
+
+    });
+  </script>
+</body>
+
+</html>
