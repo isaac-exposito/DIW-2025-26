@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grid. Ejercicios (I) - Solución</title>
+
+  <link rel="stylesheet" href="Ejercicios-grid-template.css">
+
+  <!-- Tema CSS para highlight.js -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/night-owl.min.css" integrity="sha512-i5X6Fdn/ZqvGSqPrdMa3FgcpXM/Nr6YccSKFYT93zljl/HZDEpvBbE5Pxp91eiWGccZLrL/LDQJd7fjTRYsVaA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+
+<body>
+
+  <div class="container">
+
+    <h1>Grid. Ejercicios (I) <span id="exercise-title"></span></h1>
+    <p>Explica qué tipo de grid obtenemos en los siguientes escenarios y pruébalos con el inspector del navegador. Crea tantos ítems como necesites para probar cada ejercicio. Utiliza los estilos del archivo css de forma predeterminada, haciendo las modificaciones que creas necesarias para ir probando cada ejemplo.</p>
+
+    <p>En este ejercicio practicarás la definición de la estructura de un grid mediante las propiedades <code>grid-template-rows</code> y <code>grid-template-columns</code>, utilizando diferentes tipos de valores: unidades absolutas (px), el valor <code>auto</code>, unidades fraccionarias (<code>fr</code>), la función <code>repeat()</code>, la función <code>minmax()</code> con diversos argumentos, porcentajes, y las palabras clave <code>min-content</code>, <code>max-content</code>, <code>auto-fill</code> y <code>auto-fit</code>.</p>
+
+    <div id="radio-container"></div>
+
+    <div id="styles-display"></div>
+
+    <a href="#" id="show-link">Mostrar Grid Container</a>
+
+    <div id="grid-container" class="ej1">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+      <div class="item">5</div>
+      <div class="item">6</div>
+      <div class="item">7</div>
+      <div class="item">8</div>
+      <div class="item">9</div>
+      <div class="item">10</div>
+      <div class="item">11</div>
+      <div class="item">12</div>
+      <div class="item">13</div>
+      <div class="item">14</div>
+      <div class="item">15</div>
+      <div class="item">16</div>
+      <div class="item">17</div>
+      <div class="item">18</div>
+    </div>
+  </div>
+
+  <!-- highlight.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/highlight.min.js" integrity="sha512-6yoqbrcLAHDWAdQmiRlHG4+m0g/CT/V9AGyxabG8j7Jk8j3r3K6due7oqpiRMZqcYe9WM2gPcaNNxnl2ux+3tA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <!-- Script -->
+  <script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", () => {
+      const radioContainer = document.getElementById("radio-container");
+      const gridContainer = document.getElementById("grid-container");
+      const stylesDisplay = document.getElementById("styles-display");
+      const showLink = document.getElementById("show-link");
+      const exerciseTitle = document.getElementById("exercise-title");
+
+      // Generar radio buttons dinámicamente
+      for (let i = 1; i <= 15; i++) {
+        const label = document.createElement("label");
+        const radio = document.createElement("input");
+        radio.type = "radio";
+        radio.name = "ejercicio";
+        radio.value = `ej${i}`;
+        label.textContent = `Ej. ${i}`;
+        label.prepend(radio);
+        radioContainer.appendChild(label);
+
+        // Añadir evento de clic a cada radio button
+        radio.addEventListener('click', () => {
+          gridContainer.style.visibility = 'hidden';
+          showLink.style.display = 'block';
+        });
+      }
+
+      // Obtener la hoja de estilos
+      const styles = Array.from(document.styleSheets).find(sheet =>
+        sheet.href === null || sheet.href.startsWith(location.origin)
+      );
+
+      console.log(styles);
+
+      const rules = styles?.cssRules || [];
+
+      console.log(rules);
+
+      // Función para actualizar el contenido de styles-display
+      const updateStylesDisplay = (selectedClass) => {
+        stylesDisplay.innerHTML = ""; // Limpiar contenido anterior
+        const matchingRule = Array.from(rules).find(rule =>
+          rule.selectorText === `.${selectedClass}`
+        );
+
+        if (matchingRule) {
+          const formattedRule = matchingRule.cssText
+            .replace("{", " {\n  ")
+            .replace(";", ";\n  ")
+            .replace("}", "\n}");
+
+          // Crear <pre> y <code> para mostrar el CSS
+          const pre = document.createElement("pre");
+          const code = document.createElement("code");
+          code.className = "language-css";
+          code.textContent = formattedRule;
+          pre.appendChild(code);
+          stylesDisplay.appendChild(pre);
+
+          // Resaltar el código con Highlight.js
+          hljs.highlightElement(code);
+        }
+      };
+
+      // Manejar cambio en los radio buttons
+      const radioButtons = document.querySelectorAll("input[name='ejercicio']");
+      radioButtons.forEach(radio => {
+        radio.addEventListener("change", (event) => {
+          // Eliminar todas las clases del grid-container
+          gridContainer.className = "";
+
+          // Añadir la clase correspondiente al grid-container
+          const selectedClass = event.target.value;
+          gridContainer.classList.add(selectedClass);
+
+          // Actualizar el contenido de styles-display
+          updateStylesDisplay(selectedClass);
+
+          // Actualizar el título del ejercicio
+          exerciseTitle.textContent = event.target.nextSibling.textContent;
+        });
+      });
+
+      // Seleccionar automáticamente el primer ejercicio al cargar la página
+      const firstRadio = radioButtons[0];
+      if (firstRadio) {
+        firstRadio.checked = true; // Seleccionar el primer radiobutton
+        gridContainer.classList.add(firstRadio.value); // Aplicar la clase al grid-container
+        updateStylesDisplay(firstRadio.value); // Mostrar el estilo correspondiente
+      }
+
+      // Añadir evento de clic al enlace para mostrar el grid-container
+      showLink.addEventListener('click', (event) => {
+        event.preventDefault();
+        gridContainer.style.visibility = 'visible';
+        showLink.style.display = 'none';
+      });
+    });
+  </script>
+
+</body>
+
+</html>
