@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grid overlap. Enunciado</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    main {
+      padding: 2em;
+      max-width: 950px;
+      margin: 0 auto;
+      background-color: white;
+      border: 1px solid #ccc;
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 0;
+    }
+
+    .grid-container {
+      display: grid;
+      box-shadow: 0px 0px 10px 5px rgba(204, 204, 204, 1);
+    }
+
+    .text {
+      background-color: white;
+      padding: 0.5em;
+      border: 3px solid red;
+    }
+
+    .image {
+      display: block;
+      max-width: 100%;
+      aspect-ratio: 2/3;
+      object-fit: cover;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <h1>Grid overlap</h1>
+
+    <p>Añade una media query para que a partir de 600px el texto se superponga a la imagen. El texto debe estar situado aproximadamente en el centro de la imagen tanto vertical como horizontalmente.</p>
+
+    <div class="grid-container">
+      <img class="image" src="https://picsum.photos/id/666/200/300" alt="image">
+      <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam veritatis repudiandae, ut soluta autem dolorum. Nesciunt dolore ipsum corporis modi magni labore voluptatibus, harum maiores!</p>
+    </div>
+  </main>
+</body>
+
+</html>
