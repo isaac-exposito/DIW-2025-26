@@ -19,7 +19,7 @@
   min-height: 250px;
   background-color: #ddd;
   display: flex;
-  border: 2px solid#333;
+  border: 2px solid #333;
 }
 
 .contenedor-flex > * {
