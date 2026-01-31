@@ -1,0 +1,132 @@
+:root {
+  --left-side-bg-color: rgb(211, 255, 211);
+  --header-bg-color: lightgray;
+  --footer-bg-color: lightgray;
+}
+
+.montserrat-pepe {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: bold;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Google Sans Flex", sans-serif;
+}
+
+.f-left {
+  float: left;
+}
+
+.f-right {
+  float: right;
+}
+
+.row::after,
+.clearfix {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* LEFT SIDE */
+.left-side {
+  background-color: var(--left-side-bg-color);
+  padding: 0.5em;
+}
+
+.left-side .img-container {
+  position: relative;
+  margin-right: 1em;
+}
+
+.left-side .img-container img {
+  background-color: white;
+  width: 160px;
+  border-radius: 50%;
+  border: 1px solid black;
+  box-shadow: 0px 0px 30px 0px rgb(0, 0, 0);
+}
+
+.left-side .img-container .rotulo {
+  background-color: black;
+  color: white;
+  padding: 4px 8px;
+  font-size: 1em;
+  font-weight: bold;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  text-align: center;
+}
+
+.left-side .txt-container {
+  /* font-size: 10pt; */
+  margin: 0;
+}
+
+/* RIGHT SIDE */
+.right-side {
+  /* background-color: #eee; */
+}
+
+.right-side img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2/1;
+  object-fit: cover;
+}
+
+.right-side input[type="text"],
+.right-side input[type="password"],
+.right-side input[type="email"],
+.right-side select,
+.right-side textarea {
+  width: 100%;
+}
+
+.right-side #btn-enviar {
+  padding: 4px 8px;
+  display: block;
+  margin: 0 auto;
+}
+
+/* HOLA Y ADIOS */
+.hola {
+  background-color: lightcoral;
+  padding: 20px;
+}
+
+.adios {
+  background-color: lightgreen;
+  padding: 20px;
+}
+
+p {
+  text-align: justify;
+}
+
+/* HEADER */
+header {
+  background-color: lightgray;
+  padding: 20px;
+  text-align: right;
+}
+
+/* ROW */
+.row {
+  margin: 10px 0px;
+}
+
+/* FOOTER */
+footer {
+  background-color: lightgray;
+  padding: 20px;
+  text-align: right;
+}
+
+footer img {
+  height: 40px;
+}

@@ -1,0 +1,85 @@
+/********** Estilos generales **********/
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+/* Contenedor principal */
+.container {
+  padding: 20px;
+  background-color: beige;
+  border: 1px solid #555;
+}
+
+.container h2 {
+  font-size: 1.25rem;
+}
+
+.container h2:first-child {
+  margin: 0 0 10px 0;
+}
+
+.container h2:not(:first-child) {
+  margin: 20px 0 10px 0;
+}
+
+.container p {
+  margin: 0 0 0.5em 0;
+}
+
+/* Bordes de columnas */
+.row > * {
+  border: 1px solid #999;
+}
+
+/* Numeración de columnas */
+.row > *::before {
+  font-size: 1.25rem;
+  padding: 0.25em;
+  color: #fff;
+  background-color: #333;
+  border-radius: 50%;
+  margin-right: 0.125em;
+}
+
+.row > :nth-child(1)::before {
+  content: "1";
+}
+
+.row > :nth-child(2)::before {
+  content: "2";
+}
+
+.row > :nth-child(3)::before {
+  content: "3";
+}
+
+.row > :nth-child(4)::before {
+  content: "4";
+}
+
+/* Solución Fila 1 */
+/* Centramos verticalmente el primer elemento en pantallas grandes */
+@media (width >= 900px) {
+  #fila-1 > :nth-child(1) {
+    align-self: flex-start;
+  }
+}
+
+/* Solución Fila 2 */
+/* En pantallas grandes, ocultamos el primer elemento */
+@media (width >= 900px) {
+  #fila-2 > :nth-child(1) {
+    display: none;
+  }
+}
+
+/* En pantallas pequeñas, ocultamos el segundo elemento */
+@media (width < 600px) {
+  #fila-2 > :nth-child(2) {
+    display: none;
+  }
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2026-01-29. Examen flex (rec)</title>
+  <link rel="stylesheet" href="examen-flex-rec-ejercicio-2-solucion.css">
+  <link rel="stylesheet" href="examen-flex-rec-ejercicio-2-columnas.css">
+</head>
+
+<body>
+  <div class="container">
+
+    <h2>Ejercicio 2</h2>
+
+    <hr>
+
+    <p>El contenedor general ocupará toda la anchura de la pantalla en todos los casos.</p>
+
+    <h2>Fila 1.</h2>
+    <ul>
+      <li>Pantallas grandes (&gt;900px): El primer elemento ocupa 3 columnas y se ve arriba. El segundo elemento ocupa 6 columnas. El tercero ocupa el espacio restante que dejan los otros dos, de modo que si alguno de los dos elemento desaparece, este elemento ocupa ese espacio.</li>
+      <li>Pantallas medias (600px-900px): El primer elemento ocupa 4 columnas y el segundo ocupa 8 columnas, mientras que el tercero ocupa todo el ancho disponible de la fila siguiente.</li>
+      <li>Pantallas pequeñas (&lt;600px): Todos los elementos ocupan el 100% del ancho disponible.</li>
+    </ul>
+
+    <div class="row" id="fila-1">
+      <div class="col-lg-3 col-sm-4">
+        <p>Lorem ipsum dolor sit amet.</p>
+      </div>
+
+      <div class="col-lg-6 col-sm-8">
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis laudantium accusantium ab architecto perspiciatis tempore facilis? Officiis sunt, eaque doloribus, veritatis eligendi excepturi quaerat autem id incidunt quas delectus quod!.</p>
+      </div>
+
+      <div class="col">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+      </div>
+    </div>
+
+    <h2>Fila 2.</h2>
+    <ul>
+      <li>Pantallas grandes (&gt;900px): El primer elemento desaparece. Los otros tres se reparten el espacio disponible.</li>
+      <li>Pantallas medias (600px-900px): Todos los elementos se reparten el espacio disponible.</li>
+      <li>Pantallas pequeñas (&lt;600px): El segundo elemento desaparece. Los otros tres ocupan el 100% del ancho disponible cada uno, quedando una disposición en columnas.</li>
+    </ul>
+
+    <div class="row" id="fila-2">
+      <div class="col">
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+      </div>
+      <div class="col">
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+      </div>
+      <div class="col">
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+      </div>
+      <div class="col">
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+      </div>
+    </div>
+
+  </div>
+</body>
+
+</html>
