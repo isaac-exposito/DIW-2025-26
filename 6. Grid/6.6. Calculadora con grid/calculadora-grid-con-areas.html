@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calculadora con Grid. Con áreas</title>
+
+  <link rel="stylesheet" href="../../Utils/css/general.css">
+  <!-- Tema CSS para highlight.js -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/night-owl.min.css" integrity="sha512-i5X6Fdn/ZqvGSqPrdMa3FgcpXM/Nr6YccSKFYT93zljl/HZDEpvBbE5Pxp91eiWGccZLrL/LDQJd7fjTRYsVaA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+  <style>
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .contenedor-grid {
+      width: fit-content;
+      margin: 0 auto;
+      border: 1px solid black;
+      padding: 20px;
+      background-color: rgb(234, 234, 234);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, minmax(auto, 50px));
+      grid-template-areas:
+        "MC MC MR MR M_mas M_mas M_menos M_menos MS MS M M"
+        "porcentaje porcentaje porcentaje ce ce ce c c c retroceso retroceso retroceso"
+        "inverso inverso inverso cuadrado cuadrado cuadrado raiz raiz raiz dividir dividir dividir"
+        "siete siete siete ocho ocho ocho nueve nueve nueve multiplicar multiplicar multiplicar"
+        "cuatro cuatro cuatro cinco cinco cinco seis seis seis restar restar restar"
+        "uno uno uno dos dos dos tres tres tres sumar sumar sumar"
+        "negar negar negar cero cero cero coma coma coma igual igual igual";
+      gap: 5px;
+    }
+
+    .item {
+      text-align: center;
+      border-radius: 5px;
+      background-color: white;
+      border: 1px solid rgb(196, 196, 196);
+      padding: 5px 15px;
+    }
+
+    .item:hover {
+      background-color: rgb(196, 196, 196);
+    }
+
+    .mc {
+      grid-area: MC;
+    }
+
+    .mr {
+      grid-area: MR;
+    }
+
+    .m-mas {
+      grid-area: M_mas;
+    }
+
+    .m-menos {
+      grid-area: M_menos;
+    }
+
+    .ms {
+      grid-area: MS;
+    }
+
+    .m {
+      grid-area: M;
+    }
+
+    .porcentaje {
+      grid-area: porcentaje;
+    }
+
+    .ce {
+      grid-area: ce;
+    }
+
+    .c {
+      grid-area: c;
+    }
+
+    .retroceso {
+      grid-area: retroceso;
+    }
+
+    .inverso {
+      grid-area: inverso;
+    }
+
+    .cuadrado {
+      grid-area: cuadrado;
+    }
+
+    .raiz {
+      grid-area: raiz;
+    }
+
+    .dividir {
+      grid-area: dividir;
+    }
+
+    .siete {
+      grid-area: siete;
+    }
+
+    .ocho {
+      grid-area: ocho;
+    }
+
+    .nueve {
+      grid-area: nueve;
+    }
+
+    .multiplicar {
+      grid-area: multiplicar;
+    }
+
+    .cuatro {
+      grid-area: cuatro;
+    }
+
+    .cinco {
+      grid-area: cinco;
+    }
+
+    .seis {
+      grid-area: seis;
+    }
+
+    .restar {
+      grid-area: restar;
+    }
+
+    .uno {
+      grid-area: uno;
+    }
+
+    .dos {
+      grid-area: dos;
+    }
+
+    .tres {
+      grid-area: tres;
+    }
+
+    .sumar {
+      grid-area: sumar;
+    }
+
+    .negar {
+      grid-area: negar;
+    }
+
+    .cero {
+      grid-area: cero;
+    }
+
+    .coma {
+      grid-area: coma;
+    }
+
+    .igual {
+      grid-area: igual;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <h1>Calculadora Grid. Con áreas</h1>
+
+    <div class="contenedor-grid">
+
+      <div class="grid">
+        <div class="item mc">MC</div>
+        <div class="item mr">MR</div>
+        <div class="item m-mas">M+</div>
+        <div class="item m-menos">M-</div>
+        <div class="item ms">MS</div>
+        <div class="item m">M</div>
+
+        <div class="item porcentaje">%</div>
+        <div class="item ce">CE</div>
+        <div class="item c">C</div>
+        <div class="item retroceso">&lArr;</div>
+
+        <div class="item inverso">1/X</div>
+        <div class="item cuadrado">x2</div>
+        <div class="item raiz">&#8730;2</div>
+        <div class="item dividir">/</div>
+
+        <div class="item siete">7</div>
+        <div class="item ocho">8</div>
+        <div class="item nueve">9</div>
+        <div class="item multiplicar">x</div>
+
+        <div class="item cuatro">4</div>
+        <div class="item cinco">5</div>
+        <div class="item seis">6</div>
+        <div class="item restar">-</div>
+
+        <div class="item uno">1</div>
+        <div class="item dos">2</div>
+        <div class="item tres">3</div>
+        <div class="item sumar">+</div>
+
+        <div class="item negar">+/-</div>
+        <div class="item cero">0</div>
+        <div class="item coma">,</div>
+        <div class="item igual">=</div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

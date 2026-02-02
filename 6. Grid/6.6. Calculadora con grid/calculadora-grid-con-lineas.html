@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calculadora con Grid. Con líneas</title>
+
+  <link rel="stylesheet" href="../../Utils/css/general.css">
+  <!-- Tema CSS para highlight.js -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/night-owl.min.css" integrity="sha512-i5X6Fdn/ZqvGSqPrdMa3FgcpXM/Nr6YccSKFYT93zljl/HZDEpvBbE5Pxp91eiWGccZLrL/LDQJd7fjTRYsVaA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+  <style>
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .contenedor-grid {
+      max-width: fit-content;
+      margin: 0 auto;
+      border: 1px solid black;
+      padding: 20px;
+      background-color: rgb(234, 234, 234);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, minmax(auto, 50px));
+      gap: 5px;
+    }
+
+    .item {
+      text-align: center;
+      border-radius: 5px;
+      background-color: white;
+      border: 1px solid rgb(196, 196, 196);
+      padding: 5px 15px;
+    }
+
+    .item:hover {
+      background-color: rgb(196, 196, 196);
+    }
+
+    /* Los seis primeros hijos con clase .item ocuparán 2 columnas */
+    .grid>.item:nth-child(-n+6) {
+      grid-column-end: span 2;
+    }
+
+    /* Los .item hijos a partir del séptimo (incluido) ocuparán 3 columnas */
+    .grid>.item:nth-child(n+7) {
+      grid-column-end: span 3;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <h1>Calculadora Grid. Con líneas</h1>
+
+    <div class="contenedor-grid">
+
+      <div class="grid">
+        <div class="item">MC</div>
+        <div class="item">MR</div>
+        <div class="item">M+</div>
+        <div class="item">M-</div>
+        <div class="item">MS</div>
+        <div class="item">M</div>
+
+        <div class="item">%</div>
+        <div class="item">CE</div>
+        <div class="item">C</div>
+        <div class="item">&lArr;</div>
+
+        <div class="item">1/X</div>
+        <div class="item">x2</div>
+        <div class="item">&#8730;2</div>
+        <div class="item">/</div>
+
+        <div class="item">7</div>
+        <div class="item">8</div>
+        <div class="item">9</div>
+        <div class="item">x</div>
+
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">-</div>
+
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">+</div>
+
+        <div class="item">+/-</div>
+        <div class="item">0</div>
+        <div class="item">,</div>
+        <div class="item">=</div>
+      </div>
+    </div>
+
+    <p>Hacer esta calculadora con números de líneas es extremadamente simple. Podríamos hacerlo de varias maneras:</p>
+    <p>La primera, la más enrevesada, es usar las 4 propiedades en cada uno de los 30 items, indicando para cada uno en qué línea empieza y acaba en filas y columnas. El primer elemento sería:</p>
+    <pre><code class="language-css">.mc {
+  grid-row-start: 1;
+  grid-row-end: 2;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}</code></pre>
+
+    <p>Eso serían 30*4=120 líneas de CSS. Podríamos reducirlas a la mitad eliminando las que se refieren a filas, dado que el navegador irá insertando los ítems en filas automáticamente. Así, el primer ítem quedaría:</p>
+    <pre><code class="language-css">.mc {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}</code></pre>
+
+    <p>Pero podemos seguir reduciendo las líneas necesarias. Dado que el navegador va insertando los items consecutivamente, no necesitamos indicarle dónde debe empezar cada ítem, nos basta con indicarle que ocupará X columnas, por lo que nos sobra <code>grid-column-start</code>:</p>
+    <pre><code class="language-css">.mc {
+  grid-column-end: span 2;
+}</code></pre>
+
+    <p>Incluso podemos deshacernos de las 30 clases que hemos creado solo para indicar las líneas, simplemente añadiendo dos clases nuevas y asignándoselas a cada ítem:</p>
+
+    <pre><code class="language-css">.span-2 {
+  grid-column-end: span 2;
+}
+
+.span-3 {
+  grid-column-end: span 3;
+}</code></pre>
+
+    <pre><code class="language-html">&lt;div class=&quot;contenedor-calculadora&quot;&gt;
+  &lt;div class=&quot;item span-2&quot;&gt;MC&lt;/div&gt;
+  &lt;div class=&quot;item span-2&quot;&gt;MR&lt;/div&gt;
+  ...
+  &lt;div class=&quot;item span-3&quot;&gt;,&lt;/div&gt;
+  &lt;div class=&quot;item span-3&quot;&gt;=&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+    <p>Por último, podemos incluso olvidarnos de crear clases y usar selectores más finos para los elementos, de manera que seleccionemos los 6 primeros por un lado y los restantes por otro:</p>
+
+    <pre><code class="language-css">/* Los seis primeros hijos con clase .item ocuparán 2 columnas */
+.grid&gt;.item:nth-child(-n+6) {
+  grid-column-end: span 2;
+}
+
+/* Los .item hijos a partir del séptimo (incluido) ocuparán 3 columnas */
+.grid&gt;.item:nth-child(n+7) {
+  grid-column-end: span 3;
+}</code></pre>
+
+  </div>
+
+  <!-- highlight.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/highlight.min.js" integrity="sha512-6yoqbrcLAHDWAdQmiRlHG4+m0g/CT/V9AGyxabG8j7Jk8j3r3K6due7oqpiRMZqcYe9WM2gPcaNNxnl2ux+3tA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script>hljs.highlightAll();</script>
+
+  <!-- Función para copiar el contenido del pre tag -->
+  <script src="../Utils/js/copy-button-pre-tag.js"></script>
+
+</body>
+
+</html>
