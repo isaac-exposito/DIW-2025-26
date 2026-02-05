@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grid. Líneas con nombre. Ejercicio</title>
+  <style>
+    body {
+      background-color: #f4f4f9;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-rows: [row-start-sm] 1fr [row2-sm] 1fr [row3-sm] 1fr [row4-sm] auto [row5-sm] auto [row-end-sm];
+      grid-template-columns: [col-start-sm] 1fr [col2-sm] 1fr [col3-sm] 1fr [col4-sm] 1fr [col-end-sm];
+      /*
+        Se obtendría un resultado parecido eliminando la cuarta columna y poniendo la tercera 2fr:
+        grid-template-columns: [col-start-sm] 1fr [col2-sm] 1fr [col3-sm] 2fr [col-end-sm];
+
+        Y también definiendo sólo 3 filas, ya que la cuarta y quinta se crean con el valor auto automáticamente.
+        Fíjate que ni row4-sm ni row5-sm se usan en el código (tampoco row-end-sm, pero la mantendremos como línea final):
+        grid-template-rows: [row-start-sm] 1fr [row2-sm] 1fr [row3-sm] 1fr [row-end-sm];
+      */
+      gap: 10px;
+      max-width: 800px;
+      height: 400px;
+      background-color: #ffffff;
+      border: 2px solid #ddd;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 10px;
+    }
+
+    .grid-item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #007BFF;
+      color: white;
+      font-size: 1.2rem;
+      font-weight: bold;
+      border: 1px solid #0056b3;
+      border-radius: 5px;
+    }
+
+    .grid-item:nth-child(1) {
+      grid-row: row-start-sm / row2-sm;
+      grid-column: col-start-sm / col2-sm;
+    }
+
+    .grid-item:nth-child(2) {
+      grid-row: row2-sm / row3-sm;
+      grid-column: col2-sm / col-end-sm;
+    }
+
+    .grid-item:nth-child(3) {
+      grid-row: row-start-sm / row2-sm;
+      grid-column: col2-sm / col3-sm;
+    }
+
+    .grid-item:nth-child(4),
+    .grid-item:nth-child(5),
+    .grid-item:nth-child(6) {
+      grid-row: auto;
+      grid-column: col-start-sm / col-end-sm;
+    }
+
+    /* Media query para pantallas mayores a 600px */
+    @media (min-width: 600px) {
+      .grid-container {
+        grid-template-rows: [row-start-xl] 1fr [row2-xl] 1fr [row3-xl] auto [row4-xl] 1fr [row5-xl] 2fr [row-end-xl];
+        grid-template-columns: [col-start-xl] 1fr [col2-xl] 1fr [col-end-xl];
+      }
+
+      .grid-item:nth-child(1) {
+        grid-row: row-start-xl / row2-xl;
+        grid-column: col-start-xl / col-end-xl;
+      }
+
+      .grid-item:nth-child(2) {
+        grid-row: row2-xl / row4-xl;
+        grid-column: col-start-xl / col2-xl;
+      }
+
+      .grid-item:nth-child(3) {
+        grid-row: row2-xl / row3-xl;
+        grid-column: col2-xl / col-end-xl;
+      }
+
+      .grid-item:nth-child(4) {
+        grid-row: row4-xl / row5-xl;
+        grid-column: col2-xl / col-end-xl;
+      }
+
+      .grid-item:nth-child(5) {
+        grid-row: row3-xl / row4-xl;
+        grid-column: col2-xl / col-end-xl;
+      }
+
+      .grid-item:nth-child(6) {
+        grid-row: row5-xl / row-end-xl;
+        grid-column: col-start-xl / col-end-xl;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="grid-container">
+    <div class="grid-item">1</div>
+    <div class="grid-item">2</div>
+    <div class="grid-item">3</div>
+    <div class="grid-item">4</div>
+    <div class="grid-item">5</div>
+    <div class="grid-item">6</div>
+  </div>
+</body>
+
+</html>
