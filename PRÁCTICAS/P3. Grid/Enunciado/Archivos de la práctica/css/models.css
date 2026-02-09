@@ -1,0 +1,62 @@
+.grid-models-container {
+}
+
+.filter-sidebar {
+  background-color: var(--color-off-white);
+  padding: 2rem;
+  color: var(--color-dark);
+}
+
+.filter-sidebar h2 {
+  margin-bottom: 1rem;
+}
+
+.filter-sidebar form {
+}
+
+.filter-sidebar form label {
+  font-weight: bold;
+}
+
+.filter-sidebar form input,
+.filter-sidebar form select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid var(--color-medium);
+  border-radius: 5px;
+  background-color: var(--color-white);
+  color: var(--color-dark);
+}
+
+.filter-sidebar button {
+  background-color: var(--color-dark);
+  color: var(--color-white);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.filter-sidebar button:hover {
+  background-color: var(--color-medium);
+}
+
+.models-grid {
+  padding: 2rem;
+}
+
+.config-button {
+  display: inline-block;
+  background-color: var(--color-dark);
+  color: var(--color-white);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  margin-top: 1rem;
+  transition: background-color 0.3s;
+}
+
+.config-button:hover {
+  background-color: var(--color-medium);
+}

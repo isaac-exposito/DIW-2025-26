@@ -1,0 +1,52 @@
+main {
+  padding: 2rem;
+}
+
+.grid-index-container {
+}
+
+/* Panel de bienvenida */
+.welcome {
+  background-color: var(--color-light);
+  padding: 2rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  color: var(--color-dark);
+}
+
+.welcome h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Panel Ofertas Especiales */
+.ofertas-grid {
+}
+
+.ofertas h2 {
+  margin-bottom: 1rem;
+  color: var(--color-black);
+}
+
+/* Sidebar */
+.sidebar {
+  background-color: var(--color-light);
+  padding: 2rem;
+  color: var(--color-dark);
+}
+
+.sidebar h2 {
+  margin-bottom: 1rem;
+}
+
+.sidebar ul {
+  list-style-type: none;
+}
+
+.sidebar ul li {
+  margin-bottom: 0.5rem;
+}
+
+section.ofertas {
+  margin-top: 2rem;
+}
