@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soluciones Grid Garden - Completo</title>
+
+  <link rel="stylesheet" href="../../Utils/highlightjs/highlight.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/night-owl.min.css" integrity="sha512-i5X6Fdn/ZqvGSqPrdMa3FgcpXM/Nr6YccSKFYT93zljl/HZDEpvBbE5Pxp91eiWGccZLrL/LDQJd7fjTRYsVaA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      padding: 20px;
+      background-color: #f0f2f5;
+      font-size: larger;
+    }
+
+    #container {
+      max-width: 1100px;
+      margin: 0 auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    header {
+      border-bottom: 2px solid #34495e;
+      margin-bottom: 30px;
+      padding-bottom: 10px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      margin-block: 0 5px;
+    }
+
+    .info {
+      color: #7f8c8d;
+      font-size: 0.9em;
+      margin-bottom: 20px;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 15px;
+    }
+
+    .card {
+      background: #f0f2f5;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .ejercicio-num {
+      font-weight: bold;
+      color: #27ae60;
+      border-bottom: 1px solid #eee;
+      margin-bottom: 10px;
+      padding-bottom: 5px;
+    }
+
+    pre {
+      margin: 0;
+      flex-grow: 1;
+    }
+
+    code {
+      border-radius: 4px;
+    }
+
+    a {
+      color: #3498db;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="container">
+
+    <header>
+      <h1>Soluciones Grid Garden CSS</h1>
+      <nav>
+        <a href="https://cssgridgarden.com/#es" target="_blank">Jugar a Grid Garden</a> |
+        <a href="https://programmingmentor.com/post/playing-css-grid-garden/" target="_blank">Explicaciones en inglés</a>
+      </nav>
+    </header>
+
+    <div class="grid-container">
+      <div class="card">
+        <div class="ejercicio-num">Ejercicio 1</div>
+        <pre><code class="language-css">grid-column-start: 3;</code></pre>
+      </div>
+      <div class="card">
+        <div class="ejercicio-num">Ejercicio 2</div>
+        <pre><code class="language-css">grid-column-start: 5;</code></pre>
+      </div>
+      <div class="card">
+        <div class="ejercicio-num">Ejercicio 3</div>
+        <pre><code class="language-css">grid-column-end: 4;</code></pre>
+      </div>
+      <div class="card">
+        <div class="ejercicio-num">Ejercicio 4</div>
+        <pre><code class="language-css">grid-column-end: 2;</code></pre>
+      </div>
+      <div class="card">
+        <div class="ejercicio-num">Ejercicio 5</div>
+        <pre><code class="language-css">grid-column-end: -2;</code></pre>
+      </div>
+      <div class="card">
+        <div class="ejercicio-num">Ejercicio 6</div>
+        <pre><code class="language-css">grid-column-start: -3;</code></pre>
+      </div>
+      <div class="card">
+        <div class="ejercicio-num">Ejercicio 7</div>
+        <pre><code class="language-css">grid-column-end: span 2;</code></pre>
+      </div>
+      <div class="card">
+        <div class="ejercicio-num">Ejercicio 8</div>
+        <pre><code class="language-css">grid-column-end: span 5;</code></pre>
+      </div>
+      <div class="card">
+        <div class="ejercicio-num">Ejercicio 9</div>
+        <pre><code class="language-css">grid-column-start: span 3;</code></pre>
+      </div>
+      <div class="card">
+        <div class="ejercicio-num">Ejercicio 10</div>
+        <pre><code class="language-css">grid-column: 4/6;</code></pre>
+      </div>
+      <div class="card">
+        <div class="ejercicio-num">Ejercicio 11</div>
+        <pre><code class="language-css">grid-column: 2/ span 3;</code></pre>
+      </div>
+      <div class="card">
+        <div class="ejercicio-num">Ejercicio 12</div>
+        <pre><code class="language-css">grid-row-start: 3;</code></pre>
+      </div>
+      <div class="card">
+        <div class="ejercicio-num">Ejercicio 13</div>
+        <pre><code class="language-css">grid-row: 3/6;</code></pre>
+      </div>
+      <div class="card">
+        <div class="ejercicio-num">Ejercicio 14</div>
+        <pre><code class="language-css">grid-column: 2;
+grid-row: 5;</code></pre>
+      </div>
+      <div class="card">
+        <div class="ejercicio-num">Ejercicio 15</div>
+        <pre><code class="language-css">grid-column: 2/6;
+grid-row: 1/6;
+
+/* Opción con span: */
+/* grid-column: 2/ span 4; */
+/* grid-row: 1/ span 5; */</code></pre>
+      </div>
+      <div class="card">
+        <div class="ejercicio-num">Ejercicio 16</div>
+        <pre><code class="language-css">grid-area: 1/2/4/6;
+
+/* O también: */
+/* grid-area: 1/2/span 3 / span 4; */</code></pre>
+      </div>
+      <div class="card">
+        <div class="ejercicio-num">Ejercicio 17</div>
+        <pre><code class="language-css">grid-area: 2/3 span 3/ span 3;</code></pre>
+      </div>
+      <div class="card">
+        <div class="ejercicio-num">Ejercicio 18</div>
+        <pre><code class="language-css">order: 1;</code></pre>
+      </div>
+      <div class="card">
+        <div class="ejercicio-num">Ejercicio 19</div>
+        <pre><code class="language-css">order: -1;</code></pre>
+      </div>
+      <div class="card">
+        <div class="ejercicio-num">Ejercicio 20</div>
+        <pre><code class="language-css">grid-template-columns: 50% 50%;</code></pre>
+      </div>
+      <div class="card">
+        <div class="ejercicio-num">Ejercicio 21</div>
+        <pre><code class="language-css">grid-template-columns: repeat(8, 12.5%);</code></pre>
+      </div>
+      <div class="card">
+        <div class="ejercicio-num">Ejercicio 22</div>
+        <pre><code class="language-css">grid-template-columns: 100px 3em 40%;</code></pre>
+      </div>
+      <div class="card">
+        <div class="ejercicio-num">Ejercicio 23</div>
+        <pre><code class="language-css">grid-template-columns: 1fr 5fr;</code></pre>
+      </div>
+      <div class="card">
+        <div class="ejercicio-num">Ejercicio 24</div>
+        <pre><code class="language-css">grid-template-columns: 50px repeat(3, 1fr) 50px;</code></pre>
+      </div>
+      <div class="card">
+        <div class="ejercicio-num">Ejercicio 25</div>
+        <pre><code class="language-css">grid-template-columns: 75px 3fr 2fr;</code></pre>
+      </div>
+      <div class="card">
+        <div class="ejercicio-num">Ejercicio 26</div>
+        <pre><code class="language-css">grid-template-rows: 50px 0 0 0 1fr;</code></pre>
+      </div>
+      <div class="card">
+        <div class="ejercicio-num">Ejercicio 27</div>
+        <pre><code class="language-css">grid-template: 60% / 200px;</code></pre>
+      </div>
+      <div class="card">
+        <div class="ejercicio-num">Ejercicio 28</div>
+        <pre><code class="language-css">grid-template: 1fr 50px / 1fr 4fr;</code></pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- highlight.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/highlight.min.js" integrity="sha512-6yoqbrcLAHDWAdQmiRlHG4+m0g/CT/V9AGyxabG8j7Jk8j3r3K6due7oqpiRMZqcYe9WM2gPcaNNxnl2ux+3tA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script>hljs.highlightAll();</script>
+
+  <!-- Función para copiar el contenido del pre tag -->
+  <script src="../../Utils/js/copy-button-pre-tag.js"></script>
+</body>
+
+</html>

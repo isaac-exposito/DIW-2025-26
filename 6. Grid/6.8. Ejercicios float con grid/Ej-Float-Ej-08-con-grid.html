@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicios Float. Ej. 8. Ahora con grid</title>
+  <link rel="stylesheet" href="../../Utils/css/general.css">
+  <link rel="stylesheet" href="css/Ej-Float-Ej-08.css">
+
+  <!-- Tema CSS para highlight.js -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/night-owl.min.css" integrity="sha512-i5X6Fdn/ZqvGSqPrdMa3FgcpXM/Nr6YccSKFYT93zljl/HZDEpvBbE5Pxp91eiWGccZLrL/LDQJd7fjTRYsVaA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+
+<body>
+
+  <h1 style="margin-top: 0; display: flex; justify-content: space-between; align-items: center;">
+    <a href="Ej-Float-Ej-07-con-grid.html" style="background: #2d3748; color: #fff; padding: 0.5em 1em; border-radius: 5px; text-decoration: none; font-size: 0.5em;">
+      Ejercicio anterior (7)
+    </a>
+    <span>Ejercicio 8</span>
+    <a href="Ej-Float-Ej-09-con-grid.html" style="background: #2d3748; color: #fff; padding: 0.5em 1em; border-radius: 5px; text-decoration: none; font-size: 0.5em;">
+      Siguiente ejercicio (9)
+    </a>
+  </h1>
+
+  <div id="container">
+
+    <div class="img-container">
+      <img src="https://picsum.photos/id/14/400/200" alt="random image">
+      <div class="titulo_imagen">Lorem ipsum dolor sit amet</div>
+    </div>
+
+    <div class="img-container">
+      <img src="https://picsum.photos/id/16/400/200" alt="random image">
+      <div class="titulo_imagen">Facilis tempora ab quibusdam</div>
+    </div>
+
+    <div class="img-container">
+      <img src="https://picsum.photos/id/17/400/200" alt="random image">
+      <div class="titulo_imagen">Autem saepe accusantium</div>
+    </div>
+
+  </div>
+
+  <div id="footer">
+    <div>Isaac Expósito</div>
+    <div>2º DAW. Diseño de Interfaces Web</div>
+  </div>
+
+  <div class="explanation">
+    <p><strong>Explicación:</strong></p>
+
+    <p>Para este ejercicio tenemos varias posibles soluciones, que serían poner en el contenedor alguna de estas instrucciones:</p>
+    <ol>
+      <li>
+        <p><code>grid-auto-flow: column</code>. Esta forma sólo funciona si todas las imágenes tienen el mismo tamaño y el texto también es el mismo. Vamos, que no.</p>
+      </li>
+      <li>
+        <p><code>grid-template-columns: repeat(3, auto)</code>. Tiene el mismo problema que la instrucción anterior porque en ambas las columnas se definen con un tamaño <code>auto</code>.</p>
+      </li>
+      <li>
+        <p><code>grid-template-columns: repeat(3, 33.33%)</code>. Esta solución falla si se utiliza <code>column-gap</code>, dado que se produciría desbordamiento horizontal en el contenedor.</p>
+      </li>
+      <li>
+        <p><code>grid-template-columns: repeat(3, 1fr)</code>. Esta es una buena solución. Funciona con tamaños de imágenes distintos, textos distintos y <code>column-gap</code> no produce desbordamiento.</p>
+      </li>
+      <li>
+        <p><code>grid-template-columns: repeat(auto-fit, minmax(50px, 1fr))</code>. Análoga a la anterior, pero incluso mejor porque no necesitamos definir el número de columnas.</p>
+      </li>
+    </ol>
+  </div>
+
+</body>
+
+</html>

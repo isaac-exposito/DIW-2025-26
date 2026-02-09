@@ -1,0 +1,36 @@
+.header {
+  display: grid;
+  grid-template-columns: 25fr 70fr;
+  column-gap: 40px;
+}
+
+.header .logo-container {
+  justify-self: start;
+  padding: 0;
+}
+
+.main-content {
+  display: grid;
+  grid-template-columns: 25fr 70fr;
+  column-gap: 40px;
+}
+
+.sub-content-wrapper {
+  padding: 0px;
+}
+
+.sidebar {
+  height: 300px;
+}
+
+.sub-content {
+  margin-bottom: 20px;
+}
+
+p {
+  line-height: 150%;
+}
+
+.logo {
+  justify-self: start;
+}

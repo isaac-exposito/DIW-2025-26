@@ -1,0 +1,40 @@
+#container {
+  display: grid;
+  /* grid-auto-flow: column; */
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr))
+}
+
+#container div {
+  padding: 20px;
+  text-align: center;
+  font-weight: bold;
+  box-sizing: border-box;
+  flex-grow: 1;
+}
+
+.div1 {
+  background-color: aqua;
+}
+
+.div2 {
+  background-color: beige;
+}
+
+.div3 {
+  background-color: coral;
+}
+
+.div4 {
+  background-color: cornflowerblue;
+}
+
+code {
+  font-size: 90%;
+  background-color: lightgrey;
+  padding: 2px 5px;
+  font-family: 'Consolas', 'Lucida Console', 'Courier New', Courier, monospace;
+}
+
+p {
+  line-height: 150%;
+}

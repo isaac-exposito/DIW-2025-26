@@ -1,0 +1,14 @@
+main {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.sidebar,
+.main-content,
+.sub-content {
+  height: 300px;
+}
+
+p {
+  line-height: 150%;
+}

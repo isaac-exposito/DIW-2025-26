@@ -1,0 +1,29 @@
+#container {
+  display: grid;
+  grid-auto-flow: column;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  width: 200px;
+}
+
+.divtexto {
+  padding: 15px;
+  background-color: aqua;
+  align-self: start;
+}
+
+code {
+  font-size: 90%;
+  background-color: lightgrey;
+  padding: 2px 5px;
+  font-family: 'Consolas', 'Lucida Console', 'Courier New', Courier, monospace;
+}
+
+p {
+  line-height: 150%;
+}

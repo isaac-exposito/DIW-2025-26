@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicios Float. Ej. 2. Ahora con grid</title>
+  <link rel="stylesheet" href="../../Utils/css/general.css">
+  <link rel="stylesheet" href="css/Ej-Float-Ej-02.css">
+
+  <!-- Tema CSS para highlight.js -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/night-owl.min.css" integrity="sha512-i5X6Fdn/ZqvGSqPrdMa3FgcpXM/Nr6YccSKFYT93zljl/HZDEpvBbE5Pxp91eiWGccZLrL/LDQJd7fjTRYsVaA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+
+<body>
+
+  <h1 style="margin-top: 0; display: flex; justify-content: space-between; align-items: center;">
+    <a href="Ej-Float-Ej-01-con-grid.html" style="background: #2d3748; color: #fff; padding: 0.5em 1em; border-radius: 5px; text-decoration: none; font-size: 0.5em;">
+      Ejercicio anterior (1)
+    </a>
+    <span>Ejercicio 2</span>
+    <a href="Ej-Float-Ej-03-con-grid.html" style="background: #2d3748; color: #fff; padding: 0.5em 1em; border-radius: 5px; text-decoration: none; font-size: 0.5em;">
+      Siguiente ejercicio (3)
+    </a>
+  </h1>
+
+  <div id="container">
+    <div class="div1">Div1</div>
+    <div class="div2">Div2</div>
+    <div class="div3">Div3</div>
+  </div>
+
+  <div class="explanation">
+    <p><strong>Explicación:</strong></p>
+
+    <p>Algunas formas de hacerlo con grid:</p>
+
+    <ol>
+      <li>
+        <p>Quizá la alternativa más elegante es poner en el contenedor <code>grid-template-columns: auto auto 1fr</code>, indicar al Div1 que se vaya a la derecha con <code>justify-self: right</code> y reordenarlo con <code>order: 1</code>.</p>
+      </li>
+
+      <li>
+        <p>Usando áreas sería poniendo en el contenedor <code>grid-template-columns: auto auto 1fr auto</code> y <code>grid-template-areas: "a b . c"</code>. Y ya solo tenemos que situar los ítems en sus posiciones con <code>grid-area</code>.</p>
+      </li>
+
+      <li>
+        <p>Siguiendo con la última solución del ejercicio anterior, poniendo en el contenedor <code>grid-template-columns: auto auto 1fr auto</code> y metiendo un div vacío en medio del Div2 y Div3 para que ocupe la columna con <code>1fr</code>. Solo faltaría reordenar con <code>order: 1</code>.</p>
+      </li>
+    </ol>
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+#container {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-between;
+}
+
+#header {
+  background-color: #333;
+  overflow: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+#header a.item {
+  padding: 14px 18px;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+}
+
+#header a.item:hover {
+  background-color: red;
+}
+
+p {
+  line-height: 150%;
+}

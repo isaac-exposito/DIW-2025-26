@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicios Float. Ej. 6. Ahora con grid</title>
+  <link rel="stylesheet" href="../../Utils/css/general.css">
+  <link rel="stylesheet" href="css/Ej-Float-Ej-06.css">
+
+  <!-- Tema CSS para highlight.js -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/night-owl.min.css" integrity="sha512-i5X6Fdn/ZqvGSqPrdMa3FgcpXM/Nr6YccSKFYT93zljl/HZDEpvBbE5Pxp91eiWGccZLrL/LDQJd7fjTRYsVaA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+
+<body>
+
+  <h1 style="margin-top: 0; display: flex; justify-content: space-between; align-items: center;">
+    <a href="Ej-Float-Ej-05-con-grid.html" style="background: #2d3748; color: #fff; padding: 0.5em 1em; border-radius: 5px; text-decoration: none; font-size: 0.5em;">
+      Ejercicio anterior (5)
+    </a>
+    <span>Ejercicio 6</span>
+    <a href="Ej-Float-Ej-07-con-grid.html" style="background: #2d3748; color: #fff; padding: 0.5em 1em; border-radius: 5px; text-decoration: none; font-size: 0.5em;">
+      Siguiente ejercicio (7)
+    </a>
+  </h1>
+
+  <div id="container">
+    <img src="https://picsum.photos/id/237/400/300" alt="Perro">
+
+    <div class="divtexto">
+      <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque cupiditate aperiam distinctio error exercitationem reiciendis tenetur, nostrum impedit ut necessitatibus, ipsa voluptates repudiandae perspiciatis amet adipisci nihil dignissimos tempore ab!</div>
+      <div>Accusantium itaque culpa ratione maxime aliquam necessitatibus voluptatem atque, ea ab expedita voluptates voluptas magni vel rem accusamus explicabo tempora quisquam aperiam officia? Asperiores accusantium numquam adipisci suscipit facere consequatur.</div>
+    </div>
+  </div>
+
+  <div class="explanation">
+    <p><strong>Explicación:</strong></p>
+
+    <p>La forma más fácil, rápida y eficaz de hacer este ejercicio con grid es poniendo en el contenedor <code>grid-auto-flow: column</code>. Además, tenemos que pensar qué ocurriría si tuviéramos menos texto del que tenemos. Una opción es definir <code>grid-template-columns: auto 1fr</code> para que el texto se extienda, si eso es lo que buscamos.</p>
+    <p>Finalmente, solo faltaría <code>align-self: start;</code> en el div con texto para que no se estire verticalmente.</p>
+  </div>
+
+</body>
+
+</html>

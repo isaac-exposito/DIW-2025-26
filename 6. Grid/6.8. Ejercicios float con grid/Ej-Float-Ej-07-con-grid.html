@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicios Float. Ej. 7. Ahora con grid</title>
+  <link rel="stylesheet" href="../../Utils/css/general.css">
+  <link rel="stylesheet" href="css/Ej-Float-Ej-07.css">
+
+  <!-- Tema CSS para highlight.js -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/night-owl.min.css" integrity="sha512-i5X6Fdn/ZqvGSqPrdMa3FgcpXM/Nr6YccSKFYT93zljl/HZDEpvBbE5Pxp91eiWGccZLrL/LDQJd7fjTRYsVaA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+
+<body>
+
+  <h1 style="margin-top: 0; display: flex; justify-content: space-between; align-items: center;">
+    <a href="Ej-Float-Ej-06-con-grid.html" style="background: #2d3748; color: #fff; padding: 0.5em 1em; border-radius: 5px; text-decoration: none; font-size: 0.5em;">
+      Ejercicio anterior (6)
+    </a>
+    <span>Ejercicio 7</span>
+    <a href="Ej-Float-Ej-08-con-grid.html" style="background: #2d3748; color: #fff; padding: 0.5em 1em; border-radius: 5px; text-decoration: none; font-size: 0.5em;">
+      Siguiente ejercicio (8)
+    </a>
+  </h1>
+
+  <div class="header">
+    <h1>Cabecera</h1>
+  </div>
+
+  <div id="container">
+    <div class="column menu">
+      <ul>
+        <li>Lorem</li>
+        <li>Ipsum</li>
+        <li>Dolor</li>
+        <li>Sit</li>
+      </ul>
+    </div>
+
+    <div class="column content">
+      <h1>Lorem ipsum</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae illum cum quidem! Velit minima libero quasi aspernatur commodi explicabo adipisci, quis facilis, veniam, quae aperiam unde numquam magnam minus nesciunt.
+      </p>
+      <p>Veritatis numquam fugiat rem odit perferendis maiores delectus et reiciendis, saepe optio ipsum facere ipsam accusantium maxime ab deleniti neque quod? Vitae, nulla illo deleniti commodi quaerat ab tempora dicta!</p>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>Pie de página</p>
+  </div>
+
+  <div class="explanation">
+    <p><strong>Explicación:</strong></p>
+
+    <p>La forma más sencilla de hacer este ejercicio es simplemente definir en el contenedor interior <code>grid-template-columns: 25% 75%</code> si queremos respetar los porcentajes o <code>grid-template-columns: 1fr 3fr</code> si no. Incluso podríamos mejorarlo haciéndolo <i>responsive</i> y <i>mobile first</i> definiendo esta propiedad dentro de una media query, dado que no nos interesa esa distribución en dos columnas para móviles.</p>
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+/* Priority icons */
+.icon {
+  font-size: 40px;
+  color: #9bc33f;
+  padding-top: 10px;
+}
+
+/* Urgent/red */
+.icon.urgent {
+  color: rgb(249, 56, 49);
+}
+
+/* Medium/orange */
+.icon.medium {
+  color: #ff753e;
+}
+
+/* Title */
+.todo-title {
+  text-transform: none;
+  line-height: 50px;
+  font-weight: normal;
+  font-family: "PlutoSansExtraLight";
+}
+
+/* Date */
+.todo-date {
+  color: #bbb;
+  font-weight: normal;
+  font-size: 14px;
+  text-transform: none;
+  font-family: "PlutoSansRegular";
+}
+
+/* Override other float exercise styles */
+div {
+  padding: 0;
+}
+
+body {
+  background: #eee;
+}
+
+.container {
+  background: transparent;
+  padding: 40px 0;
+}

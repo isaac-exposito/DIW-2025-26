@@ -1,0 +1,28 @@
+* {
+  box-sizing: border-box;
+}
+
+.header {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-between;
+}
+
+.image-text-container {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  column-gap: 50px;
+  padding: 0;
+}
+
+.image-text-container .image {
+  height: 150px;
+}
+
+.image-text-container .post_excerpt {
+  align-self: start;
+}
+
+p {
+  line-height: 150%;
+}

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicios Float. Ej. 1. Ahora con flex</title>
+  <link rel="stylesheet" href="../../Utils/css/general.css">
+  <link rel="stylesheet" href="css/Ej-Float-Ej-10-comun.css">
+  <link rel="stylesheet" href="css/Ej-Float-Ej-16.css">
+
+  <!-- Tema CSS para highlight.js -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/night-owl.min.css" integrity="sha512-i5X6Fdn/ZqvGSqPrdMa3FgcpXM/Nr6YccSKFYT93zljl/HZDEpvBbE5Pxp91eiWGccZLrL/LDQJd7fjTRYsVaA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+  <style>
+    /* Priority icons */
+    .icon {
+      font-size: 40px;
+      color: #9bc33f;
+      padding-top: 10px;
+    }
+
+    /* Urgent/red */
+    .icon.urgent {
+      color: rgb(249, 56, 49);
+    }
+
+    /* Medium/orange */
+    .icon.medium {
+      color: #ff753e;
+    }
+
+    /* Title */
+    .todo-title {
+      text-transform: none;
+      line-height: 50px;
+      font-weight: normal;
+      font-family: "PlutoSansExtraLight";
+    }
+
+    /* Date */
+    .todo-date {
+      color: #bbb;
+      font-weight: normal;
+      font-size: 14px;
+      text-transform: none;
+      font-family: "PlutoSansRegular";
+    }
+
+    /* Override other float exercise styles */
+    div {
+      padding: 0;
+    }
+
+    body {
+      background: #eee;
+    }
+
+    .container {
+      background: transparent;
+      padding: 40px 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1 style="margin-top: 0; display: flex; justify-content: space-between; align-items: center;">
+    <a href="Ej-Float-Ej-15-con-grid.html" style="background: #2d3748; color: #fff; padding: 0.5em 1em; border-radius: 5px; text-decoration: none; font-size: 0.5em;">
+      Ejercicio anterior (15)
+    </a>
+    <span>Ejercicio 16</span>
+    <span style="background: #666; color: #999; padding: 0.5em 1em; border-radius: 5px; text-decoration: none; font-size: 0.5em; cursor: not-allowed;">
+      Siguiente ejercicio
+    </span>
+  </h1>
+
+  <div class="container">
+    <!-- To Do list -->
+    <div class="todo-list">
+
+      <!-- To Do Item -->
+      <div class="todo">
+        <div class="icon urgent">&#9679;</div>
+        <div class="todo-info">
+          <div class="todo-title">Pay Rent</div>
+          <div class="todo-date">April 1</div>
+        </div>
+        <div class="check">
+          <input type="checkbox" class="checkbox-right" value="None" name="check">
+          <label for="check"></label>
+        </div>
+      </div>
+
+      <!-- To Do Item -->
+      <div class="todo">
+        <div class="icon urgent">&#9679;</div>
+        <div class="todo-info">
+          <div class="todo-title">Pay taxes</div>
+          <div class="todo-date">April 14</div>
+        </div>
+        <div class="check">
+          <input type="checkbox" class="checkbox-right" value="None" name="check">
+          <label for="check"></label>
+        </div>
+      </div>
+
+      <!-- To Do Item -->
+      <div class="todo">
+        <div class="icon medium">&#9679;</div>
+        <div class="todo-info">
+          <div class="todo-title">Do floats homework</div>
+          <div class="todo-date">Monday, April 21</div>
+        </div>
+        <div class="check">
+          <input type="checkbox" class="checkbox-right" value="None" name="check">
+          <label for="check"></label>
+        </div>
+      </div>
+
+      <!-- To Do Item -->
+      <div class="todo">
+        <div class="icon medium">&#9679;</div>
+        <div class="todo-info">
+          <div class="todo-title">Get groceries</div>
+          <div class="todo-date">Friday, April 18</div>
+        </div>
+        <div class="check">
+          <input type="checkbox" class="checkbox-right" value="None" name="check">
+          <label for="check"></label>
+        </div>
+      </div>
+
+      <!-- To Do Item -->
+      <div class="todo">
+        <div class="icon">&#9679;</div>
+        <div class="todo-info">
+          <div class="todo-title">Get a haircut</div>
+          <div class="todo-date">Friday, April 18</div>
+        </div>
+        <div class="check">
+          <input type="checkbox" class="checkbox-right" value="None" name="check">
+          <label for="check"></label>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="explanation">
+    <p><strong>Explicación:</strong></p>
+
+    <p>Para cada entrada de la lista (clase <i>todo</i>) hay que poner <code>grid-auto-flow: column</code> y definir 3 columnas con <code>grid-template-columns: auto auto 1fr</code>. La tercera columna la ponemos <code>1fr</code> para luego echar a la derecha el checkbox poniendo <code>justify-self: end</code> en la clase check.</p>
+  </div>
+
+</body>
+
+</html>
