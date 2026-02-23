@@ -1,0 +1,81 @@
+/* MÓVILES: <576px */
+@media (width < 576px) {
+  main {
+    /* grid-template-rows NO SE PUEDE USAR */
+  }
+
+  main > div:nth-child(1) {
+  }
+
+  main > div:nth-child(2) {
+  }
+
+  main > div:nth-child(3) {
+  }
+
+  main > div:nth-child(4) {
+  }
+
+  main > div:nth-child(5) {
+  }
+
+  main > div:nth-child(6) {
+  }
+
+  main > div:nth-child(7) {
+  }
+}
+
+/* TABLETS: 576-960px */
+@media (576px <= width < 960px) {
+  main {
+  }
+
+  main > div:nth-child(1) {
+  }
+
+  main > div:nth-child(2) {
+  }
+
+  main > div:nth-child(3) {
+  }
+
+  main > div:nth-child(4) {
+  }
+
+  main > div:nth-child(5) {
+  }
+
+  main > div:nth-child(6) {
+  }
+
+  main > div:nth-child(7) {
+  }
+}
+
+/* ESCRITORIO: >960px */
+@media (width >= 960px) {
+  main {
+  }
+
+  main > div:nth-child(1) {
+  }
+
+  main > div:nth-child(2) {
+  }
+
+  main > div:nth-child(3) {
+  }
+
+  main > div:nth-child(4) {
+  }
+
+  main > div:nth-child(5) {
+  }
+
+  main > div:nth-child(6) {
+  }
+
+  main > div:nth-child(7) {
+  }
+}
