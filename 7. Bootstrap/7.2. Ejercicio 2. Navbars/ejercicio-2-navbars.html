@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap. Ejercicio 2. Navbars</title>
+  <!-- Enlazamos Bootstrap 5.3.8 desde CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+
+  <!-- =====================================================================
+    NAVBAR 1 — Navbar clásico con todos los subcomponentes
+    =========================================================================
+    - Breakpoint de expand: lg (se colapsa por debajo de 992px)
+    - Container: container-fluid (ocupa todo el ancho)
+    - Tema: claro (bg-body-tertiary, tema por defecto)
+    - Incluye: brand como texto, nav links con .active, dropdown, formulario de búsqueda
+    - Nota: usamos me-auto en .navbar-nav para empujar el formulario a la derecha.
+      mb-2 mb-lg-0 evita un margen inferior en los nav-links cuando están colapsados.
+  -->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary mb-5 d-none">
+    <div class="container-fluid">
+      <!-- Brand: el nombre o logo del sitio, siempre visible -->
+      <a class="navbar-brand" href="#">MiSitio</a>
+
+      <!-- Toggler: botón hamburguesa que aparece cuando el navbar está colapsado.
+          data-bs-toggle="collapse" indica que usamos el plugin Collapse de Bootstrap.
+          data-bs-target apunta al id del contenedor que queremos colapsar/expandir. -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar1" aria-controls="navbar1" aria-expanded="false" aria-label="Abrir navegación">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Contenido colapsable: todo lo que va dentro de .collapse.navbar-collapse
+          se oculta en móvil y se muestra en desktop (a partir del breakpoint expand) -->
+      <div class="collapse navbar-collapse" id="navbar1">
+        <!-- .navbar-nav contiene los enlaces de navegación.
+            me-auto empuja el contenido siguiente (el formulario) a la derecha.
+            mb-2 mb-lg-0 añade margen inferior solo en móvil (colapsado). -->
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <!-- .active indica la página actual. aria-current="page" mejora la accesibilidad. -->
+            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Servicios</a>
+          </li>
+          <!-- Dropdown: un nav-item que despliega un menú -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Productos
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Electrónica</a></li>
+              <li><a class="dropdown-item" href="#">Ropa</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="#">Ver todo</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <!-- Un enlace deshabilitado: no es clicable. aria-disabled="true" para accesibilidad. -->
+            <a class="nav-link disabled" aria-disabled="true">Próximamente</a>
+          </li>
+        </ul>
+
+        <!-- Formulario de búsqueda alineado a la derecha gracias al me-auto del nav -->
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Buscar..." aria-label="Buscar">
+          <button class="btn btn-outline-success" type="submit">Buscar</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <!-- =====================================================================
+    NAVBAR 2 — Navbar oscuro con data-bs-theme="dark"
+    =========================================================================
+    - Breakpoint de expand: md (se colapsa por debajo de 768px)
+    - Container: container (centrado, con ancho máximo según breakpoint)
+    - Tema: oscuro (bg-dark + data-bs-theme="dark")
+    - Incluye: brand, nav links, navbar-text
+    - Nota: desde Bootstrap 5.3, para temas oscuros usamos data-bs-theme="dark"
+      en lugar de la clase .navbar-dark (que está deprecated pero sigue funcionando).
+  -->
+  <nav class="navbar navbar-expand-md bg-dark mb-5 d-none" data-bs-theme="dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">DarkBrand</a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar2" aria-controls="navbar2" aria-expanded="false" aria-label="Abrir navegación">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbar2">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contacto</a>
+          </li>
+        </ul>
+        <!-- .navbar-text permite incluir texto que se alinea verticalmente con los nav-links -->
+        <span class="navbar-text">
+          Bienvenido, usuario
+        </span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- =====================================================================
+    NAVBAR 3 — Navbar con fondo primario y brand con imagen
+    =========================================================================
+    - Breakpoint de expand: sm (se colapsa por debajo de 576px)
+    - Container: container-md
+    - Tema: oscuro sobre fondo primario (bg-primary + data-bs-theme="dark")
+    - Incluye: brand con imagen (Lorem Picsum) y texto, nav links, botón de acción
+    - Nota: al usar bg-primary necesitamos data-bs-theme="dark" para que el texto
+      sea blanco y legible sobre el fondo azul.
+      En el brand usamos una <img> con las clases .d-inline-block y .align-text-top
+      para alinear la imagen correctamente con el texto.
+  -->
+  <nav class="navbar navbar-expand-sm bg-primary mb-5 d-none" data-bs-theme="dark">
+    <div class="container-md">
+      <!-- Brand con una imagen de Lorem Picsum y texto.
+          .d-inline-block hace que la imagen se comporte como un elemento inline.
+          .align-text-top alinea la imagen con la parte superior del texto. -->
+      <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+        <img src="https://picsum.photos/30/24" alt="Logo" width="30" height="24" class="rounded-circle">
+        SpaceBrand
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar3" aria-controls="navbar3" aria-expanded="false" aria-label="Abrir navegación">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbar3">
+        <ul class="navbar-nav me-auto mb-2 mb-sm-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Misiones</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Tripulación</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Galería</a>
+          </li>
+        </ul>
+        <!-- Botón de acción a la derecha del navbar -->
+        <a href="#" class="btn btn-outline-light">
+          <i class="bi bi-box-arrow-in-right me-1"></i>
+          Acceder
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- =====================================================================
+    NAVBAR 4 — Navbar con toggler a la izquierda, brand con imagen a la derecha
+    =========================================================================
+    - Breakpoint de expand: lg
+    - Container: container-fluid
+    - Tema: oscuro con fondo success (bg-success + data-bs-theme="dark")
+    - Incluye: toggler a la izquierda, brand con imagen a la derecha, nav links, formulario
+    - Nota: para invertir la posición del toggler y el brand, simplemente
+      colocamos el <button> antes del <a class="navbar-brand"> en el HTML.
+      El toggler queda a la izquierda por defecto, y el brand se empuja a la derecha.
+      En el brand usamos una <img> en vez de un icono de Bootstrap Icons.
+  -->
+  <nav class="navbar navbar-expand-lg bg-success mb-5 d-none" data-bs-theme="dark">
+    <div class="container-fluid">
+      <!-- Toggler primero: aparece a la izquierda -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar4" aria-controls="navbar4" aria-expanded="false" aria-label="Abrir navegación">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Brand después: aparece a la derecha del toggler.
+          Usamos una imagen de Lorem Picsum como logo. -->
+      <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+        <img src="https://picsum.photos/30/24?random=2" alt="Logo" width="30" height="24" class="rounded-circle">
+        EcoBrand
+      </a>
+
+      <div class="collapse navbar-collapse" id="navbar4">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Proyectos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Voluntariado</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" aria-disabled="true">Donaciones</a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" data-bs-theme="light" type="search" placeholder="Buscar proyecto..." aria-label="Buscar">
+          <button class="btn btn-outline-light" type="submit">Buscar</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <!-- =====================================================================
+    NAVBAR 5 — Navbar sin expand (siempre colapsado)
+    =========================================================================
+    - NO tiene .navbar-expand-*: el navbar SIEMPRE está colapsado
+    - Container: container-fluid
+    - Tema: fondo warning con texto oscuro (bg-warning, sin data-bs-theme)
+    - Incluye: brand visible, toggler, nav links dentro del collapse
+    - Nota: al no añadir ninguna clase .navbar-expand-*, el contenido del
+      .collapse.navbar-collapse siempre estará oculto y solo se podrá mostrar
+      pulsando el toggler, independientemente del tamaño de la pantalla.
+  -->
+  <nav class="navbar bg-warning mb-5 d-none">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <i class="bi bi-exclamation-triangle me-1"></i>
+        SiempreColapsado
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar5" aria-controls="navbar5" aria-expanded="false" aria-label="Abrir navegación">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbar5">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Novedades</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Catálogo</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contacto</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- =====================================================================
+    NAVBAR 6 — Navbar con nav links SIN lista (usando <div> en vez de <ul>)
+    =========================================================================
+    - Breakpoint de expand: md
+    - Container: container
+    - Tema: oscuro con fondo info (bg-info + data-bs-theme="dark")
+    - Incluye: brand, nav links sin usar <ul>/<li> (alternativa con <div>)
+    - Nota: en lugar de usar una lista <ul> con <li>, podemos usar directamente
+      un <div class="navbar-nav"> con enlaces <a class="nav-link"> dentro.
+      Ambas formas son válidas; la documentación de Bootstrap muestra las dos.
+  -->
+  <nav class="navbar navbar-expand-md bg-info mb-5" data-bs-theme="dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <i class="bi bi-water me-1"></i>
+        AquaBrand
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar6" aria-controls="navbar6" aria-expanded="false" aria-label="Abrir navegación">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbar6">
+        <!-- Alternativa SIN lista: usamos un <div> con clase .navbar-nav
+            y dentro colocamos los <a> directamente -->
+        <div class="navbar-nav me-auto mb-2 mb-md-0">
+          <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+          <a class="nav-link" href="#">Destinos</a>
+          <a class="nav-link" href="#">Actividades</a>
+          <a class="nav-link disabled" aria-disabled="true">Reservas</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- =====================================================================
+    NAVBAR 7 — Navbar con formulario como container
+    =========================================================================
+    - NO tiene .navbar-expand-*
+    - Container: el propio <form> actúa como container (container-fluid)
+    - Tema: claro (bg-body-tertiary)
+    - Incluye: un input group dentro de un <form> que actúa como container
+    - Nota: podemos usar el <form> directamente como container del navbar,
+      ahorrando un <div> wrapper. Esto es útil cuando el navbar es
+      esencialmente un formulario completo.
+  -->
+  <nav class="navbar bg-body-tertiary mb-5 ">
+    <form class="container-fluid">
+      <div class="input-group">
+        <span class="input-group-text" id="addon-usuario">
+          <i class="bi bi-person"></i>
+        </span>
+        <input type="text" class="form-control" placeholder="Nombre de usuario" aria-label="Nombre de usuario" aria-describedby="addon-usuario">
+        <button class="btn btn-primary" type="submit">Entrar</button>
+      </div>
+    </form>
+  </nav>
+
+  <!-- =====================================================================
+    NAVBAR 8 — Navbar con navbar-nav-scroll (scroll en contenido)
+    =========================================================================
+    - Breakpoint de expand: xxl (se colapsa por debajo de 1400px)
+    - Container: container-fluid
+    - Tema: oscuro (bg-dark + data-bs-theme="dark")
+    - Incluye: brand, muchos nav links con scroll, dropdown, formulario
+    - Nota: .navbar-nav-scroll permite hacer scroll vertical en el contenido
+      del navbar cuando está colapsado. Usamos la variable CSS
+      --bs-scroll-height para definir la altura máxima del contenido scrollable.
+      Esto es útil cuando hay muchos enlaces y no queremos que el menú
+      colapsado ocupe toda la pantalla.
+  -->
+  <nav class="navbar navbar-expand-xxl bg-dark mb-5 " data-bs-theme="dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <i class="bi bi-list-nested me-1"></i>
+        MegaNav
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar8" aria-controls="navbar8" aria-expanded="false" aria-label="Abrir navegación">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbar8">
+        <!-- .navbar-nav-scroll + --bs-scroll-height limitan la altura y añaden scroll -->
+        <ul class="navbar-nav me-auto my-2 my-xxl-0 navbar-nav-scroll" style="--bs-scroll-height: 150px;">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Sección A</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Sección B</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Sección C</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Sección D</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Más secciones
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark">
+              <li><a class="dropdown-item" href="#">Sección E</a></li>
+              <li><a class="dropdown-item" href="#">Sección F</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="#">Ver todas</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" aria-disabled="true">Archivado</a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Buscar sección..." aria-label="Buscar">
+          <button class="btn btn-outline-light" type="submit">Buscar</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <!-- =====================================================================
+    NAVBAR 9 — Navbar Offcanvas con brand con imagen (menú lateral deslizante)
+    =========================================================================
+    - Breakpoint de expand: md (en pantallas >= 768px se muestra como navbar normal)
+    - Container: container-fluid
+    - Tema: claro (bg-body-tertiary)
+    - Incluye: brand con imagen (Lorem Picsum), offcanvas con header, nav links,
+      dropdown y formulario
+    - Nota: el offcanvas es una alternativa al collapse estándar. En vez de
+      desplegar el menú verticalmente, se abre un panel lateral (drawer).
+      Usamos data-bs-toggle="offcanvas" en vez de "collapse", y la estructura
+      interna cambia: usamos .offcanvas, .offcanvas-header, .offcanvas-body.
+      Con .navbar-expand-md, el offcanvas solo aparece en pantallas < 768px;
+      en pantallas mayores se muestra como un navbar normal expandido.
+  -->
+  <nav class="navbar navbar-expand-md bg-body-tertiary mb-5 ">
+    <div class="container-fluid">
+      <!-- Brand con imagen de Lorem Picsum en vez de icono -->
+      <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+        <img src="https://picsum.photos/30/24?random=3" alt="Logo" width="30" height="24">
+        OffcanvasNav
+      </a>
+
+      <!-- Toggler: ahora usa data-bs-toggle="offcanvas" en vez de "collapse" -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbar9" aria-controls="navbar9" aria-label="Abrir navegación">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Offcanvas: usamos .offcanvas y .offcanvas-end para que se abra desde la derecha -->
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="navbar9" aria-labelledby="navbar9Label">
+
+        <!-- Cabecera del offcanvas: título y botón de cierre -->
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="navbar9Label">Menú</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
+        </div>
+
+        <!-- Cuerpo del offcanvas: aquí van los nav links y el formulario -->
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Tutoriales</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Categorías
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Frontend</a></li>
+                <li><a class="dropdown-item" href="#">Backend</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#">Todas</a></li>
+              </ul>
+            </li>
+          </ul>
+          <form class="d-flex mt-3 mt-md-0" role="search">
+            <input class="form-control me-2" type="search" placeholder="Buscar..." aria-label="Buscar">
+            <button class="btn btn-outline-success" type="submit">Buscar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- =====================================================================
+    NAVBAR 10 — Navbar con múltiples elementos: badges y botones
+    =========================================================================
+    - Breakpoint de expand: lg
+    - Container: container
+    - Tema: oscuro con fondo danger (bg-danger + data-bs-theme="dark")
+    - Incluye: brand con icono, nav links, badges, botones variados
+    - Nota: podemos combinar cualquier utilidad de Bootstrap dentro del navbar.
+      Aquí usamos badges (etiquetas) junto a los nav links para indicar
+      notificaciones o novedades, y botones con diferentes estilos.
+  -->
+  <nav class="navbar navbar-expand-lg bg-danger mb-5 " data-bs-theme="dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <i class="bi bi-fire me-1"></i>
+        HotBrand
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar10" aria-controls="navbar10" aria-expanded="false" aria-label="Abrir navegación">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbar10">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              Mensajes
+              <!-- Badge: una pequeña etiqueta para indicar notificaciones -->
+              <span class="badge text-bg-light">3</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              Alertas
+              <span class="badge text-bg-warning">Nuevo</span>
+            </a>
+          </li>
+        </ul>
+        <div class="d-flex gap-2">
+          <a href="#" class="btn btn-outline-light btn-sm">
+            <i class="bi bi-person-circle me-1"></i>Mi perfil
+          </a>
+          <a href="#" class="btn btn-light btn-sm">
+            <i class="bi bi-box-arrow-right me-1"></i>Salir
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Enlazamos el JavaScript de Bootstrap (necesario para el navbar responsive) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
