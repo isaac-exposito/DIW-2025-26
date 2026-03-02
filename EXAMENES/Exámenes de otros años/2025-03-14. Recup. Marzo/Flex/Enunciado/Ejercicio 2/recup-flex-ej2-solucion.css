@@ -1,0 +1,49 @@
+/********** Estilos generales **********/
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+p {
+  margin: 0 0 0.5em 0;
+}
+
+/* Estilos para numerar las columnas */
+.row > *::before {
+  font-size: 1.25rem;
+  padding: 0.25em;
+  color: #fff;
+  background-color: #333;
+  border-radius: 50%;
+  margin-right: 0.125em;
+}
+
+.row > :nth-child(1)::before {
+  content: "1";
+}
+.row > :nth-child(2)::before {
+  content: "2";
+}
+.row > :nth-child(3)::before {
+  content: "3";
+}
+.row > :nth-child(4)::before {
+  content: "4";
+}
+.row > :nth-child(5)::before {
+  content: "5";
+}
+
+/* Borde para las columnas */
+.row > * {
+  border: 1px solid #999;
+}
+
+/* Background para las filas */
+.row {
+  background-color: rgb(246, 246, 235);
+}

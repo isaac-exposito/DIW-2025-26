@@ -1,0 +1,75 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 1.75em;
+  margin: 0 0 10px 0;
+  text-align: center;
+}
+
+.contenedor-ejercicio {
+  padding: 15px;
+  border: 2px solid #333;
+  margin-bottom: 20px;
+  background-color: beige;
+}
+
+.contenedor-ejercicio h2 {
+  margin: 0 0 10px 0;
+}
+
+.contenedor-flex {
+  min-height: 250px;
+  background-color: #ddd;
+  display: flex;
+  border: 2px solid#333;
+}
+
+.contenedor-flex > * {
+  font-size: 1rem;
+  padding: 0.5em;
+}
+
+.contenedor-flex > :nth-child(1) {
+  background-color: lightcoral;
+}
+.contenedor-flex > :nth-child(2) {
+  background-color: lightgreen;
+}
+.contenedor-flex > :nth-child(3) {
+  background-color: lightblue;
+}
+.contenedor-flex > :nth-child(4) {
+  background-color: lightpink;
+}
+.contenedor-flex > :nth-child(5) {
+  background-color: lightsalmon;
+}
+
+.contenedor-flex > *::before {
+  font-size: 1.25rem;
+  padding: 0.25em;
+  color: #fff;
+  background-color: #333;
+  border-radius: 50%;
+  margin-right: 0.125em;
+}
+
+.contenedor-flex > :nth-child(1)::before {
+  content: "1";
+}
+.contenedor-flex > :nth-child(2)::before {
+  content: "2";
+}
+.contenedor-flex > :nth-child(3)::before {
+  content: "3";
+}
+.contenedor-flex > :nth-child(4)::before {
+  content: "4";
+}
+.contenedor-flex > :nth-child(5)::before {
+  content: "5";
+}

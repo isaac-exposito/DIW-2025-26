@@ -1,0 +1,42 @@
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  text-align: center;
+}
+
+/* MAIN */
+main {
+  display: grid;
+  height: 300px;
+  border: 3px solid #555;
+}
+
+main > div {
+  font-size: 1.25rem;
+}
+
+main > div:nth-child(1) {
+  background-color: lightseagreen;
+}
+
+main > div:nth-child(2) {
+  background-color: lightgrey;
+}
+
+main > div:nth-child(3) {
+  background-color: lightgreen;
+}
+
+main > div:nth-child(4) {
+  background-color: lightcyan;
+}
+
+main > div:nth-child(5) {
+  background-color: lightcoral;
+}
+
+main > div:nth-child(6) {
+  background-color: lightblue;
+}

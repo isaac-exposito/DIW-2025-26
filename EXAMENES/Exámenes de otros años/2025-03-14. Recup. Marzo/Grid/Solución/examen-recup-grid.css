@@ -1,0 +1,94 @@
+/* MÓVILES: <600px */
+@media only screen and (max-width: 600px) {
+  main {
+    grid-template-columns: 1fr auto;
+    gap: 10px;
+  }
+
+  main > div:nth-child(1) {
+    justify-self: end;
+  }
+
+  main > div:nth-child(2) {
+    align-self: end;
+  }
+
+  main > div:nth-child(3) {
+  }
+
+  main > div:nth-child(4) {
+  }
+
+  main > div:nth-child(5) {
+  }
+
+  main > div:nth-child(6) {
+  }
+}
+
+/* TABLETS: 600-900px */
+@media only screen and (min-width: 600px) and (max-width: 900px) {
+  main {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto 1fr 2fr;
+    grid-template-areas:
+      "uno uno dos"
+      "tres cuatro dos"
+      "cinco cuatro dos"
+      "seis seis seis";
+  }
+
+  main > div:nth-child(1) {
+    grid-area: uno;
+    justify-self: start;
+  }
+
+  main > div:nth-child(2) {
+    grid-area: dos;
+  }
+
+  main > div:nth-child(3) {
+    grid-area: tres;
+    justify-self: end;
+  }
+
+  main > div:nth-child(4) {
+    grid-area: cuatro;
+    align-self: end;
+  }
+
+  main > div:nth-child(5) {
+    grid-area: cinco;
+  }
+
+  main > div:nth-child(6) {
+    grid-area: seis;
+  }
+}
+
+/* ESCRITORIO: 1000+px */
+@media only screen and (min-width: 900px) {
+  main {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    align-content: center;
+  }
+
+  main > div:nth-child(1) {
+  }
+
+  main > div:nth-child(2) {
+  }
+
+  main > div:nth-child(3) {
+  }
+
+  main > div:nth-child(4) {
+    align-self: start;
+  }
+
+  main > div:nth-child(5) {
+  }
+
+  main > div:nth-child(6) {
+  }
+}
