@@ -1,0 +1,81 @@
+/* ----------------------------------- */
+/* --- ESTILOS BASE PROPORCIONADOS --- */
+/* ----------------------------------- */
+/* ----------- NO MODIFICAR ---------- */
+/* ----------------------------------- */
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f0f0f0;
+}
+
+/* Header */
+header {
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.25em;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  padding: 8px 15px;
+  margin-left: 5px;
+  border-radius: 4px;
+}
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 50px 20px;
+  color: white;
+}
+
+.hero p {
+  font-size: 1.1em;
+  opacity: 0.9;
+}
+
+/* Text Content */
+.text-content {
+  padding: 1em 2em;
+}
+
+.text-content p {
+  margin-bottom: 1em;
+}
+
+/* Footer */
+footer {
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+footer nav {
+  margin-top: 10px;
+}
+
+.footer-link {
+  color: #bdc3c7;
+  text-decoration: none;
+  margin: 0 10px;
+}
