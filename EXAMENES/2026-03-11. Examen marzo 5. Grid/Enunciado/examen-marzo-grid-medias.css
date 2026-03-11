@@ -1,0 +1,41 @@
+/* MÓVILES: <800px */
+@media (width < 800px) {
+  main {
+  }
+
+  main > div:nth-child(1) {
+  }
+  
+  main > div:nth-child(2) {
+  }
+
+  main > div:nth-child(3) {
+  }
+
+  main > div:nth-child(4) {
+  }
+
+  main > div:nth-child(5) {
+  }
+}
+
+/* TABLETS: >= 800px */
+@media (width >= 800px) {
+  main {
+  }
+
+  main > div:nth-child(1) {
+  }
+
+  main > div:nth-child(2) {
+  }
+
+  main > div:nth-child(3) {
+  }
+
+  main > div:nth-child(4) {
+  }
+
+  main > div:nth-child(5) {
+  }
+}
